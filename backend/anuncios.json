@@ -1,0 +1,26 @@
+{
+  "anuncios": [
+    {
+      "nombre": "Rocky",
+      "venta": true,
+      "edad": 1,
+      "raza":"West Highland White Terrier",
+      "size": "Mediano",
+      "foto": "Westy.jpeg",
+      "sexo": true,
+      "perro": true,
+      "descripcion": "cariñoso y con mucha energía"
+    },
+    {
+      "nombre": "Maximiliano",
+      "venta": true,
+      "Edad": 2,
+      "Raza":"Pastor Alemán",
+      "size": "Grande",
+      "foto": "pastorAleman.webp",
+      "sexo": true,
+      "perro": true,
+      "descripcion": "Tranquilo y muy educado"
+    }
+  ]
+}
