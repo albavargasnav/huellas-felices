@@ -7,7 +7,6 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const jwtAuth = require('./lib/jwtAuth')
-const LoginController = require('./controllers/LoginController')
 const PrivateController = require('./controllers/PrivateController')
 const session = require('express-session')
 const sessionAuth = require('./middleware/sessionAuthMiddleware')
@@ -15,7 +14,7 @@ const sessionAuth = require('./middleware/sessionAuthMiddleware')
 require('dotenv').config() // inicializamos variables de entrono desde el fichero .env
 
 const i18n = require('./lib/i18nSetup')
-const cors = require('cors');
+const cors = require('cors')
 
 // Connect DB & register models
 require('./models')
@@ -47,24 +46,22 @@ app.use(session({
 
 // Configuracion de Cors para permitir solicitudes desde React
 app.use(cors({
-  origin: 'http://localhost:3001',
-}));
+  origin: 'http://localhost:3001'
+}))
 
-// API v1
-app.use('/apiv1/authenticate', require('./routes/apiv1/authenticate'))
-app.use('/apiv1/anuncios', jwtAuth(), require('./routes/apiv1/anuncios'))
+// API
+app.use('/api/auth', require('./routes/api/auth'))
+app.use('/api/anuncios', jwtAuth(), require('./routes/api/anuncios'))
+app.use('api/login', require('./routes/api/login'))
 
 // Global Template variables
 app.locals.title = 'Huellas Felices'
 
-const loginController = new LoginController()
 const privadoController = new PrivateController()
 
 // Web
 app.use('/', require('./routes/index'))
 app.use('/anuncios', require('./routes/anuncios'))
-app.get('/login', loginController.index)
-app.post('/login', loginController.post)
 app.get('/privado', sessionAuth, privadoController.index)
 
 // catch 404 and forward to error handler
