@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: `${process.env.REACT_APP_API_BASE_URL}/api`,
+  baseURL: `${process.env.REACT_APP_API_BASE_URL}/apiv1`,
 });
 
 const setAuthorizationHeader = token => {
