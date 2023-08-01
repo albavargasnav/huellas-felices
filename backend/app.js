@@ -15,6 +15,7 @@ const sessionAuth = require('./middleware/sessionAuthMiddleware')
 require('dotenv').config() // inicializamos variables de entrono desde el fichero .env
 
 const i18n = require('./lib/i18nSetup')
+const cors = require('cors');
 
 // Connect DB & register models
 require('./models')
@@ -43,6 +44,11 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 24 * 2 // expira a los 2 días de inactividad
   }
 }))
+
+// Configuracion de Cors para permitir solicitudes desde React
+app.use(cors({
+  origin: 'http://localhost:3001',
+}));
 
 // API v1
 app.use('/apiv1/authenticate', require('./routes/apiv1/authenticate'))
