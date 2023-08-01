@@ -5,7 +5,7 @@ const authPath = '/auth';
 
 export const login = ({ remember, ...credentials }) => {
   return client
-    .post(`${authPath}/login`, credentials)
+    .post(`${authPath}`, credentials)
     .then(({ accessToken }) => {
       configureClient({ accessToken });
       return accessToken;
