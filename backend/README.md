@@ -11,9 +11,9 @@ Api for the iOS/Android apps.
     
     npm install
 
-### Configure  
+### Copy .env.example to .env and customize your variables.  
 
-Review lib/connectMongoose.js to set database configuration
+    cp .env.example .env
 
 ### Init database
 

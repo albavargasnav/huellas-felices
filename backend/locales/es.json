@@ -22,5 +22,8 @@
 	"Gender": "Gender",
 	"Size": "Size",
 	"M": "M",
-	"Descripcion": "Descripcion"
+	"Descripcion": "Descripcion",
+	"Sign in": "Sign in",
+	"Invalid credentials": "Invalid credentials",
+	"Private zone": "Private zone"
 }

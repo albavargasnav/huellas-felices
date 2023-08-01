@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict'
 
 const express = require('express')
@@ -6,6 +7,10 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const jwtAuth = require('./lib/jwtAuth')
+const LoginController = require('./controllers/LoginController')
+const PrivateController = require('./controllers/PrivateController')
+const session = require('express-session')
+const sessionAuth = require('./middleware/sessionAuthMiddleware')
 
 require('dotenv').config() // inicializamos variables de entrono desde el fichero .env
 
@@ -29,17 +34,32 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(i18n.init)
+app.use(session({
+  name: 'nodeapp-session',
+  secret: 'as78dbas8d7bva6sd6vas',
+  saveUninitialized: true,
+  resave: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 2 // expira a los 2 días de inactividad
+  }
+}))
 
 // API v1
 app.use('/apiv1/authenticate', require('./routes/apiv1/authenticate'))
 app.use('/apiv1/anuncios', jwtAuth(), require('./routes/apiv1/anuncios'))
 
 // Global Template variables
-app.locals.title = 'NodePop'
+app.locals.title = 'Huellas Felices'
+
+const loginController = new LoginController()
+const privadoController = new PrivateController()
 
 // Web
 app.use('/', require('./routes/index'))
 app.use('/anuncios', require('./routes/anuncios'))
+app.get('/login', loginController.index)
+app.post('/login', loginController.post)
+app.get('/privado', sessionAuth, privadoController.index)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

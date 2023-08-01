@@ -1,7 +1,7 @@
 'use strict'
 
 const mongoose = require('mongoose')
-var hash = require('hash.js')
+const bcrypt = require('bcrypt')
 
 const usuarioSchema = mongoose.Schema({
   name: String,
@@ -9,10 +9,17 @@ const usuarioSchema = mongoose.Schema({
   password: String
 })
 
-usuarioSchema.statics.hashPassword = function (plain) {
-  return hash.sha256().update(plain).digest('hex')
+// método estático
+usuarioSchema.statics.hashPassword = function (passwordEnClaro) {
+  return bcrypt.hash(passwordEnClaro, 7)
 }
 
+// método de instancia
+usuarioSchema.methods.comparePassword = function (passwordEnClaro) {
+  return bcrypt.compare(passwordEnClaro, this.password)
+}
+
+// crear el modelo
 var Usuario = mongoose.model('Usuario', usuarioSchema)
 
 module.exports = Usuario

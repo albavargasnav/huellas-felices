@@ -2,7 +2,7 @@
 
 require('dotenv').config() // inicializamos variables de entrono desde el fichero .env
 
-const { askUser } = require('./lib/utils')
+// const { askUser } = require('./lib/utils')
 const { mongoose, connectMongoose, Anuncio, Usuario } = require('./models')
 
 const ANUNCIOS_JSON = './anuncios.json'
@@ -16,11 +16,11 @@ async function main () {
   // Espero a que se conecte la BD (para que los mensajes salgan en orden)
   await connectMongoose
 
-  const answer = await askUser('Are you sure you want to empty DB and load initial data? (no) ')
-  if (answer.toLowerCase() !== 'yes') {
-    console.log('DB init aborted! nothing has been done')
-    return process.exit(0)
-  }
+  // const answer = await askUser('Are you sure you want to empty DB and load initial data? (no) ')
+  // if (answer.toLowerCase() !== 'yes') {
+  //   console.log('DB init aborted! nothing has been done')
+  //   return process.exit(0)
+  // }
 
   // Inicializar nuestros modelos
   const anunciosResult = await initAnuncios(ANUNCIOS_JSON)
@@ -44,8 +44,8 @@ async function initAnuncios (fichero) {
 async function initUsuarios () {
   const { deletedCount } = await Usuario.deleteMany()
   const loadedCount = await Usuario.insertMany([
-    {name: 'user', email: 'user@example.com', password: Usuario.hashPassword('1234')},
-    {name: 'user2', email: 'user2@example.com', password: Usuario.hashPassword('1234')}
+    {name: 'user', email: 'user@example.com', password: await Usuario.hashPassword('1234')},
+    {name: 'user2', email: 'user2@example.com', password: await Usuario.hashPassword('1234')}
   ])
   return { deletedCount, loadedCount }
 }
