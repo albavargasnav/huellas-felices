@@ -45,7 +45,8 @@ app.use(session({
 
 // Configuracion de Cors para permitir solicitudes desde React
 app.use(cors({
-  origin: 'http://localhost:3001'
+  origin: 'http://localhost:3001',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }))
 
 // API
