@@ -7,7 +7,6 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const jwtAuth = require('./lib/jwtAuth')
-const PrivateController = require('./controllers/PrivateController')
 const session = require('express-session')
 const sessionAuth = require('./middleware/sessionAuthMiddleware')
 
@@ -52,17 +51,8 @@ app.use(cors({
 // API
 app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/anuncios', jwtAuth(), require('./routes/api/anuncios'))
-app.use('api/login', require('./routes/api/login'))
-
-// Global Template variables
-app.locals.title = 'Huellas Felices'
-
-const privadoController = new PrivateController()
-
-// Web
-app.use('/', require('./routes/index'))
-app.use('/anuncios', require('./routes/anuncios'))
-app.get('/privado', sessionAuth, privadoController.index)
+app.use('/api/login', require('./routes/api/login'))
+app.use('/api/usuarios', require('./routes/api/usuarios'))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
