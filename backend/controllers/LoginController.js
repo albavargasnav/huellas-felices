@@ -1,12 +1,7 @@
 const { Usuario } = require('../models')
 const jwt = require('jsonwebtoken')
 
-// index (req, res, next) {
-//   res.locals.error = ''
-//   res.locals.email = ''
-//   res.render('login')
-// }
-
+// Controlador para buscar usuario
 exports.loginUsuarios = async (req, res, next) => {
   try {
     const { email, password } = req.body
