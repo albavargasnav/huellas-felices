@@ -3,24 +3,156 @@
     {
       "nombre": "Rocky",
       "venta": true,
-      "edad": 1,
+      "edad": "2021-12-04",
       "raza":"West Highland White Terrier",
       "size": "Mediano",
       "foto": "Westy.jpeg",
       "sexo": true,
       "perro": true,
-      "descripcion": "cariñoso y con mucha energía"
+      "descripcion": "Cariñoso y con mucha energía."
     },
     {
       "nombre": "Maximiliano",
       "venta": true,
-      "Edad": 2,
+      "Edad": "2019-03-13",
       "Raza":"Pastor Alemán",
       "size": "Grande",
       "foto": "pastorAleman.webp",
       "sexo": true,
       "perro": true,
-      "descripcion": "Tranquilo y muy educado"
+      "descripcion": "Tranquilo y muy educado, sin problemas para estar con niños pequeños y otros perros."
+    },
+    {
+      "nombre": "Penny",
+      "venta": true,
+      "Edad": "2020-06-08",
+      "Raza":"Yorshire Terrier",
+      "size": "Pequeño",
+      "foto": "yorkshire-terrier.jpg",
+      "sexo": false,
+      "perro": true,
+      "descripcion": "Tímida con otros perros pero genial con las personas"
+    },
+    {
+      "nombre": "Luna",
+      "venta": true,
+      "Edad": "2023-02-18",
+      "Raza":"Husky Siberiano",
+      "size": "Grande",
+      "foto": "Husky.jpg",
+      "sexo": true,
+      "perro": true,
+      "descripcion": "Revoltosa y con mucha energía para gastar. Le encanta jugar."
+    },
+    {
+      "nombre": "Athos",
+      "venta": true,
+      "Edad": "2018-10-06",
+      "Raza":"Bulldog Francés",
+      "size": "Mediano",
+      "foto": "Buldog-frances.jpg",
+      "sexo": true,
+      "perro": true,
+      "descripcion": "Desconfiado de primeras, necesita una familia que le dé el tiempo y amor que necesita."
+    },
+    {
+      "nombre": "Estrella",
+      "venta": true,
+      "Edad": "2020-09-22",
+      "Raza":"Mestizo",
+      "size": "Grande",
+      "foto": "mestizo_1.jpg",
+      "sexo": false,
+      "perro": true,
+      "descripcion": "Le gusta los niños. No tiene problemas para estar con otros perros y con gatos. Es muy obediente."
+    },
+    {
+      "nombre": "Lucas",
+      "venta": true,
+      "Edad": "2023-04-14",
+      "Raza":"Samoyedo",
+      "size": "Grande",
+      "foto": "samoyedo.jpg",
+      "sexo": true,
+      "perro": true,
+      "descripcion": "Cachorrete con mucha energía y un poco trasto."
+    },
+    {
+      "nombre": "Wendy",
+      "venta": true,
+      "Edad": "2020-03-20",
+      "Raza":"Mestizo",
+      "size": "Pequeño",
+      "foto": "mestizo_2.jpg",
+      "sexo": false,
+      "perro": true,
+      "descripcion": "Juguetona, curiosa, dulce, amigable e inteligente."
+    },
+    {
+      "nombre": "Obélix",
+      "venta": true,
+      "Edad": "2021-11-03",
+      "Raza":"Bullmastiff",
+      "size": "Grande",
+      "foto": "Bullmastiff.jpg",
+      "sexo": true,
+      "perro": true,
+      "descripcion": "A pesar de su tamaño, es un pan de perro y algo asustadizo con otros, sobretodo lo que son más pequeño que él."
+    },
+    {
+      "nombre": "Lily",
+      "venta": true,
+      "Edad": "2023-05-21",
+      "Raza":"Golden Retriever",
+      "size": "Grande",
+      "foto": "golden-retriever-puppy.jpg",
+      "sexo": false,
+      "perro": true,
+      "descripcion": "Mimosa y tierna que dan ganas de comersela a besos."
+    },
+    {
+      "nombre": "Charlie",
+      "venta": true,
+      "Edad": "2022-05-12",
+      "Raza":"Catire",
+      "size": "Pequeño",
+      "foto": "Cartire.jpg",
+      "sexo": true,
+      "perro": false,
+      "descripcion": "Bueno con otros gatos, niños y perros."
+    },
+    {
+      "nombre": "Nina",
+      "venta": true,
+      "Edad": "2020-02-03",
+      "Raza":"Siamés",
+      "size": "Pequeño",
+      "foto": "siames.jpg",
+      "sexo": false,
+      "perro": false,
+      "descripcion": "Gata con mucho carácter e independiente."
+    },
+    {
+      "nombre": "Oreo",
+      "venta": true,
+      "Edad": "2021-12-21",
+      "Raza":"Pelo Corto Negro",
+      "size": "Pequeño",
+      "foto": "dosmetic short hair.jpg",
+      "sexo": true,
+      "perro": false,
+      "descripcion": "Es un gato muy tierno que le gusta estar en compañia de otros gatoso de personas."
+    },
+    {
+      "nombre": "Nala",
+      "venta": true,
+      "Edad": "2018-01-21",
+      "Raza":"Multicolor",
+      "size": "Pequeño",
+      "foto": "multicolor.jpg",
+      "sexo": false,
+      "perro": false,
+      "descripcion": "Gata muy bella que le gusta dormir en las piernas de las personas."
     }
   ]
 }
