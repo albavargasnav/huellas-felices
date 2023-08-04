@@ -29,14 +29,17 @@ To start in development mode:
 ## ESLint
 
     npm run hints
-
-## Models
-# User
+## Api
+### Models
+#### User
+```
 - name: String
 - email: String
 - password: String
+```
 
-# Anuncios
+#### Anuncios
+```
 - nombre: String
 - venta: Bolean
 - edad: Date "yyyy-mm-dd"
@@ -46,7 +49,7 @@ To start in development mode:
 - sexo: Bolean True-Macho Falso-Hembra
 - perro: Bolean True-Perro Falso-Gato
 - description: String
-
+```
 
 ### Base Path
 
