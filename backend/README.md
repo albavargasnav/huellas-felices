@@ -1,10 +1,3 @@
-
-# NodePop Avanzado
-
-[Demo](/anuncios) of the methods (this link works only if you run the project)
-
-Api for the iOS/Android apps.
-
 ## Deploy
 
 ### Install dependencies  
@@ -37,13 +30,28 @@ To start in development mode:
 
     npm run hints
 
-## API v1 info
+## Models
+# User
+- name: String
+- email: String
+- password: String
+
+# Anuncios
+- nombre: String
+- venta: Bolean
+- edad: Date "yyyy-mm-dd"
+- raza: String
+- size: {Pequeño, Mediano, Grande}
+- foto: String
+- sexo: Bolean True-Macho Falso-Hembra
+- perro: Bolean True-Perro Falso-Gato
+- description: String
 
 
 ### Base Path
 
 The API can be used with the path: 
-[API V1](/apiv1/anuncios)
+[API](/api/anuncios)
 
 ### Language
 
