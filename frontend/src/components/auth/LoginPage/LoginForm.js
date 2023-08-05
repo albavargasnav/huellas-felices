@@ -24,23 +24,29 @@ function LoginForm({ onSubmit, isLoading }) {
       <div className='form-container'>
         <form className='login-form' onSubmit={handleSubmit(onSubmit)}>
           <span className='login-form-title'>Iniciar sesión</span>
-          <div className='login-form-text-info'>Correo electrónico</div>
-          <input name="email" value={email} onChange={handleChange} placeholder='Introduce tu correo electrónico' />
-          <div className='login-form-text-info'>Contraseña</div>
-          <input
+          <div className='login-form-text'>
+            <span className='login-form-text-info'>Correo electrónico</span>
+          </div>
+          <input className='login-form-text-area' name="email" value={email} onChange={handleChange} />
+          <div className='login-form-text'>
+            <span className='login-form-text-info'>Contraseña</span>
+          </div>
+          <input className='login-form-text-area'
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
-            placeholder='Introduce tu contraseña'
           />
-          <input
-            type="checkbox"
-            name="remember"
-            checked={remember}
-            onChange={handleChange}
-          />
-          <button disabled={!validate(validEmail, validPassword, () => !isLoading)}>
+          <div class="checkbox-container">
+            <input className='checkbox-input'
+              type="checkbox"
+              name="remember"
+              checked={remember}
+              onChange={handleChange}
+            />
+            <label class="checkbox-label" for="remember">Recordar contraseña</label>
+          </div>
+          <button className='login-form-button' disabled={!validate(validEmail, validPassword, () => !isLoading)}>
             Iniciar sesión
           </button>
         </form>
