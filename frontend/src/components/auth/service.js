@@ -6,14 +6,14 @@ const authPath = '/login';
 export const login = ({ remember, ...credentials }) => {
   return client
     .post(`${authPath}`, credentials)
-    .then(({ accessToken }) => {
-      configureClient({ accessToken });
-      return accessToken;
+    .then(({ jwt }) => {
+      configureClient({ jwt });
+      return jwt;
     })
-    .then(accessToken => {
-      storage.remove('auth');
+    .then(jwt => {
+      storage.remove('jwt');
       if (remember) {
-        storage.set('auth', accessToken);
+        storage.set('jwt', jwt);
       }
     });
 };

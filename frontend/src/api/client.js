@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import axios from 'axios';
 
 const client = axios.create({
@@ -18,6 +19,7 @@ client.interceptors.response.use(
     if (!error.response) {
       return Promise.reject({ message: error.message });
     }
+   
     return Promise.reject({
       message: error.response.statusText,
       statusCode: error.response.status,
@@ -26,9 +28,9 @@ client.interceptors.response.use(
   },
 );
 
-export const configureClient = ({ accessToken }) => {
-  if (accessToken) {
-    setAuthorizationHeader(accessToken);
+export const configureClient = ({ jwt }) => {
+  if (jwt) {
+    setAuthorizationHeader(jwt);
   }
 };
 
