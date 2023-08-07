@@ -12,10 +12,10 @@ mongoose.connection.once('open', function () {
 })
 
 const connectionPromise = mongoose.connect(process.env.MONGODB_CONNSTR, {
-  // useUnifiedTopology: true,
-  // useNewUrlParser: true,
-  // useFindAndModify: false,
-  // useCreateIndex: true
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true
 })
 
 // exportamos la promesa de la conexión (https://mongoosejs.com/docs/connections.html)

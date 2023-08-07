@@ -1,6 +1,6 @@
 import client from '../../api/client';
 
-const advertsPath = '/v1/adverts';
+const advertsPath = '/anuncios';
 
 export const getTags = () => {
   return client.get(`${advertsPath}/tags`);

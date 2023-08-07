@@ -19,11 +19,6 @@ const cors = require('cors')
 require('./models')
 
 const app = express()
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-
 if (process.env.LOG_FORMAT !== 'nolog') {
   app.use(logger(process.env.LOG_FORMAT || 'dev'))
 }
@@ -45,9 +40,22 @@ app.use(session({
 
 // Configuracion de Cors para permitir solicitudes desde React
 app.use(cors({
-  origin: 'http://localhost:3001',
+  origin: ['http://localhost:3001', 'http://3.82.120.21'],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }))
+
+// Middleware para manejar las solicitudes OPTIONS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*') // Permite el acceso desde cualquier origen (reemplaza * por el origen permitido específico)
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE') // Métodos HTTP permitidos
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization') // Encabezados permitidos
+  if (req.method === 'OPTIONS') {
+    // Las solicitudes OPTIONS no requieren ninguna respuesta adicional
+    res.sendStatus(200)
+  } else {
+    next()
+  }
+})
 
 // API
 app.use('/api/auth', require('./routes/api/auth'))
@@ -81,11 +89,9 @@ app.use(function (err, req, res, next) {
 
   // si es una petición al API respondo JSON...
   if (isAPI(req)) {
-    res.json({ success: false, error: err.message })
+    res.json({ statusCode: err.status, menssage: err.message })
     return
   }
-
-  // ...y si no respondo con HTML...
 
   // set locals, only providing error in development
   res.locals.message = err.message

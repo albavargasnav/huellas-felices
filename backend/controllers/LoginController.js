@@ -11,7 +11,7 @@ exports.loginUsuarios = async (req, res, next) => {
 
     // si no lo encuentro o no coincide la contraseña --> error
     if (!usuario || !(await usuario.comparePassword(password))) {
-      res.json({error: 'invalid credentials'})
+      res.status(401).json({ statusCode: '401', menssage: 'Unathorized' })
       return
     }
 
@@ -21,7 +21,7 @@ exports.loginUsuarios = async (req, res, next) => {
       expiresIn: '2d'
     })
 
-    res.json({jwt: token})
+    res.status(201).json({jwt: token})
   } catch (err) {
     next(err)
   }

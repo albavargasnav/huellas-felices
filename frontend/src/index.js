@@ -8,14 +8,14 @@ import './index.css';
 import App from './components/app';
 import { AuthProvider } from './components/auth/context';
 
-const accessToken = storage.get('auth');
-configureClient({ accessToken });
+const jwt = storage.get('auth');
+configureClient({ jwt });
 
 const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider isInitiallyLogged={!!accessToken}>
+      <AuthProvider isInitiallyLogged={!!jwt}>
         <App />
       </AuthProvider>
     </Router>
