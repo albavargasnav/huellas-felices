@@ -1,6 +1,6 @@
 # huellas-felices
 
-# DESPLIEGUE EN EL  SERVIDOR (Deployment)
+# DESPLIEGUE EN EL SERVIDOR (Deployment)
 
 *07/08/2023*
 
