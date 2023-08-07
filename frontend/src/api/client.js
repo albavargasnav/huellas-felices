@@ -1,8 +1,14 @@
 /* eslint-disable no-restricted-globals */
 import axios from 'axios';
 
+let baseUrl = `${process.env.REACT_APP_API_BASE_URL}/api`;
+
+if (process.env.NODE_ENV === 'production') {
+  baseUrl = `${process.env.REACT_APP_API_BASE_URL_PROD}/api`
+}
+
 const client = axios.create({
-  baseURL: `${process.env.REACT_APP_API_BASE_URL}/api`,
+  baseURL: baseUrl,
 });
 
 const setAuthorizationHeader = token => {
