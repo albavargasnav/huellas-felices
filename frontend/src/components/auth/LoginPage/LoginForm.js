@@ -3,10 +3,12 @@ import T from 'prop-types';
 import useForm from '../../../hooks/useForm';
 import './LoginForm.css';
 
+import ErrorIcon from '../../../assets/images/icon-error.png' 
+
 const validEmail = ({ email }) => email;
 const validPassword = ({ password }) => password;
 
-function LoginForm({ onSubmit, isLoading }) {
+function LoginForm({ onSubmit, isLoading, resetError, error }) {
   const {
     formValue: credentials,
     handleChange,
@@ -49,6 +51,20 @@ function LoginForm({ onSubmit, isLoading }) {
           <button className='login-form-button' disabled={!validate(validEmail, validPassword, () => !isLoading)}>
             Iniciar sesión
           </button>
+          
+            
+          {error && (
+            <div class="form-error-container">
+              {isLoading && <p>Accediendo a Huellas felices...</p>}
+              <div className="error-message">
+                <img src={ErrorIcon} alt="Error" style={{ marginRight: '5px', width: '20px', height: '20px' }} />
+                <div onClick={resetError} style={{ color: 'black', fontWeight: 'bold' }}>
+                  {error.message}
+                </div>
+              </div>
+            </div>
+          )}
+          
         </form>
       </div>
     </div>
