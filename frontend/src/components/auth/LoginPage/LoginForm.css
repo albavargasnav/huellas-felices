@@ -8,7 +8,6 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 15px;
   background-position: center;
@@ -21,6 +20,7 @@
   width: 430px;
   display: flex;
   flex-direction: column;
+  margin-left: 150px;
   background: white;
   border-radius: 10px;
   position: relative;
