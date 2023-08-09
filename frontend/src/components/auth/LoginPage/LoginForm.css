@@ -33,7 +33,7 @@
 
 .login-form button {
   padding: 0 20px;
-  background-color: darkcyan;
+  background-color: #96613d;
   color: #fff;
   border-radius: 10px;
   border: none;
@@ -86,7 +86,7 @@
 
 .login-form-text-area:focus {
   outline: none;
-  border: 2px solid darkcyan;
+  border: 2px solid #CC9966;
 }
 
 .checkbox-container {
