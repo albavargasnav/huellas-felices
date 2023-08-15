@@ -17,6 +17,7 @@ exports.loginUsuarios = async (req, res, next) => {
 
     // si existe y la contrseña coincide
     // crear un token JWT con el _id del usuario dentro
+
     const token = await jwt.sign({ _id: usuario._id }, process.env.JWT_SECRET, {
       expiresIn: '2d'
     })

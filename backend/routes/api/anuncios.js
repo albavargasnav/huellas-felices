@@ -65,4 +65,10 @@ router.post('/', upload.single('foto'), async (req, res, next) => {
   } catch (err) { next(err) }
 })
 
+router.get('/:anuncioId', (req, res, next) => {
+  Anuncio.list({ '_id': req.params.anuncioId }, 0, 1, '_id', false).then(anuncios => {
+    res.json({result: anuncios.rows[0]})
+  }).catch(err => { err.status = 404; err.message = 'Anuncio no encontrado'; next(err) })
+})
+
 module.exports = router
