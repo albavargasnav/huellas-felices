@@ -8,7 +8,6 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 15px;
   background-position: center;
@@ -21,6 +20,7 @@
   width: 430px;
   display: flex;
   flex-direction: column;
+  margin-left: 150px;
   background: white;
   border-radius: 10px;
   position: relative;
@@ -33,7 +33,7 @@
 
 .login-form button {
   padding: 0 20px;
-  background-color: darkcyan;
+  background-color: #96613d;
   color: #fff;
   border-radius: 10px;
   border: none;
@@ -86,7 +86,7 @@
 
 .login-form-text-area:focus {
   outline: none;
-  border: 2px solid darkcyan;
+  border: 2px solid #CC9966;
 }
 
 .checkbox-container {
@@ -103,4 +103,16 @@
 .checkbox-label {
   margin-left: 6px;
   font-size: 14px;
+}
+
+.form-error-container {
+  background-color: #ffb3b3;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
 }
