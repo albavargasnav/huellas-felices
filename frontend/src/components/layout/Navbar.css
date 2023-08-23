@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color:  rgb(86, 86, 86);
+    padding: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .right-section .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .right-section .nav-links a {
+    text-decoration: none;
+    color: rgb(86, 86, 86);
+    transition: color 0.3s ease-in-out;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .right-section .nav-links a:hover {
+    color: #00aced; /* Cambiar color */
+  }
+  
