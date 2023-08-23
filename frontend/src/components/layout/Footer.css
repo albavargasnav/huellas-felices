@@ -1,0 +1,37 @@
+.footer {
+    background-color: #e7e1e1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+
+.titulo-footer, .subtitulo-footer {
+    color:  rgb(86, 86, 86);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-icons a:hover {
+    color: #00aced; /* Cambiar color*/
+  }
+  
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+  
