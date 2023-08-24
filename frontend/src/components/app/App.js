@@ -5,6 +5,7 @@ import { LoginPage, RequireAuth } from '../auth';
 import NotFoundPage from './NotFoundPage';
 import Layout from '../layout';
 import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
+import LandingPage from '../pages/LandingPage/LandingPage';
 
 function App() {
   return (
