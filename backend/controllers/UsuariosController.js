@@ -5,10 +5,14 @@ const Usuario = require('../models/Usuario')
 exports.crearUsuario = async (req, res, next) => {
   try {
     const {name, email, password} = req.body
-    const nuevoUsuario = new Usuario({name, email, password})
-    await nuevoUsuario.save()
-    res.json(nuevoUsuario)
+    const newUser = new Usuario({
+      name: name,
+      email: email,
+      password: await Usuario.hashPassword(password)
+    })
+    await newUser.save()
+    res.status(201).json(newUser)
   } catch (err) {
-    res.json({error: 'error al crear usuario'})
-  }
+    res.status(500).json({ error: 'Hubo un error al crear el usuario.' })
+  }
 }
