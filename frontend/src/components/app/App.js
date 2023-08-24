@@ -18,7 +18,7 @@ function App() {
           </RequireAuth>
         }
       >
-        <Route index element={<AdvertsPage />} />
+        <Route index element={<LandingPage />} />
         <Route path="new" element={<NewAdvertPage />} />
         <Route path=":advertId" element={<AdvertPage />} />
       </Route>
