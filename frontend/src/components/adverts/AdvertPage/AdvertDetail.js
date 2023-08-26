@@ -5,16 +5,21 @@ import { ConfirmationButton } from '../../common';
 import placeholder from '../../../assets/images/placeholder.png';
 import { advert } from '../propTypes';
 
-function AdvertDetail({ name, sale, price, tags, photo, onDelete, isLoading }) {
+function AdvertDetail({ nombre, venta, edad, raza, size, foto, sexo, perro, descripcion }, onDelete, isLoading) {
   return (
     <div>
-      <p>{name}</p>
-      <p>{sale ? 'Sell' : 'Buy'}</p>
-      <p>{tags.join(', ')}</p>
-      <p>{price}</p>
+      <p>{nombre}</p>
+      <p>{venta ? 'Sell' : 'Buy'}</p>
+      
+      <p>{edad}</p>
+      <p>{raza}</p>
+      <p>{size}</p>
+      <p>{sexo}</p>
+      <p>{perro}</p>
+      <p>{descripcion}</p>
       <img
-        src={photo || placeholder}
-        alt={name}
+        src={foto || placeholder}
+        alt={nombre}
         width="200"
         height="200"
         style={{ objectFit: 'contain' }}
