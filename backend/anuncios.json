@@ -2,7 +2,7 @@
   "anuncios": [
     {
       "nombre": "Rocky",
-      "venta": true,
+      "disponible": true,
       "edad": "2021-12-04",
       "raza":"West Highland White Terrier",
       "size": "Mediano",
@@ -13,7 +13,7 @@
     },
     {
       "nombre": "Maximiliano",
-      "venta": true,
+      "disponible": true,
       "Edad": "2019-03-13",
       "Raza":"Pastor Alemán",
       "size": "Grande",
@@ -24,7 +24,7 @@
     },
     {
       "nombre": "Penny",
-      "venta": true,
+      "disponible": true,
       "Edad": "2020-06-08",
       "Raza":"Yorshire Terrier",
       "size": "Pequeño",
@@ -35,7 +35,7 @@
     },
     {
       "nombre": "Luna",
-      "venta": true,
+      "disponible": true,
       "Edad": "2023-02-18",
       "Raza":"Husky Siberiano",
       "size": "Grande",
@@ -46,7 +46,7 @@
     },
     {
       "nombre": "Athos",
-      "venta": true,
+      "disponible": true,
       "Edad": "2018-10-06",
       "Raza":"Bulldog Francés",
       "size": "Mediano",
@@ -57,7 +57,7 @@
     },
     {
       "nombre": "Estrella",
-      "venta": true,
+      "disponible": true,
       "Edad": "2020-09-22",
       "Raza":"Mestizo",
       "size": "Grande",
@@ -68,7 +68,7 @@
     },
     {
       "nombre": "Lucas",
-      "venta": true,
+      "disponible": true,
       "Edad": "2023-04-14",
       "Raza":"Samoyedo",
       "size": "Grande",
@@ -79,7 +79,7 @@
     },
     {
       "nombre": "Wendy",
-      "venta": true,
+      "disponible": true,
       "Edad": "2020-03-20",
       "Raza":"Mestizo",
       "size": "Pequeño",
@@ -90,7 +90,7 @@
     },
     {
       "nombre": "Obélix",
-      "venta": true,
+      "disponible": true,
       "Edad": "2021-11-03",
       "Raza":"Bullmastiff",
       "size": "Grande",
@@ -101,7 +101,7 @@
     },
     {
       "nombre": "Lily",
-      "venta": true,
+      "disponible": true,
       "Edad": "2023-05-21",
       "Raza":"Golden Retriever",
       "size": "Grande",
@@ -112,7 +112,7 @@
     },
     {
       "nombre": "Charlie",
-      "venta": true,
+      "disponible": true,
       "Edad": "2022-05-12",
       "Raza":"Catire",
       "size": "Pequeño",
@@ -123,7 +123,7 @@
     },
     {
       "nombre": "Nina",
-      "venta": true,
+      "disponible": true,
       "Edad": "2020-02-03",
       "Raza":"Siamés",
       "size": "Pequeño",
@@ -134,7 +134,7 @@
     },
     {
       "nombre": "Oreo",
-      "venta": true,
+      "disponible": true,
       "Edad": "2021-12-21",
       "Raza":"Pelo Corto Negro",
       "size": "Pequeño",
@@ -145,7 +145,7 @@
     },
     {
       "nombre": "Nala",
-      "venta": true,
+      "disponible": true,
       "Edad": "2018-01-21",
       "Raza":"Multicolor",
       "size": "Pequeño",

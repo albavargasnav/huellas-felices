@@ -15,8 +15,8 @@ router.get('/', async function (req, res, next) {
     if (req.query.sexo) {
       filters.sexo = req.query.sexo
     }
-    if (req.query.venta) {
-      filters.venta = req.query.venta
+    if (req.query.disponible) {
+      filters.disponible = req.query.disponible
     }
     if (req.query.size) {
       filters.size = req.query.size

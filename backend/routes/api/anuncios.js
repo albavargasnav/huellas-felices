@@ -15,8 +15,8 @@ router.get('/', (req, res, next) => {
     filters.size = req.query.size
   }
 
-  if (typeof req.query.venta !== 'undefined') {
-    filters.venta = req.query.venta
+  if (typeof req.query.disponible !== 'undefined') {
+    filters.disponible = req.query.disponible
   }
   if (typeof req.query.sexo !== 'undefined') {
     filters.sexo = req.query.sexo

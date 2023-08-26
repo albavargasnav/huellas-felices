@@ -14,7 +14,7 @@ const thumbnailRequester = new cote.Requester({
 
 const anuncioSchema = mongoose.Schema({
   nombre: { type: String, index: true },
-  venta: { type: Boolean, index: true },
+  disponible: { type: Boolean, index: true },
   edad: { type: Date, index: true },
   raza: { type: String, indez: true },
   sexo: { type: Boolean, index: true },
