@@ -1,0 +1,78 @@
+.primer-bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.foto-info-prote1 {
+  max-width: 80%; /* Ajusta el tamaño de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.texto-info-prote1 {
+  background-color: #ffffff; /* Color de fondo para el cuadro de texto */
+  padding: 20px;
+  border-radius: 10px; /* Añade bordes redondeados al cuadro de texto */
+  text-align: justify;
+  margin: 5px 300px 10px; /* Ajusta los márgenes: arriba 5px, derecha/izquierda 20px, abajo 10px */
+}
+
+.segundo-bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.foto-info-prote2 {
+  max-width: 40%; /* Ajusta el tamaño de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.texto-info-prote2 {
+  background-color: #ffffff; /* Color de fondo para el cuadro de texto */
+  padding: 20px;
+  border-radius: 10px; /* Añade bordes redondeados al cuadro de texto */
+  text-align: justify;
+  margin: 5px 300px 10px;
+}
+
+.tercer-bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.foto-info-prote3 {
+  max-width: 40%; /* Ajusta el tamaño de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.texto-info-prote3 {
+  background-color: #ffffff; /* Color de fondo para el cuadro de texto */
+  padding: 20px;
+  border-radius: 10px; /* Añade bordes redondeados al cuadro de texto */
+  text-align: justify;
+  margin: 5px 300px 10px;
+}
+
+.cuarto-bloque {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px; /* Agrega espacio alrededor del bloque */
+}
+
+.foto-info-prote4 {
+  max-width: 40%; /* Tamaño de la imagen */
+  height: auto;
+}
+
+.texto-info-prote4 {
+  background-color: #ffffff;
+  max-width: 55%; /* Ajusta el ancho del texto */
+  text-align: justify;
+  margin: 30px;
+}
