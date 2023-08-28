@@ -4,16 +4,11 @@ import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
 import { LoginPage, RequireAuth } from '../auth';
 import NotFoundPage from './NotFoundPage';
 import Layout from '../layout';
-<<<<<<< HEAD
-import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
-import LandingPage from '../pages/LandingPage/LandingPage';
-=======
+import RegistrationPage from '../auth/RegistrationPage/RegitrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
-import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage"
-import RegistrationPage from '../auth/RegistrationPage/RegitrationPage'
+import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
 
->>>>>>> adca56b0475dba962594830400093ccad7413721
 
 function App() {
   return (
@@ -31,10 +26,6 @@ function App() {
         <Route path=":advertId" element={<AdvertPage />} />
         <Route path="info-prote" element={<InfoProtePage />} />
         <Route path="info-adopcion" element={<InfoAdopcionPage />} />
-<<<<<<< HEAD
-=======
-
->>>>>>> adca56b0475dba962594830400093ccad7413721
       </Route>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/registrer" element={<RegistrationPage />} />
