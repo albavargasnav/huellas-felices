@@ -7,7 +7,7 @@ import Layout from '../layout';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage"
-import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
+import RegistrationPage from '../auth/RegistrationPage/RegitrationPage'
 
 
 function App() {
