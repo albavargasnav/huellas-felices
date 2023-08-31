@@ -20,8 +20,8 @@ function ConfirmationButton({ confirmation, onConfirm, ...props }) {
       {confirmationVisible && (
         <div>
           {confirmation}
-          <button onClick={handleConfirmClick}>Ok</button>
-          <button onClick={handleCancelClick}>Cancel</button>
+          <button onClick={handleConfirmClick}>Confirmar</button>
+          <button onClick={handleCancelClick}>Cancelar</button>
         </div>
       )}
     </>

@@ -1,0 +1,36 @@
+.primer-bloque {
+  text-align: center;
+}
+
+
+.foto-info-prote {
+  max-width: 62%;
+  height: auto;
+  margin: 0 auto;
+}
+.texto-info-prote1 {
+  padding: 20px;
+  text-align: justify;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.contenedor-info-maps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.foto-maps {
+  max-width: 35%;
+  height: auto;
+  margin-left: 20%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.recuadros {
+  max-width: 55%;
+  text-align: justify;
+  font-size: 18px;
+  margin-right: 20%;
+  margin-left: 2%;
+}
