@@ -1,4 +1,4 @@
-import "./LadingPage.css";
+import "./LandingPage.css";
 import fotoFondo from "../../../assets/images/foto_fondo_jpg.jpg";
 import fotoDiagrama from "../../../assets/images/Diagrama_proceso_de_adopcion.png";
 import fotoInfo from "../../../assets/images/foto-perro-info-protectora.jpg";
@@ -16,12 +16,13 @@ function LandingPage() {
             brillar los corazones de peludos de cuatro patas. En Huellas
             Felices, nuestra pasión es crear vínculos duraderos entre humanos
             amorosos y adorables compañeros caninos y felinos en busca de un
-            hogar. 
-            <p className="texto-foto-fondo">La protectora huellas felices es una entidad sin ánimo de
-            lucro que se fundó en Madrid (España) en 1992, como respuesta al
-            elevado número de animales que son abandonados y maltratados en
-            nuestro país. Durante el año 2021 fueron recogidos 104.688 animales.</p>
-            
+            hogar.
+            <p className="texto-foto-fondo">
+              La protectora huellas felices es una entidad sin ánimo de lucro
+              que se fundó en Madrid (España) en 1992, como respuesta al elevado
+              número de animales que son abandonados y maltratados en nuestro
+              país. Durante el año 2021 fueron recogidos 104.688 animales.
+            </p>
           </p>
         </div>
       </section>
