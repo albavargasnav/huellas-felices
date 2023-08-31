@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import AuthButton from '../../components/auth/AuthButton/AuthButton';
 
 const Navbar = () => {
   return (
@@ -16,6 +17,7 @@ const Navbar = () => {
           <li><a href="#">Inicio de Sesión</a></li>
           <li><a href="#">Adopción</a></li>
           <li><a href="#">Contacto</a></li>
+          <AuthButton/>
         </ul>
       </div>
     </nav>
