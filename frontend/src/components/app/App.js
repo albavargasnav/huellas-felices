@@ -4,7 +4,11 @@ import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
 import { LoginPage, RequireAuth } from '../auth';
 import NotFoundPage from './NotFoundPage';
 import Layout from '../layout';
-import LandingPage from '../pages/LandingPage/LandingPage';
+import RegistrationPage from '../auth/RegistrationPage/RegitrationPage';
+import LandingPage from '../pages/pages/LandingPage';
+import InfoProtePage from "../pages/pages/InfoProtePage";
+import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
+
 
 function App() {
   return (
