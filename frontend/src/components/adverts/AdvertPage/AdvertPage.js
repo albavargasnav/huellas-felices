@@ -1,6 +1,6 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import "./AdvertDetail.css";
 import AdvertDetail from './AdvertDetail';
 import { getAdvert, deleteAdvert } from '../service';
 
@@ -24,7 +24,6 @@ function AdvertPage() {
       });
     setIsLoading(false);
   }, [params.advertId, navigate]);
-console.log(advert)
   if (error?.status === 404) {
     return <Navigate to="/404" />;
   }
