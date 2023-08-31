@@ -8,7 +8,7 @@ import './index.css';
 import App from './components/app';
 import { AuthProvider } from './components/auth/context';
 
-const jwt = storage.get('auth');
+const jwt = storage.get('jwt');
 configureClient({ jwt });
 
 const root = createRoot(document.getElementById('root'));

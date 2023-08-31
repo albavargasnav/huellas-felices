@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import T from 'prop-types';
+import "./ConfirmationButton.css";
 
 function ConfirmationButton({ confirmation, onConfirm, ...props }) {
   const [confirmationVisible, setConfirmationVisible] = useState(false);
@@ -16,9 +17,9 @@ function ConfirmationButton({ confirmation, onConfirm, ...props }) {
 
   return (
     <>
-      <button onClick={handleClick} {...props} />
+      <button className = "boton-confirmar" onClick={handleClick} {...props} />
       {confirmationVisible && (
-        <div>
+        <div className='ventana-confirmacion'>
           {confirmation}
           <button onClick={handleConfirmClick}>Confirmar</button>
           <button onClick={handleCancelClick}>Cancelar</button>

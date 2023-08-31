@@ -12,7 +12,7 @@ const client = axios.create({
 });
 
 const setAuthorizationHeader = token => {
-  client.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  client.defaults.headers.common['Authorization'] = `${token}`;
 };
 
 const removeAuthorizationHeader = () => {
