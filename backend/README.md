@@ -41,7 +41,7 @@ To start in development mode:
 #### Anuncios
 ```
 - nombre: String
-- venta: Bolean
+- disponible: Bolean
 - edad: Date "yyyy-mm-dd"
 - raza: String
 - size: {Pequeño, Mediano, Grande}
@@ -82,7 +82,7 @@ i.e. Accept-Language: es
                 ],
                 "_id": "64c3d10376561947887526b6",
                 "nombre": "Rocky",
-                "venta": true,
+                "disponible": true,
                 "edad": "1",
                 "raza": "West Highland White Terrier",
                 "foto": "\\images\\anuncios\\Westy.jpeg",

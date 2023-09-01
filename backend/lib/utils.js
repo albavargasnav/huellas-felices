@@ -25,8 +25,8 @@ const utils = {
       filters.tags = { $in: req.query.tag }
     }
 
-    if (typeof req.query.venta !== 'undefined') {
-      filters.venta = req.query.venta
+    if (typeof req.query.disponible !== 'undefined') {
+      filters.disponible = req.query.disponible
     }
 
     if (typeof req.query.precio !== 'undefined' && req.query.precio !== '-') {

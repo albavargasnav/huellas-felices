@@ -11,7 +11,6 @@ module.exports = function () { // devuelve un middleware que si no hay usuario r
       err.status = 401
       return next(err)
     }
-
     // tengo token
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
       if (err) {

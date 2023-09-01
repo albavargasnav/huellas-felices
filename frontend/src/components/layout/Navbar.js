@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Navbar.css";
 import AuthButton from "../../components/auth/AuthButton/AuthButton";
@@ -18,6 +19,7 @@ const Navbar = () => {
       </div>
       <div className="right-section">
         <ul className="nav-links">
+
           <AuthButton />
           <li>
             <a href="#">Adopción</a>
@@ -25,6 +27,7 @@ const Navbar = () => {
           <li>
             <a href="#">Contacto</a>
           </li>
+
         </ul>
       </div>
     </nav>
