@@ -1,0 +1,19 @@
+.boton-confirmar { 
+    background-color: #666;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.boton-confirmar:hover {
+    cursor: pointer
+}
+
+.ventana-confirmacion {
+    padding: 4%;
+    border: 1px dotted black;
+    width: 90%;
+    margin-top: 3px;
+}

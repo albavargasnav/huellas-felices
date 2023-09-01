@@ -1,0 +1,36 @@
+.primer-bloque {
+  text-align: center;
+}
+
+.foto-info-prote {
+  max-width: 62%;
+  height: auto;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.texto-info-prote1 {
+  padding: 20px;
+  text-align: justify;
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 62%; /* Iguala el ancho al de foto-info-prote */
+}
+
+.contenedor-info-maps {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.foto-maps {
+  max-width: 35%;
+  height: auto;
+  margin-bottom: 2%;
+}
+
+.recuadros {
+  max-width: 55%;
+  text-align: justify;
+  font-size: 15px;
+  margin-left: 2%; /* Añade un margen izquierdo pequeño */
+}
