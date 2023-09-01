@@ -29,7 +29,7 @@
 }
 
 .foto-info-prote2 {
-  max-width: 30%; /* Ajusta el tamaño de la imagen al máximo ancho posible */
+  max-width: 35%; /* Ajusta el tamaño de la imagen al máximo ancho posible */
   height: auto; /* Ajusta la altura automáticamente según la proporción */
   margin: 0 auto; /* Centra la imagen horizontalmente */
   
