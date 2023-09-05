@@ -5,9 +5,8 @@ import { ConfirmationButton } from '../../common';
 import placeholder from '../../../assets/images/placeholder.png';
 import { advert } from '../propTypes';
 
-function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, descripcion }, onDelete, isLoading) {
-  const fecha = new Date(edad); 
-  
+function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, descripcion, onDelete, isLoading }) {
+  const fecha = new Date(edad);
   return (
     <div className="contenedor-detalle">
       <div className='contenedor-foto'>
