@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="left-section">
         <div className="brand-name">
-          <a href="#">Huellas Felices</a>
+          <a href="/">Huellas Felices</a>
         </div>
         <div className="logo">
           <img
@@ -22,10 +22,10 @@ const Navbar = () => {
 
           <AuthButton />
           <li>
-            <a href="#">Adopción</a>
+            <a href="/adverts">Adopción</a>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <a href="/">Contacto</a>
           </li>
 
         </ul>
