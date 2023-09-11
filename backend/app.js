@@ -14,11 +14,20 @@ require('dotenv').config() // inicializamos variables de entrono desde el ficher
 
 const i18n = require('./lib/i18nSetup')
 const cors = require('cors')
+const app = express()
+
+// Configura la carpeta "public" como estática
+app.use(express.static('public'))
+
+// Ruta para mostrar una imagen específica
+app.get('/images/:imageName', (req, res) => {
+  const imageName = req.params.imageName
+  res.sendFile(`${__dirname}/public/images/${imageName}`)
+})
 
 // Connect DB & register models
 require('./models')
 
-const app = express()
 if (process.env.LOG_FORMAT !== 'nolog') {
   app.use(logger(process.env.LOG_FORMAT || 'dev'))
 }
@@ -60,6 +69,7 @@ app.use((req, res, next) => {
 // API
 app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/anuncios', jwtAuth(), require('./routes/api/anuncios'))
+app.use('/api/anuncios_publicos', require('./routes/api/anuncios_publicos'))
 app.use('/api/login', require('./routes/api/login'))
 app.use('/api/usuarios', require('./routes/api/usuarios'))
 

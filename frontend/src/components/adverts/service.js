@@ -1,13 +1,14 @@
 import client from '../../api/client';
 
 const advertsPath = '/anuncios';
+const advertsPublicPath = '/anuncios_publicos';
 
 export const getTags = () => {
-  return client.get(`${advertsPath}/tags`);
+  return client.get(`${advertsPublicPath}/tags`);
 };
 
 export const getAdverts = () => {
-  return client.get(`${advertsPath}`);
+  return client.get(advertsPublicPath);
 };
 
 export const getAdvert = advertId => {

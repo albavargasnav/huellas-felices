@@ -1,88 +1,56 @@
-export const saleFilter = {
-  all: { value: 'all', label: 'All' },
-  sell: { value: 'sell', label: 'Sell' },
-  buy: { value: 'buy', label: 'Buy' },
+export const perroFilter = {
+  all: { value: 'Todo', label: 'Todo' },
+  perro: { value: 'perro', label: 'Perro' },
+  gato: { value: 'gato', label: 'Gato' },
+};
+export const sexoFilter = {
+  all: { value: 'Todo', label: 'Todo' },
+  macho: { value: 'macho', label: 'Macho' },
+  hembra: { value: 'hembra', label: 'Hembra' },
 };
 
 export const defaultFilters = {
-  name: '',
-  price: [],
-  sale: saleFilter.all.value,
-  tags: [],
+  raza: '',
+  sexo: sexoFilter.all.value,
+  perro: perroFilter.all.value,
+  size: [],
 };
 
-// Individual filters are in form
-// filterValue => advert => Boolean
-
-const filterByName =
+const filterByRaza =
   filter =>
-  ({ name }) => {
+  ({ raza }) => {
     const cleanFilter = filter.trim();
-    return !cleanFilter || new RegExp(cleanFilter, 'gi').test(name);
+    return !cleanFilter || new RegExp(cleanFilter, 'gi').test(raza);
   };
 
-const filterByPrice =
+const filterByPerro =
   filter =>
-  ({ price }) => {
-    if (!filter.length) {
-      return true;
-    }
-    const [min, max] = filter;
-    if (!max) {
-      return price >= min;
-    }
-    return price >= min && price <= max;
-  };
-
-const filterBySale =
-  filter =>
-  ({ sale }) =>
+  ({ perro }) =>
     [
-      saleFilter.all.value,
-      sale ? saleFilter.sell.value : saleFilter.buy.value,
+      perroFilter.all.value,
+      perro ? perroFilter.perro.value : perroFilter.gato.value,
     ].includes(filter);
 
-// const filterBySale =
-//   filter =>
-//   ({ sale }) => {
-//     if (filter === saleFilter.all.value) {
-//       return true;
-//     }
-//     if (filter === saleFilter.sell.value) {
-//       return sale;
-//     }
-//     if (filter === saleFilter.buy.value) {
-//       return !sale;
-//     }
-//   };
+const filterBySexo =
+  filter =>
+  ({ sexo }) =>
+    [
+       sexoFilter.all.value,
+        sexo ? sexoFilter.macho.value : sexoFilter.hembra.value,
+      ].includes(filter);
+
 
 const filterByTags =
   filter =>
-  ({ tags }) =>
-    !filter.length || filter.every(tag => tags.includes(tag));
+  ({ size }) =>
+    !filter.length || filter.some(siz => size.includes(siz));
 
-// export const filterAdverts = (adverts, { name, price, sale, tags }) => {
-//   const applyFilters = (...filters) =>
-//     adverts.filter(advert => filters.every(filter => filter(advert)));
 
-//   return applyFilters(
-//     filterByName(name),
-//     filterByPrice(price),
-//     filterBySale(sale),
-//     filterByTags(tags)
-//   );
-// };
 
-export const filterAdverts = (adverts, { name, price, sale, tags }) =>
-  // adverts.filter(
-  //   advert =>
-  //     filterByName(name)(advert) &&
-  //     filterByPrice(price)(advert) &&
-  //     filterBySale(sale)(advert) &&
-  //     filterByTags(tags)(advert),
-  // );
+export const filterAdverts = (adverts, {perro, raza, sexo, size }) =>
+  
   adverts
-    .filter(filterByName(name))
-    .filter(filterByPrice(price))
-    .filter(filterBySale(sale))
-    .filter(filterByTags(tags));
+     .filter(filterByRaza(raza))
+     .filter(filterByPerro(perro))
+     .filter(filterBySexo(sexo))
+     .filter(filterByTags(size))
