@@ -1,5 +1,5 @@
 import "./LandingPage.css";
-import fotoFondo from "../../../assets/images/foto_fondo_jpg.jpg";
+import fotoFondo from "../../../assets/images/foto_fondo_recortadajpg.jpg";
 import fotoDiagrama from "../../../assets/images/Diagrama_proceso_de_adopcion.png";
 import fotoInfo from "../../../assets/images/foto-perro-info-protectora.jpg";
 import { ButtonLadingPage, MasInfoButton } from "../../common";
@@ -10,33 +10,19 @@ function LandingPage() {
       <section className="contenedor-img-header" id="contenedor-img-header">
         <img className="foto-fondo" src={fotoFondo} />
         <div className="header-img-texto">
-          <h2>Huellas felices, Esperando Una Nueva Vida</h2>
+          <h2 className="titulo-huellas-felices">
+            Huellas felices, Esperando Una Nueva Vida
+          </h2>
           <p className="texto-foto-fondo">
             Bienvenidos a Huellas Felices, un refugio comprometido con hacer
             brillar los corazones de peludos de cuatro patas. En Huellas
             Felices, nuestra pasión es crear vínculos duraderos entre humanos
             amorosos y adorables compañeros caninos y felinos en busca de un
-            hogar.
-            <p className="texto-foto-fondo">
-              La protectora huellas felices es una entidad sin ánimo de lucro
-              que se fundó en Madrid (España) en 1992, como respuesta al elevado
-              número de animales que son abandonados y maltratados en nuestro
-              país. Durante el año 2021 fueron recogidos 104.688 animales.
-            </p>
+            hogar. La protectora huellas felices es una entidad sin ánimo de
+            lucro que se fundó en Madrid (España) en 1992, como respuesta al
+            elevado número de animales que son abandonados y maltratados en
+            nuestro país. Durante el año 2022 fueron recogidos 104.688 animales.
           </p>
-        </div>
-      </section>
-
-      <section className="titulo-proceso-de-adopcion">
-        <h2>Proceso de adopción</h2>
-      </section>
-
-      <section className="proceso-de-adopcion">
-        <div className="info-protectora">
-          <img className="foto-diagrama" src={fotoDiagrama} />
-          <div className="imagen-info-protectora">
-            <MasInfoButton />
-          </div>
         </div>
       </section>
       <div className="contenedor">
@@ -54,7 +40,7 @@ function LandingPage() {
           </p>
         </div>
         <div className="boton">
-          <ButtonLadingPage />
+          <MasInfoButton />
         </div>
       </div>
     </>

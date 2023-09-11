@@ -3,26 +3,28 @@ import { Link } from 'react-router-dom';
 
 function MasInfoButton() {
   const buttonStyle = {
-    fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif",
-    color: "gray",
-    fontSize: "18px",
+    fontFamily: "Arial, Helvetica, sans-serif;",
+    color: "#2e3138",
+    fontSize: "14px",
     marginTop: "10px",
-    borderRadius: "10%", 
+    borderRadius: "5%", 
     width: "150px",
-    height: "100px", 
+    height: "35px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     textDecoration: "none",
-    backgroundColor: "",
-    border: "none",
+    backgroundColor: "#d5d7dd",
+    border: "2px solid #d5d7dd",
     cursor: "pointer",
   };
+  
+  
 
   return (
     <div>
       {/* Otro contenido de la página */}
-      <Link to="/mas-informacion">
+      <Link to="/huellas-felices/info-adopcion">
         <button style={buttonStyle}>Más información</button>
       </Link>
     </div>
