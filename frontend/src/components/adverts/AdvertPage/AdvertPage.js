@@ -29,8 +29,8 @@ function AdvertPage() {
   }
 
   const handleDelete = async event => {
-    await deleteAdvert(advert.id);
-      navigate('/');
+    await deleteAdvert(advert._id);
+    navigate('/');
   };
 
   return (

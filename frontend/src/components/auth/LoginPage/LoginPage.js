@@ -16,7 +16,7 @@ function LoginPage() {
     execute(credentials)
       .then(handleLogin)
       .then(() => {
-        const from = location.state?.from?.pathname || '/';
+        const from = location.state?.from?.pathname || '/adverts';
         navigate(from);
       });
   };
