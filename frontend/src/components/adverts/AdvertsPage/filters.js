@@ -43,7 +43,7 @@ const filterBySexo =
 const filterByTags =
   filter =>
   ({ size }) =>
-    !filter.length || filter.every(siz => size.includes(siz));
+    !filter.length || filter.some(siz => size.includes(siz));
 
 
 
