@@ -3,16 +3,18 @@ import T from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { advert } from '../propTypes';
+import "./AdvertsList.css";
 import placeholder from '../../../assets/images/placeholder.png';
 const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}/images/anuncios/`;
 
-function Advert({ nombre, raza, size, foto, sexo}) {
+function Advert({ nombre, raza, size, foto, sexo, disponible}) {
   return (
-    <div>
+    <div className='AdvertsForm'> 
       <p>{nombre}</p>
       <p><b>Raza: </b>{raza}</p>
       <p><b>Tamaño: </b>{size.join(', ')}</p>
       <p><b>Sexo: </b>{sexo ? 'Macho' : 'Hembra'}</p>
+      <p>{disponible ? 'Disponible' : 'Adoptado'}</p>
       <img
           src={`${fotoUrl + foto}`|| placeholder}
           alt={nombre}
