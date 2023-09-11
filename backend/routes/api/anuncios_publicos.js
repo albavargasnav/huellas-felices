@@ -37,7 +37,7 @@ router.get('/', async (req, res, next) => {
       filtro.perro = filterByPerro
     }
     if (filterBySexo) {
-      filtro.sexo = filterBySexo
+      filtro.sexo = filterByPerro
     }
     if (filterBySize) {
       filtro.size = filterBySize
@@ -50,7 +50,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-// GET api/anuncios/size
+// GET api/anuncios/tags
 router.get('/tags', async (req, res, next) => {
   const listaTags = await Anuncio.allowedSize()
   res.json(listaTags)

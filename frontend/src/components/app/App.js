@@ -21,7 +21,8 @@ function App() {
       }
     >
       <Route index element={<AdvertsPage />} />
-      <Route path="new" element={<NewAdvertPage />} />
+      <Route path="new" element={<NewAdvertPage /> } />
+
       <Route path=":advertId" element={<AdvertPage />} />
       <Route path="info-prote" element={<InfoProtePage />} />
       <Route path="info-adopcion" element={<InfoAdopcionPage />} />
