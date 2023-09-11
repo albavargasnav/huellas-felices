@@ -24,7 +24,7 @@
     },
     {
       "nombre": "Penny",
-      "disponible": true,
+      "disponible": false,
       "edad": "2020-06-08",
       "raza":"Yorshire Terrier",
       "size": "Pequeño",
@@ -46,7 +46,7 @@
     },
     {
       "nombre": "Athos",
-      "disponible": true,
+      "disponible": false,
       "edad": "2018-10-06",
       "raza":"Bulldog Francés",
       "size": "Mediano",
@@ -112,7 +112,7 @@
     },
     {
       "nombre": "Charlie",
-      "disponible": true,
+      "disponible": false,
       "edad": "2022-05-12",
       "raza":"Catire",
       "size": "Pequeño",
@@ -145,7 +145,7 @@
     },
     {
       "nombre": "Nala",
-      "disponible": true,
+      "disponible": false,
       "edad": "2018-01-21",
       "raza":"Multicolor",
       "size": "Pequeño",
