@@ -1,27 +1,32 @@
+.contenedor-img-header {
+  max-width: 100%;
+  position: relative;
+}
+.foto-fondo {
+  max-width: 100%;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.titulo-huellas-felices{
+  margin-left: 20px;
+  text-align: center;
+}
+.header-img-texto {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
 
-.contenedor-img-header{
-    max-width: 100%;
-    position: relative;
-    
-}
-.foto-fondo{
-    max-width: 100%;
-    margin-top: 10px;    
-    margin-right: 10px;  
-    margin-bottom: 10px; 
-    margin-left: 10px; 
-}
-  
-.header-img-texto{
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+.texto-foto-fondo {
+  text-align: center;
+  font-size: large;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.texto-foto-fondo{
-    font-size: large;
-}
 .titulo-proceso-de-adopcion {
   display: flex;
   justify-content: center;
@@ -29,10 +34,8 @@
   background-color: #ffffff;
   color: rgb(86, 86, 86);
   padding: 10px 20px;
-  font-family:Arial, Helvetica, sans-serif;;
   margin-top: 20px;
 }
-
 
 .proceso-de-adopcion {
   max-width: 80%;
@@ -40,13 +43,13 @@
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .info-protectora {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .foto-diagrama {
@@ -54,7 +57,7 @@
   height: auto;
   margin-right: 30px;
 }
-  
+
 .contenedor {
   display: flex;
   align-items: center;
@@ -67,21 +70,18 @@
 
 .imagen-foto-info img {
   max-width: 70%;
+  margin-left: 40px;
 }
 
 .texto-info {
   flex: 2;
   padding: 10px;
+  text-align: justify;
 }
 
 .boton {
   flex: 1;
   padding: 10px;
   text-align: right;
-  margin-left: 80px; 
+  margin-left: 80px;
 }
-
-
-
-
-
