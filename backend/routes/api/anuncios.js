@@ -71,4 +71,10 @@ router.get('/:anuncioId', (req, res, next) => {
   }).catch(err => { err.status = 404; err.message = 'Anuncio no encontrado'; next(err) })
 })
 
+router.delete('/:anuncioId', (req, res, next) => {
+  Anuncio.deleteOne({ '_id': req.params.anuncioId }).then(() => {
+    res.json({result: 'El anuncio se ha borrado correctamente'})
+  }).catch(err => { err.status = 404; err.message = 'Anuncio no encontrado'; next(err) })
+})
+
 module.exports = router

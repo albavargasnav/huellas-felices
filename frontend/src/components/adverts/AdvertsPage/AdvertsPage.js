@@ -31,7 +31,6 @@ function AdvertsPage() {
         <FiltersForm
           initialFilters={filters}
           defaultFilters={defaultFilters}
-          prices={adverts.map(({ price }) => price)}
           onFilter={setFilters}
         />
       )}
