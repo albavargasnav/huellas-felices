@@ -1,6 +1,6 @@
-
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import AuthButton from "../../components/auth/AuthButton/AuthButton";
 
 const Navbar = () => {
@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="left-section">
         <div className="brand-name">
-          <a href="/">Huellas Felices</a>
+          <a href="/">Huellas Felices</a>   
         </div>
         <div className="logo">
           <img
@@ -19,7 +19,6 @@ const Navbar = () => {
       </div>
       <div className="right-section">
         <ul className="nav-links">
-
           <AuthButton />
           <li>
             <a href="/adverts">Adopción</a>
@@ -27,7 +26,6 @@ const Navbar = () => {
           <li>
             <a href="/">Contacto</a>
           </li>
-
         </ul>
       </div>
     </nav>

@@ -1,5 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-
+import { Route, Routes, Navigate } from "react-router-dom";
 import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
 import { LoginPage, RequireAuth } from '../auth';
 import NotFoundPage from './NotFoundPage';
