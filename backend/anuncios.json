@@ -47,8 +47,8 @@
     {
       "nombre": "Athos",
       "disponible": true,
-      "Edad": "2018-10-06",
-      "Raza":"Bulldog Francés",
+      "edad": "2018-10-06",
+      "raza":"Bulldog Francés",
       "size": "Mediano",
       "foto": "Buldog-frances.jpg",
       "sexo": true,
@@ -69,8 +69,8 @@
     {
       "nombre": "Lucas",
       "disponible": true,
-      "Edad": "2023-04-14",
-      "Raza":"Samoyedo",
+      "edad": "2023-04-14",
+      "raza":"Samoyedo",
       "size": "Grande",
       "foto": "samoyedo.jpg",
       "sexo": true,
@@ -83,7 +83,7 @@
       "edad": "2020-03-20",
       "raza":"Mestizo",
       "size": "Pequeño",
-      "foto": "mestizo_2.jpg",
+      "foto": "mestizo_2.png",
       "sexo": false,
       "perro": true,
       "descripcion": "Juguetona, curiosa, dulce, amigable e inteligente."
