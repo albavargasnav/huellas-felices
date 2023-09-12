@@ -1,0 +1,25 @@
+.contenedor-detalle {
+    width: 70%;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.contenedor-foto {
+    display: inline-block;
+    margin: 1% 2% 1% 2%;
+}
+.contenedor-datos {
+    display: inline-block;
+    vertical-align: top;
+    margin: 1%;
+    padding: 1%;
+}
+
+.enunciado {
+    text-align: center;
+}
+.enunciado-verde {
+    color: #095a45
+}
+.enunciado-rojo {
+    color: #7F1734
+}

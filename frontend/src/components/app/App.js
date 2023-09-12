@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
+import UserPage from "../users/UserPage/UserPage";
 import { LoginPage, RequireAuth } from '../auth';
 import NotFoundPage from './NotFoundPage';
 import Layout from '../layout';
@@ -26,6 +27,15 @@ function App() {
       <Route path=":advertId" element={<AdvertPage />} />
       <Route path="info-prote" element={<InfoProtePage />} />
       <Route path="info-adopcion" element={<InfoAdopcionPage />} />
+    </Route>
+    <Route path="/users"
+      element={
+        <RequireAuth>
+          <Layout />
+        </RequireAuth>
+      }
+    >
+      <Route path=":userId" element={<UserPage />} />
     </Route>
     <Route path="/login" element={<LoginPage />} />
     <Route path="/register" element={<RegistrationPage />} />
