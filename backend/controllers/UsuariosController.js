@@ -13,6 +13,29 @@ exports.crearUsuario = async (req, res, next) => {
     await newUser.save()
     res.status(201).json(newUser)
   } catch (err) {
-    res.status(500).json({ error: 'Hubo un error al crear el usuario.' })
-  }
+    res.status(500).json({ error: 'Hubo un error al crear el usuario.' })
+  }
+}
+
+exports.obtenerUsuario = async (req, res, next) => {
+  try {
+    const usuarioId = req.params.usuarioId
+    res.status(200).json(await Usuario.findById(usuarioId))
+  } catch (err) {
+    res.status(500).json({ error: 'Hubo un error al obtener el usuario.' })
+  }
+}
+
+exports.actualizarUsuario = async (req, res, next) => {
+  const usuarioId = req.params.usuarioId
+  let body = req.body
+  if (body.password) {
+    body.password = await Usuario.hashPassword(body.password)
+  }
+  await Usuario.findOneAndUpdate({_id: usuarioId}, body, function (err, place) {
+    if (err) {
+      res.status(500).json({ error: err })
+    }
+  })
+  res.status(201).json({ result: 'Actualizado correctamente' })
 }

@@ -40,7 +40,7 @@ app.use(session({
 
 // Configuracion de Cors para permitir solicitudes desde React
 app.use(cors({
-  origin: ['http://localhost:3001', 'http://3.82.120.21'],
+  origin: ['http://localhost:3001', 'http://34.239.130.54/'],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }))
 
