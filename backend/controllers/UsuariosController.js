@@ -13,6 +13,6 @@ exports.crearUsuario = async (req, res, next) => {
     await newUser.save()
     res.status(201).json(newUser)
   } catch (err) {
-    res.status(500).json({ error: 'Hubo un error al crear el usuario.' })
-  }
+    res.status(500).json({ error: 'Hubo un error al crear el usuario.' })
+  }
 }

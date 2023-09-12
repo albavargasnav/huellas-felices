@@ -15,10 +15,10 @@ router.get('/', async (req, res, next) => {
     const filterBySize = req.query.size
 
     // paginación
-    const skip = req.query.skip
-    const limit = req.query.limit
+    const start = parseInt(req.query.start) || 0
+    const limit = parseInt(req.query.limit) || 1000 // nuestro api devuelve max 1000 registros
     // ordenar
-    const sort = req.query.sort
+    const sort = {creacion: -1}
     // selección de campos
     const fields = req.query.fields
 
@@ -37,12 +37,12 @@ router.get('/', async (req, res, next) => {
       filtro.perro = filterByPerro
     }
     if (filterBySexo) {
-      filtro.sexo = filterBySexo
+      filtro.sexo = filterByPerro
     }
     if (filterBySize) {
       filtro.size = filterBySize
     }
-    const anuncios = await Anuncio.lista(filtro, skip, limit, sort, fields)
+    const anuncios = await Anuncio.lista(filtro, start, limit, sort, fields)
     res.locals.anuncios = anuncios
     res.json(anuncios)
   } catch (error) {
@@ -50,7 +50,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-// GET api/anuncios/size
+// GET api/anuncios/tags
 router.get('/tags', async (req, res, next) => {
   const listaTags = await Anuncio.allowedSize()
   res.json(listaTags)

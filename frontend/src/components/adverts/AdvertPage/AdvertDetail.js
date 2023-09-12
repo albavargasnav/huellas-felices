@@ -4,6 +4,7 @@ import T from 'prop-types';
 import { ConfirmationButton } from '../../common';
 import placeholder from '../../../assets/images/placeholder.png';
 import { advert } from '../propTypes';
+const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}`;
 
 function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, descripcion, onDelete, isLoading }) {
   const fecha = new Date(edad);
@@ -12,7 +13,7 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
       <div className='contenedor-foto'>
         <h1 className='enunciado'>{nombre}</h1>
         <img
-          src={foto || placeholder}
+          src={`${fotoUrl + foto}`|| placeholder}
           alt={nombre}
           width="200"
           height="200"
