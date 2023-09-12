@@ -1,0 +1,10 @@
+.container .AdvertsForm{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    width: calc(25% - 20px); /* 25% del ancho del contenedor, con un margen de 20px entre elementos */
+    margin: 10px; /* Espacio entre elementos */
+    box-sizing: border-box; /* Incluir margen en el ancho calculado */
+  }

@@ -21,14 +21,15 @@ const anuncioSchema = mongoose.Schema({
   size: { type: [String], index: true },
   foto: String,
   perro: { type: Boolean, index: true },
-  descripcion: { type: String }
+  descripcion: { type: String },
+  creacion: { type: Date, index: true }
 })
 
 /**
  * lista de tags permitidos
  */
 anuncioSchema.statics.allowedSize = function () {
-  return ['Pequeño', 'Meadiano', 'Grande']
+  return ['Pequeño', 'Mediano', 'Grande']
 }
 
 /**
@@ -52,6 +53,15 @@ anuncioSchema.statics.cargaJson = async function (fichero) {
 
 anuncioSchema.statics.createRecord = function (nuevo, cb) {
   new Anuncio(nuevo).save(cb)
+}
+
+anuncioSchema.statics.lista = function (filtro, skip, limit, sort, fields) {
+  const query = Anuncio.find(filtro) // thenables
+  query.skip(skip)
+  query.limit(limit)
+  query.sort(sort)
+  query.select(fields)
+  return query.exec()
 }
 
 anuncioSchema.statics.list = async function (filters, startRow, numRows, sortField, includeTotal, cb) {

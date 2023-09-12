@@ -9,150 +9,164 @@
       "foto": "Westy.jpeg",
       "sexo": true,
       "perro": true,
-      "descripcion": "Cariñoso y con mucha energía."
+      "descripcion": "Cariñoso y con mucha energía.",
+      "creacion": "2023-04-14"
     },
     {
       "nombre": "Maximiliano",
       "disponible": true,
-      "Edad": "2019-03-13",
-      "Raza":"Pastor Alemán",
+      "edad": "2019-03-13",
+      "raza":"Pastor Alemán",
       "size": "Grande",
       "foto": "pastorAleman.webp",
       "sexo": true,
       "perro": true,
-      "descripcion": "Tranquilo y muy educado, sin problemas para estar con niños pequeños y otros perros."
+      "descripcion": "Tranquilo y muy educado, sin problemas para estar con niños pequeños y otros perros.",
+      "creacion": "2023-07-24"
     },
     {
       "nombre": "Penny",
-      "disponible": true,
-      "Edad": "2020-06-08",
-      "Raza":"Yorshire Terrier",
+      "disponible": false,
+      "edad": "2020-06-08",
+      "raza":"Yorshire Terrier",
       "size": "Pequeño",
       "foto": "yorkshire-terrier.jpg",
       "sexo": false,
       "perro": true,
-      "descripcion": "Tímida con otros perros pero genial con las personas"
+      "descripcion": "Tímida con otros perros pero genial con las personas",
+      "creacion": "2023-02-24"
     },
     {
       "nombre": "Luna",
       "disponible": true,
-      "Edad": "2023-02-18",
-      "Raza":"Husky Siberiano",
+      "edad": "2023-02-18",
+      "raza":"Husky Siberiano",
       "size": "Grande",
       "foto": "Husky.jpg",
       "sexo": true,
       "perro": true,
-      "descripcion": "Revoltosa y con mucha energía para gastar. Le encanta jugar."
+      "descripcion": "Revoltosa y con mucha energía para gastar. Le encanta jugar.",
+      "creacion": "2023-05-24"
     },
     {
       "nombre": "Athos",
-      "disponible": true,
-      "Edad": "2018-10-06",
-      "Raza":"Bulldog Francés",
+      "disponible": false,
+      "edad": "2018-10-06",
+      "raza":"Bulldog Francés",
       "size": "Mediano",
       "foto": "Buldog-frances.jpg",
       "sexo": true,
       "perro": true,
-      "descripcion": "Desconfiado de primeras, necesita una familia que le dé el tiempo y amor que necesita."
+      "descripcion": "Desconfiado de primeras, necesita una familia que le dé el tiempo y amor que necesita.",
+      "creacion": "2023-06-11"
     },
     {
       "nombre": "Estrella",
       "disponible": true,
-      "Edad": "2020-09-22",
-      "Raza":"Mestizo",
+      "edad": "2020-09-22",
+      "raza":"Mestizo",
       "size": "Grande",
       "foto": "mestizo_1.jpg",
       "sexo": false,
       "perro": true,
-      "descripcion": "Le gusta los niños. No tiene problemas para estar con otros perros y con gatos. Es muy obediente."
+      "descripcion": "Le gusta los niños. No tiene problemas para estar con otros perros y con gatos. Es muy obediente.",
+      "creacion": "2023-03-01"
     },
     {
       "nombre": "Lucas",
       "disponible": true,
-      "Edad": "2023-04-14",
-      "Raza":"Samoyedo",
+      "edad": "2023-04-14",
+      "raza":"Samoyedo",
       "size": "Grande",
       "foto": "samoyedo.jpg",
       "sexo": true,
       "perro": true,
-      "descripcion": "Cachorrete con mucha energía y un poco trasto."
+      "descripcion": "Cachorrete con mucha energía y un poco trasto.",
+      "creacion": "2023-06-10"
     },
     {
       "nombre": "Wendy",
       "disponible": true,
-      "Edad": "2020-03-20",
-      "Raza":"Mestizo",
+      "edad": "2020-03-20",
+      "raza":"Mestizo",
       "size": "Pequeño",
-      "foto": "mestizo_2.jpg",
+      "foto": "mestizo_2.png",
       "sexo": false,
       "perro": true,
-      "descripcion": "Juguetona, curiosa, dulce, amigable e inteligente."
+      "descripcion": "Juguetona, curiosa, dulce, amigable e inteligente.",
+      "creacion": "2023-04-05"
     },
     {
       "nombre": "Obélix",
       "disponible": true,
-      "Edad": "2021-11-03",
-      "Raza":"Bullmastiff",
+      "edad": "2021-11-03",
+      "raza":"Bullmastiff",
       "size": "Grande",
       "foto": "Bullmastiff.jpg",
       "sexo": true,
       "perro": true,
-      "descripcion": "A pesar de su tamaño, es un pan de perro y algo asustadizo con otros, sobretodo lo que son más pequeño que él."
+      "descripcion": "A pesar de su tamaño, es un pan de perro y algo asustadizo con otros, sobretodo lo que son más pequeño que él.",
+      "creacion": "2023-07-15"
     },
     {
       "nombre": "Lily",
       "disponible": true,
-      "Edad": "2023-05-21",
-      "Raza":"Golden Retriever",
+      "edad": "2023-05-21",
+      "raza":"Golden Retriever",
       "size": "Grande",
       "foto": "golden-retriever-puppy.jpg",
       "sexo": false,
       "perro": true,
-      "descripcion": "Mimosa y tierna que dan ganas de comersela a besos."
+      "descripcion": "Mimosa y tierna que dan ganas de comersela a besos.",
+      "creacion": "2023-07-28"
     },
     {
       "nombre": "Charlie",
-      "disponible": true,
-      "Edad": "2022-05-12",
-      "Raza":"Catire",
+      "disponible": false,
+      "edad": "2022-05-12",
+      "raza":"Catire",
       "size": "Pequeño",
       "foto": "Cartire.jpg",
       "sexo": true,
       "perro": false,
-      "descripcion": "Bueno con otros gatos, niños y perros."
+      "descripcion": "Bueno con otros gatos, niños y perros.",
+      "creacion": "2023-08-28"
     },
     {
       "nombre": "Nina",
       "disponible": true,
-      "Edad": "2020-02-03",
-      "Raza":"Siamés",
+      "edad": "2020-02-03",
+      "raza":"Siamés",
       "size": "Pequeño",
       "foto": "siames.jpg",
       "sexo": false,
       "perro": false,
-      "descripcion": "Gata con mucho carácter e independiente."
+      "descripcion": "Gata con mucho carácter e independiente.",
+      "creacion": "2023-05-13"
     },
     {
       "nombre": "Oreo",
       "disponible": true,
-      "Edad": "2021-12-21",
-      "Raza":"Pelo Corto Negro",
+      "edad": "2021-12-21",
+      "raza":"Pelo Corto Negro",
       "size": "Pequeño",
       "foto": "dosmetic short hair.jpg",
       "sexo": true,
       "perro": false,
-      "descripcion": "Es un gato muy tierno que le gusta estar en compañia de otros gatoso de personas."
+      "descripcion": "Es un gato muy tierno que le gusta estar en compañia de otros gatoso de personas.",
+      "creacion": "2023-09-02"
     },
     {
       "nombre": "Nala",
-      "disponible": true,
-      "Edad": "2018-01-21",
-      "Raza":"Multicolor",
+      "disponible": false,
+      "edad": "2018-01-21",
+      "raza":"Multicolor",
       "size": "Pequeño",
       "foto": "multicolor.jpg",
       "sexo": false,
       "perro": false,
-      "descripcion": "Gata muy bella que le gusta dormir en las piernas de las personas."
+      "descripcion": "Gata muy bella que le gusta dormir en las piernas de las personas.",
+      "creacion": "2023-06-22"
     }
   ]
 }

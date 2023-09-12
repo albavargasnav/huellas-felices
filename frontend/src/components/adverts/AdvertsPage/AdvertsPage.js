@@ -8,6 +8,7 @@ import { getAdverts } from '../service';
 import { defaultFilters, filterAdverts } from './filters';
 import useQuery from '../../../hooks/useQuery';
 
+
 const getFilters = () => storage.get('filters') || defaultFilters;
 const saveFilters = filters => storage.set('filters', filters);
 
@@ -31,7 +32,6 @@ function AdvertsPage() {
         <FiltersForm
           initialFilters={filters}
           defaultFilters={defaultFilters}
-          prices={adverts.map(({ price }) => price)}
           onFilter={setFilters}
         />
       )}
