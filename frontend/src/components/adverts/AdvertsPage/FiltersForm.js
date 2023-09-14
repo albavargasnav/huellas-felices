@@ -21,21 +21,33 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
   const {raza, sexo, perro, size} = filters;
   return (
     <form onSubmit={handleSubmit(onFilter)}>
-      <p>Filters</p>
-      {<input name="raza" value={raza} onChange={handleChange} />}
+      <div>
+      <p>Búsqueda:</p>
+      {<input name="raza" value={raza} placeholder="Nombre de la raza" onChange={handleChange} />}
+      <div>
+        <legend>¿Qué tipo de animal buscas?</legend>
       {<RadioGroup
         options={Object.values(perroFilter)}
         name="perro"
         value={perro}
         onChange={handleChange}
       />}
-      {<RadioGroup
-        options={Object.values(sexoFilter)}
-        name="sexo"
-        value={sexo}
-        onChange={handleChange}
-      />}
+      </div>
+      <div>
+        <legend>¿Qué género buscas?</legend>
+        {<RadioGroup
+          options={Object.values(sexoFilter)}
+          name="sexo"
+          value={sexo}
+          onChange={handleChange}
+        />}
+      </div>
+      <div>
+      <legend>¿Qué tamaño buscas?</legend>
       {<SelectTags multiple name="size" value={size} onChange={handleChange} /> }
+      </div>
+      </div>
+     
       <button type="submit">Filter</button>
       <button onClick={handleResetClick}>Reset</button>
     </form>
