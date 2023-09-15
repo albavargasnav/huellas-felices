@@ -7,7 +7,7 @@ import storage from '../../../utils/storage';
 import { getAdverts } from '../service';
 import { defaultFilters, filterAdverts } from './filters';
 import useQuery from '../../../hooks/useQuery';
-import Pagination from './Pagination';
+import Pagination from '../../common/Pagination';
 
 
 const getFilters = () => storage.get('filters') || defaultFilters;
