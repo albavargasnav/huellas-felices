@@ -3,7 +3,7 @@ import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
 import { LoginPage, RequireAuth } from '../auth';
 import NotFoundPage from './NotFoundPage';
 import Layout from '../layout';
-import RegistrationPage from '../auth/RegistrationPage/RegitrationPage';
+import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
