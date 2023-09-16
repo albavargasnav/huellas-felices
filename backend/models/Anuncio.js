@@ -16,13 +16,14 @@ const anuncioSchema = mongoose.Schema({
   nombre: { type: String, index: true },
   disponible: { type: Boolean, index: true },
   edad: { type: Date, index: true },
-  raza: { type: String, indez: true },
+  raza: { type: String, index: true },
   sexo: { type: Boolean, index: true },
   size: { type: [String], index: true },
   foto: String,
   perro: { type: Boolean, index: true },
   descripcion: { type: String },
-  creacion: { type: Date, index: true }
+  creacion: { type: Date, index: true },
+  usuarioName: { type: String, index: true }
 })
 
 /**

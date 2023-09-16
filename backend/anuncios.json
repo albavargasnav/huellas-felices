@@ -10,7 +10,8 @@
       "sexo": true,
       "perro": true,
       "descripcion": "Cariñoso y con mucha energía.",
-      "creacion": "2023-04-14"
+      "creacion": "2023-04-14",
+      "usuarioName": "user"
     },
     {
       "nombre": "Maximiliano",
@@ -22,7 +23,8 @@
       "sexo": true,
       "perro": true,
       "descripcion": "Tranquilo y muy educado, sin problemas para estar con niños pequeños y otros perros.",
-      "creacion": "2023-07-24"
+      "creacion": "2023-07-24",
+      "usuarioName": "user"
     },
     {
       "nombre": "Penny",
@@ -34,7 +36,8 @@
       "sexo": false,
       "perro": true,
       "descripcion": "Tímida con otros perros pero genial con las personas",
-      "creacion": "2023-02-24"
+      "creacion": "2023-02-24",
+      "usuarioName": "user"
     },
     {
       "nombre": "Luna",
@@ -46,7 +49,8 @@
       "sexo": true,
       "perro": true,
       "descripcion": "Revoltosa y con mucha energía para gastar. Le encanta jugar.",
-      "creacion": "2023-05-24"
+      "creacion": "2023-05-24",
+      "usuarioName": "user"
     },
     {
       "nombre": "Athos",
@@ -58,7 +62,8 @@
       "sexo": true,
       "perro": true,
       "descripcion": "Desconfiado de primeras, necesita una familia que le dé el tiempo y amor que necesita.",
-      "creacion": "2023-06-11"
+      "creacion": "2023-06-11",
+      "usuarioName": "user"
     },
     {
       "nombre": "Estrella",
@@ -70,7 +75,8 @@
       "sexo": false,
       "perro": true,
       "descripcion": "Le gusta los niños. No tiene problemas para estar con otros perros y con gatos. Es muy obediente.",
-      "creacion": "2023-03-01"
+      "creacion": "2023-03-01",
+      "usuarioName": "user3"
     },
     {
       "nombre": "Lucas",
@@ -82,7 +88,8 @@
       "sexo": true,
       "perro": true,
       "descripcion": "Cachorrete con mucha energía y un poco trasto.",
-      "creacion": "2023-06-10"
+      "creacion": "2023-06-10",
+      "usuarioName": "user3"
     },
     {
       "nombre": "Wendy",
@@ -94,7 +101,8 @@
       "sexo": false,
       "perro": true,
       "descripcion": "Juguetona, curiosa, dulce, amigable e inteligente.",
-      "creacion": "2023-04-05"
+      "creacion": "2023-04-05",
+      "usuarioName": "user3"
     },
     {
       "nombre": "Obélix",
@@ -106,7 +114,8 @@
       "sexo": true,
       "perro": true,
       "descripcion": "A pesar de su tamaño, es un pan de perro y algo asustadizo con otros, sobretodo lo que son más pequeño que él.",
-      "creacion": "2023-07-15"
+      "creacion": "2023-07-15",
+      "usuarioName": "user3"
     },
     {
       "nombre": "Lily",
@@ -118,7 +127,8 @@
       "sexo": false,
       "perro": true,
       "descripcion": "Mimosa y tierna que dan ganas de comersela a besos.",
-      "creacion": "2023-07-28"
+      "creacion": "2023-07-28",
+      "usuarioName": "user3"
     },
     {
       "nombre": "Charlie",
@@ -130,7 +140,8 @@
       "sexo": true,
       "perro": false,
       "descripcion": "Bueno con otros gatos, niños y perros.",
-      "creacion": "2023-08-28"
+      "creacion": "2023-08-28",
+      "usuarioName": "user3"
     },
     {
       "nombre": "Nina",
@@ -142,7 +153,8 @@
       "sexo": false,
       "perro": false,
       "descripcion": "Gata con mucho carácter e independiente.",
-      "creacion": "2023-05-13"
+      "creacion": "2023-05-13",
+      "usuarioName": "user3"
     },
     {
       "nombre": "Oreo",
@@ -154,7 +166,8 @@
       "sexo": true,
       "perro": false,
       "descripcion": "Es un gato muy tierno que le gusta estar en compañia de otros gatoso de personas.",
-      "creacion": "2023-09-02"
+      "creacion": "2023-09-02",
+      "usuarioName": "user"
     },
     {
       "nombre": "Nala",
@@ -166,7 +179,8 @@
       "sexo": false,
       "perro": false,
       "descripcion": "Gata muy bella que le gusta dormir en las piernas de las personas.",
-      "creacion": "2023-06-22"
+      "creacion": "2023-06-22",
+      "usuarioName": "user"
     }
   ]
 }

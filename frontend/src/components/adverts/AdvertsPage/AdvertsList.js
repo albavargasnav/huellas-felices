@@ -9,14 +9,14 @@ import "./AdvertsList.css";
 import placeholder from '../../../assets/images/placeholder.png';
 const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}/images/anuncios/`;
 
-function Advert({ nombre, raza, size, foto, sexo, disponible}) {
+function Advert({ nombre, raza, size, foto, sexo, disponible, usuarioName}) {
   return (
     <div className='item'> 
       <h2>{nombre}</h2>
       <p><b>Raza: </b>{raza}</p>
       <p><b>Tamaño: </b>{size}</p>
       <p><b>Sexo: </b>{sexo ? 'Macho' : 'Hembra'}</p>
-      <p>{disponible ? 'Disponible' : 'Adoptado'}</p>
+      <p>{disponible ? <span className= "enunciado-verde">Disponible</span> : <span className= "enunciado-rojo">Adoptado</span>}</p>
       <img className='Foto'
           src={`${fotoUrl + foto}`|| placeholder}
           alt={nombre}
@@ -24,6 +24,7 @@ function Advert({ nombre, raza, size, foto, sexo, disponible}) {
           height="200"
           style={{ objectFit: 'contain' }}
         />
+        <p><b>Publicado por: </b>{usuarioName}</p>
     </div>
   );
 }
