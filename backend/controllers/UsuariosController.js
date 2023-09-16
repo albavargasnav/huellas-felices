@@ -1,4 +1,3 @@
-const { response } = require('../app')
 const Usuario = require('../models/Usuario')
 const validator = require('validator')
 
