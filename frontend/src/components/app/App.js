@@ -8,40 +8,26 @@ import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
-
-
-
 function App() {
   return (
     <Routes>
-    <Route path="/adverts"
-      element={
-          <Layout />
-      }
-    >
+    <Route path="/adverts"element={<Layout />}>
       <Route index element={<AdvertsPage />} />
       <Route path="new" element={<NewAdvertPage /> } />
-      <Route path=":advertId" element={
-        <RequireAuth>
-          <AdvertPage />
-        </RequireAuth>
-      }>
-      </Route>
+      <Route path=":advertId" element={<RequireAuth> <AdvertPage /></RequireAuth>}></Route>
       <Route path=":advertId" element={<AdvertPage />} />
       <Route path="info-prote" element={<InfoProtePage />} />
       <Route path="info-adopcion" element={<InfoAdopcionPage />} />
     </Route>
-    <Route path="/users"
-      element={
-        <RequireAuth>
-          <Layout />
-        </RequireAuth>
-      }
-    >
+    <Route path="/users" element={<RequireAuth> <Layout /></RequireAuth>}>
       <Route path=":userId" element={<UserPage />} />
     </Route>
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="/register" element={<RegistrationPage />} />
+      <Route path="/login" element={<Layout />}>
+        <Route index element={<LoginPage />} />
+      </Route>
+      <Route path="/register" element={<Layout />}>
+        <Route index element={<RegistrationPage />} />
+      </Route>
     <Route path="/404" element={<Layout />}>
       <Route index element={<NotFoundPage />} />
     </Route>
@@ -53,6 +39,4 @@ function App() {
   
 );
 }
-
-
 export default App;

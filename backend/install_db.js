@@ -44,8 +44,8 @@ async function initAnuncios (fichero) {
 async function initUsuarios () {
   const { deletedCount } = await Usuario.deleteMany()
   const loadedCount = await Usuario.insertMany([
-    {nombre: 'user', email: 'user@example.com', password: await Usuario.hashPassword('1234'), direccion: 'calle falsa 123', telefono: '658982891', documento: '63473273N', haTenidoMascotas: true},
-    {nombre: 'user2', email: 'user2@example.com', password: await Usuario.hashPassword('1234'), direccion: 'Privet Drive 4', telefono: '664538132', documento: '80704650L', haTenidoMascotas: false}
+    {name: 'user', email: 'user@example.com', password: await Usuario.hashPassword('1234'), direccion: 'calle falsa 123', telefono: '658982891', documento: '63473273N', haTenidoMascotas: true},
+    {name: 'user2', email: 'user2@example.com', password: await Usuario.hashPassword('1234'), direccion: 'Privet Drive 4', telefono: '664538132', documento: '80704650L', haTenidoMascotas: false}
   ])
   return { deletedCount, loadedCount }
 }

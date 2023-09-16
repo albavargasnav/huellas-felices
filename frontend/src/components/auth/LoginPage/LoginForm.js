@@ -1,4 +1,5 @@
 import T from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import useForm from '../../../hooks/useForm';
 import './LoginForm.css';
@@ -48,6 +49,11 @@ function LoginForm({ onSubmit, isLoading, resetError, error }) {
             />
             <label class="checkbox-label" for="remember">Recordar contraseña</label>
           </div>
+          <div className='login-form-register'> 
+            <p>¿Eres un usuario nuevo?</p>
+            <Link to="/register" className='registerBotton'>Empieza aquí</Link>
+          </div>
+          
           <button className='login-form-button' disabled={!validate(validEmail, validPassword, () => !isLoading)}>
             Iniciar sesión
           </button>
@@ -59,7 +65,7 @@ function LoginForm({ onSubmit, isLoading, resetError, error }) {
               <div className="error-message">
                 <img src={ErrorIcon} alt="Error" style={{ marginRight: '5px', width: '20px', height: '20px' }} />
                 <div onClick={resetError} style={{ color: 'black', fontWeight: 'bold' }}>
-                  {error.message}
+                  {error.mensaje}
                 </div>
               </div>
             </div>
