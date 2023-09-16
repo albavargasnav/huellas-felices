@@ -1,51 +1,64 @@
-import React from 'react';
+import React, {useState, useEffect} from "react";
 import T from 'prop-types';
 
-import { ConfirmationButton } from '../../common';
 import { user } from '../propTypes';
 
-function UserDetail({ nombre, password, direccion, telefono, documento, haTenidoMascotas, onDelete, isLoading }) {
+function UserDetail({ nombre, password, direccion, telefono, documento, haTenidoMascotas, onSubmit, isLoading, error }) {
+  const [checked, setChecked] = useState(false);
+  
+  useEffect(() => {
+    setChecked(haTenidoMascotas)
+  }, [haTenidoMascotas]);
+  
+  const handleOnChange = () => {
+    setChecked(!checked);
+  };
+  
+  if (isLoading) {
+    return 'Loading...';
+  }
+
   return (
     <div className="contenedor-detalle">
-      <div className='contenedor-datos'>
         <h3 className='enunciado'> Datos del usuario</h3>
-        <form>
+        <form onSubmit={onSubmit}>
           <fieldset>
-            <label>
-              Nombre:
-              <input type="text" name="name" value={nombre} />
-            </label>
-            <br/>
-            <label>
-              Password:
-              <input type="text" name="name" value={password} />
-            </label>
-            <br/>
-            <label>
-              Direccion:
-              <input type="text" name="name" value={direccion} />
-            </label>
-            <br/>
-            <label>
-              Teléfono:
-              <input type="text" name="name" value={telefono} />
-            </label>
-            <br/>
-            <label>
-              ¿Ha tenido mascotas antes?
-              <input type="checkbox" name="name" checked={haTenidoMascotas} />
-            </label>
-            <br/>
+            <div className='form-group'>
+              <label>Nombre:</label>
+              <input type="text" name="nombre" defaultValue={nombre} />
+            </div>
+            <div className='form-group'>
+              <label>Documento:</label>
+              <input type="text" name="documento" defaultValue={documento} />
+            </div>
+            <div className='form-group'>
+              <label>Contraseña:</label>
+              <input type="password" name="password" defaultValue={password} />
+            </div>
+            <div className='form-group'>
+              <label>Repita Contraseña:</label>
+              <input type="password" name="passwordRep" defaultValue={password} />
+            </div>
+            <div className='form-group'>
+              <label>Direccion:</label>
+              <input type="text" name="direccion" defaultValue={direccion} />
+            </div>
+            <div className='form-group'>
+              <label>Teléfono:</label>
+              <input type="text" name="telefono" defaultValue={telefono} />
+            </div>
+            <div className='form-group'>
+              <label>¿Ha tenido mascotas antes?</label>
+              <input id="chk-mascotas" type="checkbox" name="haTenidoMascotas" 
+              checked={checked}
+              onChange={handleOnChange}/>
+            </div>
+            <div className='form-group'>
+              <button id="boton-submit" type="submit">Actualizar</button>
+            </div>
+            {error.mensaje !== '' ? <div className='div-error'>{error.mensaje}</div> : ''}
           </fieldset>
         </form>
-        <ConfirmationButton
-          confirmation="¿Estás seguro/a?"
-          onConfirm={onDelete}
-          disabled={isLoading}
-        >
-          Actualizar
-        </ConfirmationButton>
-      </div>
     </div>
   );
 }

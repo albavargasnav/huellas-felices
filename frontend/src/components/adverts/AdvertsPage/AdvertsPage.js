@@ -22,9 +22,6 @@ function AdvertsPage() {
 
   const filteredAdverts = filterAdverts(adverts, filters);
 
-  if (isLoading) {
-    return 'Loading...';
-  }
 
   return (
     <>
