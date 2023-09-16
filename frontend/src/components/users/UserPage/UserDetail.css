@@ -1,0 +1,50 @@
+.form-group {
+    padding-bottom: 1em;
+}
+
+.form-group > label {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-group > input {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+}
+
+.div-error{
+    border: 2px solid red;
+    font-weight: bold;
+    padding: 1%;
+    color: red;
+}
+
+#chk-mascotas {
+    cursor: pointer;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #888;
+}
+
+.contenedor-detalle {
+    width: 70%;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#boton-submit {
+    background-color: #666;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3%;
+    border-radius: 5px;
+    margin-left: 41%;
+}
+
+#boton-submit:hover {
+    cursor: pointer;
+}

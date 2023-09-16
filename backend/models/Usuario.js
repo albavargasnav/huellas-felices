@@ -4,9 +4,13 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
 const usuarioSchema = mongoose.Schema({
-  name: String,
+  nombre: String,
   email: { type: String, unique: true },
-  password: String
+  password: String,
+  direccion: String,
+  documento: String,
+  telefono: String,
+  haTenidoMascotas: Boolean
 })
 
 // método estático
