@@ -26,6 +26,7 @@ function AdvertsPage() {
 
   const filteredAdverts = filterAdverts(adverts, filters);
 
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
