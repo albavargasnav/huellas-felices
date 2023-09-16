@@ -15,14 +15,17 @@ function App() {
     <Routes>
     <Route path="/adverts"
       element={
-        <RequireAuth>
           <Layout />
-        </RequireAuth>
       }
     >
       <Route index element={<AdvertsPage />} />
       <Route path="new" element={<NewAdvertPage /> } />
-
+      <Route path=":advertId" element={
+        <RequireAuth>
+          <AdvertPage />
+        </RequireAuth>
+      }>
+      </Route>
       <Route path=":advertId" element={<AdvertPage />} />
       <Route path="info-prote" element={<InfoProtePage />} />
       <Route path="info-adopcion" element={<InfoAdopcionPage />} />
