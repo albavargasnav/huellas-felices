@@ -1,0 +1,29 @@
+/* Contenedor de paginación */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilos para los enlaces de paginación */
+  .page-link {
+    text-decoration: none;
+    color: #333;
+    background-color: #f8f8f8;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .page-link:hover {
+    background-color: #ddd;
+  }
+  
+  /* Estilo para la página activa */
+  .page-link.active {
+    background-color: #4d3a1a;
+    color: #fff;
+  }

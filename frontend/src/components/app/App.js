@@ -4,7 +4,7 @@ import UserPage from "../users/UserPage/UserPage";
 import { LoginPage, RequireAuth } from '../auth';
 import NotFoundPage from './NotFoundPage';
 import Layout from '../layout';
-import RegistrationPage from '../auth/RegistrationPage/RegitrationPage';
+import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
@@ -16,14 +16,17 @@ function App() {
     <Routes>
     <Route path="/adverts"
       element={
-        <RequireAuth>
           <Layout />
-        </RequireAuth>
       }
     >
       <Route index element={<AdvertsPage />} />
       <Route path="new" element={<NewAdvertPage /> } />
-
+      <Route path=":advertId" element={
+        <RequireAuth>
+          <AdvertPage />
+        </RequireAuth>
+      }>
+      </Route>
       <Route path=":advertId" element={<AdvertPage />} />
       <Route path="info-prote" element={<InfoProtePage />} />
       <Route path="info-adopcion" element={<InfoAdopcionPage />} />
