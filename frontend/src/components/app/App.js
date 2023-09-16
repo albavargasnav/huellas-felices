@@ -13,11 +13,7 @@ import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
 function App() {
   return (
     <Routes>
-    <Route path="/adverts"
-      element={
-          <Layout />
-      }
-    >
+      <Route path="/adverts" element={<Layout />}>
       <Route index element={<AdvertsPage />} />
       <Route path="new" element={<NewAdvertPage /> } />
       <Route path=":advertId" element={
@@ -29,9 +25,13 @@ function App() {
       <Route path=":advertId" element={<AdvertPage />} />
       <Route path="info-prote" element={<InfoProtePage />} />
       <Route path="info-adopcion" element={<InfoAdopcionPage />} />
-    </Route>
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="/register" element={<RegistrationPage />} />
+      </Route>
+      <Route path="/login" element={<Layout />}>
+        <Route index element={<LoginPage />} />
+      </Route>
+      <Route path="/register" element={<Layout />}>
+        <Route index element={<RegistrationPage />} />
+      </Route>
     <Route path="/404" element={<Layout />}>
       <Route index element={<NotFoundPage />} />
     </Route>

@@ -44,6 +44,7 @@ import
   height: 60px;
   transition: all .4s;
   font-size: 18px;
+
 }
 
 .login-form button:disabled {
@@ -70,6 +71,16 @@ import
   color: grey;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+}
+.login-form-register{
+  font-size: 15px;
+  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.registerBotton{
+  color: rgb(98, 98, 241);
 }
 
 .login-form-text-area {

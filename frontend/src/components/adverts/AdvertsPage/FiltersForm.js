@@ -50,8 +50,8 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
         {<SelectTags multiple name="size" value={size} onChange={handleChange} /> }
       </div>
       </div>
-      <button type="submit">Filter</button>
-      <button onClick={handleResetClick}>Reset</button>
+      <button type="submit">Buscar</button>
+      <button onClick={handleResetClick}>Mostrar Todos</button>
       </div>
     </form>
   );
