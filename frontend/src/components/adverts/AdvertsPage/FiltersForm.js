@@ -5,6 +5,7 @@ import SelectTags from '../SelectTags';
 import { RadioGroup} from '../../common';
 import { advert } from '../propTypes';
 import { perroFilter, sexoFilter } from './filters';
+import './FiltersForm.css'
 
 function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
   const {
@@ -20,36 +21,38 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
   };
   const {raza, sexo, perro, size} = filters;
   return (
-    <form onSubmit={handleSubmit(onFilter)}>
-      <div>
-      <p>Búsqueda:</p>
-      {<input name="raza" value={raza} placeholder="Nombre de la raza" onChange={handleChange} />}
-      <div>
+    <form className='busqueda' onSubmit={handleSubmit(onFilter)}>
+      <div className='buscador'>
+      <h2>Búsqueda:</h2>
+      {<input className='BuscadorRaza' name="raza" value={raza} placeholder="Nombre de la raza" onChange={handleChange} />}
+      <div className='opciones'>
         <legend>¿Qué tipo de animal buscas?</legend>
-      {<RadioGroup
-        options={Object.values(perroFilter)}
-        name="perro"
-        value={perro}
-        onChange={handleChange}
-      />}
-      </div>
-      <div>
+        <div className='BuscadorOpciones'>
+          {<RadioGroup
+          options={Object.values(perroFilter)}
+          name="perro"
+          value={perro}
+          onChange={handleChange}
+        />}
+        </div>
+      
         <legend>¿Qué género buscas?</legend>
+        <div className='BuscadorOpciones'>
         {<RadioGroup
           options={Object.values(sexoFilter)}
           name="sexo"
           value={sexo}
           onChange={handleChange}
         />}
-      </div>
-      <div>
+        </div>
       <legend>¿Qué tamaño buscas?</legend>
-      {<SelectTags multiple name="size" value={size} onChange={handleChange} /> }
+      <div className='BuscadorOpciones'>
+        {<SelectTags multiple name="size" value={size} onChange={handleChange} /> }
       </div>
       </div>
-     
       <button type="submit">Filter</button>
       <button onClick={handleResetClick}>Reset</button>
+      </div>
     </form>
   );
 }

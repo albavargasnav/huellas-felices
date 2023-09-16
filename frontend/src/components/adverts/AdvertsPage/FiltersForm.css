@@ -1,0 +1,40 @@
+.busqueda{
+    text-align: center;
+    background-color: #cdb8a0;
+    padding: 5px;
+}
+.buscador {
+    text-align: center;
+    background-color: #cdb8a0;
+    padding: 5px;
+    display: inline-block
+
+}
+.buscador button {
+    padding: 5px 15px;
+    background-color: #4b4a34; /* Cambia el color de fondo según tus preferencias */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+/* Estilo para el campo de entrada de texto */
+.buscador .BuscadorRaza {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+legend{
+    padding: 10px;
+    background-color: #a58576;
+    display: inline-block;    
+}
+.BuscadorOpciones{
+    padding: 10px;
+}

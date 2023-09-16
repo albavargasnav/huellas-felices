@@ -11,13 +11,13 @@ const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}/images/anuncios/`;
 
 function Advert({ nombre, raza, size, foto, sexo, disponible}) {
   return (
-    <div className='AdvertsForm'> 
-      <p>{nombre}</p>
+    <div className='item'> 
+      <h2>{nombre}</h2>
       <p><b>Raza: </b>{raza}</p>
       <p><b>Tamaño: </b>{size}</p>
       <p><b>Sexo: </b>{sexo ? 'Macho' : 'Hembra'}</p>
       <p>{disponible ? 'Disponible' : 'Adoptado'}</p>
-      <img
+      <img className='Foto'
           src={`${fotoUrl + foto}`|| placeholder}
           alt={nombre}
           width="200"
@@ -44,7 +44,7 @@ const ShowDetails = ({_id}) => {
     setPopupVisible(false);
   };
 
-  return (<><button onClick={openPopup}>Más Información</button>
+  return (<><button className='BotonDetalle' onClick={openPopup}>Más Información</button>
    {popupVisible && <Popup closePopup={closePopup}></Popup>}</>) 
 }
 
@@ -52,21 +52,20 @@ function AdvertsList({ adverts }) {
   const { isLogged } = useAuth();
  
   const renderAdvert = ({_id, ...advert }) => (
-    <li key={_id}>
+    <li key={_id} className='AdvertsForm'>
       <Advert {...advert} />
       <Link to={_id}> 
-      <button>Más Información</button>
+      <button className='BotonDetalle'>Más Información</button>
       </Link>
     </li>
   );
 
   const renderAdvertPublic = ({_id, ...advert }) => (
-    <li key={_id}>
+    <li key={_id} className='AdvertsForm'>
       <Advert {...advert} />
-      <ShowDetails>
-        Mas Información
-      </ShowDetails>
+      <ShowDetails/>
     </li>
+    
   );
     return isLogged ? (<ul>{adverts.map(renderAdvert)}</ul>) :
     (<ul>{adverts.map(renderAdvertPublic)}</ul>)
