@@ -36,7 +36,7 @@ function RegistrarionForm({ onSubmit, isLoading, resetError, error }) {
           <div className='login-form-text'>
             <span className='login-form-text-info'>Correo electrónico</span>
           </div>
-          <input className='login-form-text-area' name="email" value={email} onChange={handleChange} />
+          <input className='login-form-text-area' name="email" value={email} type="email" onChange={handleChange} />
           <div className='login-form-text'>
             <span className='login-form-text-info'>Contraseña</span>
           </div>
@@ -67,7 +67,7 @@ function RegistrarionForm({ onSubmit, isLoading, resetError, error }) {
               <div className="error-message">
                 <img src={ErrorIcon} alt="Error" style={{ marginRight: '5px', width: '20px', height: '20px' }} />
                 <div onClick={resetError} style={{ color: 'black', fontWeight: 'bold' }}>
-                  {error.message}
+                  {error.mensaje}
                 </div>
               </div>
             </div>

@@ -24,7 +24,7 @@ function MasInfoButton() {
   return (
     <div>
       {/* Otro contenido de la página */}
-      <Link to="/huellas-felices/info-adopcion">
+      <Link to="/info-adopcion">
         <button style={buttonStyle}>Más información</button>
       </Link>
     </div>

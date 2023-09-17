@@ -1,25 +1,21 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { useAuth } from '../context';
+import { register } from '../service';
 import RegistrationForm from './RegistrationForm';
 import useMutation from '../../../hooks/useMutation';
 
 function RegistrationPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { registerUser } = useAuth();
-  const { isLoading, error, execute, resetError } = useMutation(registerUser);
+  const { isLoading, error, execute, resetError } = useMutation(register);
 
   const handleSubmit = credentials => {
     execute(credentials)
       .then(() => {
-        const from = location.state?.from?.pathname || '/';
+        const from = location.state?.from?.pathname || '/login';
         navigate(from);
       })
-      .catch(error => {
-        console.error('Error al registrarse', error);
-      });
   };
   
   return (
