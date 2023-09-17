@@ -7,6 +7,7 @@ import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
+import RecoveryPasswordPage from "../auth/RecoveryPasswordPage/RecoveryPasswordPage";
 
 
 
@@ -29,6 +30,7 @@ function App() {
     </Route>
     <Route path="/login" element={<LoginPage />} />
     <Route path="/register" element={<RegistrationPage />} />
+    <Route path="/recoverypassword" element={<RecoveryPasswordPage />} />
     <Route path="/404" element={<Layout />}>
       <Route index element={<NotFoundPage />} />
     </Route>

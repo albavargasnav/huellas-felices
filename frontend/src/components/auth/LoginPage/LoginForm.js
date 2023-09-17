@@ -1,6 +1,7 @@
 import T from 'prop-types';
 
 import useForm from '../../../hooks/useForm';
+import { Link } from 'react-router-dom';
 import './LoginForm.css';
 
 import ErrorIcon from '../../../assets/images/icon-error.png' 
@@ -51,6 +52,11 @@ function LoginForm({ onSubmit, isLoading, resetError, error }) {
           <button className='login-form-button' disabled={!validate(validEmail, validPassword, () => !isLoading)}>
             Iniciar sesión
           </button>
+
+          <div className='login-form-text'>
+            <span className='login-form-text-info'>¿Quieres recuperar tu contraseña?</span>
+            <Link to="/recoverypassword">Haz clic aquí</Link>
+          </div>
           
             
           {error && (
