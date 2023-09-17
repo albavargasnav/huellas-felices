@@ -34,6 +34,12 @@ function App() {
     <Route path="/" element={<Layout />}>
       <Route index element={<LandingPage />} />
     </Route>
+    <Route path="/contacto" element={<Layout />}>
+      <Route index element={<InfoProtePage />} />
+    </Route>
+    <Route path="/info-adopcion" element={<Layout />}>
+      <Route index element={<InfoAdopcionPage />} />
+    </Route>
     <Route path="*" element={<Navigate to="/404" />} />
   </Routes>
   
