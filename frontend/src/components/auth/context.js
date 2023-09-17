@@ -14,17 +14,9 @@ export const AuthProvider = ({ isInitiallyLogged, children }) => {
 
   const handleLogin = () => setIsLogged(true);
   const handleLogout = () => setIsLogged(false);
-  const registerUser = async credentials => {
-    try {
-      await client.post('/usuarios', credentials); 
-      console.log('Usuario registrado exitosamente');
-    } catch (error) {
-      console.error('Error en la solicitud:', error.message);
-    }
-  };
-
+ 
   return (
-    <AuthContext.Provider value={{ isLogged, handleLogin, handleLogout, registerUser }}>
+    <AuthContext.Provider value={{ isLogged, handleLogin, handleLogout}}>
       {children}
     </AuthContext.Provider>
   );
