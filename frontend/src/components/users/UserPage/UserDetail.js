@@ -3,7 +3,7 @@ import T from 'prop-types';
 
 import { user } from '../propTypes';
 
-function UserDetail({ nombre, password, direccion, telefono, documento, haTenidoMascotas, onSubmit, isLoading, error }) {
+function UserDetail({ name, password, direccion, telefono, documento, haTenidoMascotas, onSubmit, isLoading, error }) {
   const [checked, setChecked] = useState(false);
   
   useEffect(() => {
@@ -25,7 +25,7 @@ function UserDetail({ nombre, password, direccion, telefono, documento, haTenido
           <fieldset>
             <div className='form-group'>
               <label>Nombre:</label>
-              <input type="text" name="nombre" defaultValue={nombre} />
+              <input type="text" name="name" defaultValue={name} />
             </div>
             <div className='form-group'>
               <label>Documento:</label>

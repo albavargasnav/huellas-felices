@@ -38,7 +38,7 @@ function UserPage() {
     } else {
       setError({status: 0, mensaje: ''})
       const body = {
-        nombre: form.elements.nombre.value,
+        name: form.elements.name.value,
         direccion: form.elements.direccion.value,
         telefono: form.elements.telefono.value,
         documento: form.elements.documento.value,
