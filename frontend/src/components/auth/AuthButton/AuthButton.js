@@ -14,6 +14,7 @@ const AuthButton = () => {
   const handleLogoutConfirm = async () => {
     await mutation.execute();
     handleLogout();
+    setShowPopup(false)
   };
 
   return isLogged ? (
