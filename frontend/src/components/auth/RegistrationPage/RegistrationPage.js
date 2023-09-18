@@ -13,8 +13,11 @@ function RegistrationPage() {
   const handleSubmit = credentials => {
     execute(credentials)
       .then(() => {
-        const from = location.state?.from?.pathname || '/login';
+        setTimeout(() => {
+          const from = location.state?.from?.pathname || '/login';
         navigate(from);
+        }, 1000);
+        
       })
   };
   
