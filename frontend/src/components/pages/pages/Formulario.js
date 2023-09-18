@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Formulario.css";
 
+import { createRequest } from "../../adverts/service";
+
 function Formulario() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     nombre: "",
     apellidos: "",
@@ -21,13 +27,30 @@ function Formulario() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí puedes realizar validaciones adicionales si es necesario
-    // Luego, puedes enviar los datos al backend
-    console.log("Datos a enviar:", formData);
-    // Llama a una función para enviar los datos al backend aquí
-    
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+
+    const body = {
+      nombre: form.elements.nombre.value,
+      apellidos: form.elements.apellidos.value,
+      dni: form.elements.dni.value,
+      fechaNacimiento: form.elements.fechaNacimiento.value,
+      codigoPostal: form.elements.codigoPostal.value,
+      provincia: form.elements.provincia.value,
+      email: form.elements.email.value,
+      movil: form.elements.movil.value,
+      estadoCivil: form.elements.estadoCivil.value,
+      tipoVivienda: form.elements.tipoVivienda.value,
+      motivoAdopcion: form.elements.motivoAdopcion.value,
+    };
+
+    createRequest(body)
+      .then(() => navigate("/"))
+      .catch((error) => {
+        // Manejar el error aquí, por ejemplo, mostrar un mensaje de error al usuario.
+        console.error(error);
+      });
   };
 
   return (
@@ -57,7 +80,7 @@ function Formulario() {
         </div>
       </div>
 
-     <div className="dni-date">
+      <div className="dni-date">
         <div className="dni">
           <label htmlFor="dni">DNI</label>
           <input
@@ -69,7 +92,7 @@ function Formulario() {
             required
           />
         </div>
-        <div className="date">
+        <div className="text">
           <label htmlFor="fechaNacimiento">Fecha de nacimiento</label>
           <input
             type="text"
@@ -115,7 +138,6 @@ function Formulario() {
               value={formData.email}
               onChange={handleChange}
               required
-              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
             />
           </div>
           <div className="movil">
