@@ -12,6 +12,16 @@ exports.crearUsuario = async (req, res, next) => {
       return res.status(400).json({mensaje: 'Correo no válido'})
     }
 
+    const usuarioExistente = await Usuario.findOne({ $or: [{ name }, { email }] })
+
+    if (usuarioExistente) {
+      if (usuarioExistente.name === name) {
+        return res.status(400).json({ mensaje: 'El nombre de usuario ya está en uso.' })
+      } else {
+        return res.status(400).json({ mensaje: 'El email ya está en uso.' })
+      }
+    }
+
     const newUser = new Usuario({
       name: name,
       email: email,
@@ -20,7 +30,7 @@ exports.crearUsuario = async (req, res, next) => {
     await newUser.save()
     res.status(201).json(newUser)
   } catch (err) {
-    res.status(400).json({mensaje: 'Correo ya está en uso'})
+    res.status(500).json({mensaje: 'Error interno del servidor.'})
   }
 }
 
