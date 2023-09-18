@@ -2,7 +2,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import "./UserDetail.css";
 import UserDetail from './UserDetail';
-import { getUserInfo, updateUserInfo } from '../service';
+import { getUserInfo, getUserInfoByName, updateUserInfo } from '../service';
 
 function UserPage() {
   const params = useParams();
@@ -14,7 +14,8 @@ function UserPage() {
 
   useEffect(() => {
     setIsLoading(true);
-    getUserInfo(params.userId)
+    if (params.userId) {
+      getUserInfo(params.userId)
       .then(res => setUser(res))
       .catch(error => {
         if (error.status === 404) {
@@ -22,6 +23,17 @@ function UserPage() {
         }
         setError(error);
       });
+    } else {
+      getUserInfoByName(params.name)
+      .then(res => setUser(res))
+      .catch(error => {
+        if (error.status === 404) {
+          return navigate('/404');
+        }
+        setError(error);
+      });
+    }
+    
     setIsLoading(false);
   }, [params.userId, navigate]);
   if (error?.status === 404) {
@@ -62,6 +74,7 @@ function UserPage() {
         onSubmit={handleSubmit}
         isLoading={isLoading}
         error={error}
+        params={params}
         {...user}
       />
     )

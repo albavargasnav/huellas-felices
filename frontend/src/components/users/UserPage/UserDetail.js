@@ -3,7 +3,7 @@ import T from 'prop-types';
 
 import { user } from '../propTypes';
 
-function UserDetail({ name, password, direccion, telefono, documento, haTenidoMascotas, onSubmit, isLoading, error }) {
+function UserDetail({ name, password, direccion, telefono, documento, haTenidoMascotas, onSubmit, isLoading, error, params }) {
   const [checked, setChecked] = useState(false);
   
   useEffect(() => {
@@ -25,36 +25,36 @@ function UserDetail({ name, password, direccion, telefono, documento, haTenidoMa
           <fieldset>
             <div className='form-group'>
               <label>Nombre:</label>
-              <input type="text" name="name" defaultValue={name} />
+              <input type="text" name="name" defaultValue={name} disabled={params.userId ? false : true }/>
             </div>
             <div className='form-group'>
               <label>Documento:</label>
-              <input type="text" name="documento" defaultValue={documento} />
+              <input type="text" name="documento" defaultValue={documento} disabled={params.userId ? false : true }/>
             </div>
-            <div className='form-group'>
+            <div className='form-group' style={{display: params.userId ? 'block' : 'none' }}>
               <label>Contraseña:</label>
               <input type="password" name="password" defaultValue={password} />
             </div>
-            <div className='form-group'>
+            <div className='form-group' style={{display: params.userId ? 'block' : 'none' }}>
               <label>Repita Contraseña:</label>
               <input type="password" name="passwordRep" defaultValue={password} />
             </div>
             <div className='form-group'>
               <label>Direccion:</label>
-              <input type="text" name="direccion" defaultValue={direccion} />
+              <input type="text" name="direccion" defaultValue={direccion} disabled={params.userId ? false : true }/>
             </div>
             <div className='form-group'>
               <label>Teléfono:</label>
-              <input type="text" name="telefono" defaultValue={telefono} />
+              <input type="text" name="telefono" defaultValue={telefono} disabled={params.userId ? false : true }/>
             </div>
             <div className='form-group'>
               <label>¿Ha tenido mascotas antes?</label>
               <input id="chk-mascotas" type="checkbox" name="haTenidoMascotas" 
               checked={checked}
-              onChange={handleOnChange}/>
+              onChange={handleOnChange} disabled={params.userId ? false : true }/>
             </div>
             <div className='form-group'>
-              <button id="boton-submit" type="submit">Actualizar</button>
+              <button id="boton-submit" type="submit" style={{display: params.userId ? 'block' : 'none' }}>Actualizar</button>
             </div>
             {error.mensaje !== '' ? <div className='div-error'>{error.mensaje}</div> : ''}
           </fieldset>
