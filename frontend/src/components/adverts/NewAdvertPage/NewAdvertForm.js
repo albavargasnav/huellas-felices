@@ -1,5 +1,5 @@
 import T from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 
 import useForm from '../../../hooks/useForm';
 import { InputFile, RadioGroup} from '../../common';

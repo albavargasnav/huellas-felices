@@ -6,6 +6,7 @@ import { RadioGroup} from '../../common';
 import { advert } from '../propTypes';
 import { perroFilter, sexoFilter } from './filters';
 import './FiltersForm.css'
+import { useAuth } from '../../auth/context'
 
 function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
   const {
@@ -20,6 +21,7 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
     onFilter(defaultFilters);
   };
   const {raza, sexo, perro, size} = filters;
+  const { isLogged } = useAuth();
   return (
     <>
     <form className='busqueda' onSubmit={handleSubmit(onFilter)}>
@@ -52,10 +54,11 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
         <button type="submit">Buscar</button>
         <button onClick={handleResetClick}>Mostrar Todos</button>
       </div>
+      { isLogged &&
+      (<Link to="/adverts/new">
+      <button className='BotonDetalle'>Crear Anuncio</button>
+      </Link> )}
     </form>
-    <Link to="/adverts/new">
-        New advert
-    </Link>
     </>
   );
 }
