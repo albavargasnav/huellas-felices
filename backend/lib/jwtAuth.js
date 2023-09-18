@@ -18,7 +18,7 @@ module.exports = function () { // devuelve un middleware que si no hay usuario r
       }
       // guardo el id del usuario en request para que
       // los siguientes middlewares puedan usarlo
-      req.userId = decoded._id
+      req.userEmail = decoded.email
 
       next()
     })

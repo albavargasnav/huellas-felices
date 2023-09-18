@@ -1,12 +1,9 @@
 'use strict'
-const mongodb = require('mongodb')
 const express = require('express')
 const upload = require('../../lib/multerConfig')
 const router = express.Router()
 const { Anuncio, Usuario } = require('../../models')
-const ObjectId = mongodb.ObjectId
 
-// http://127.0.0.1:3000/api/anuncios?usuarioName={nombreUsuario}
 router.get('/', async (req, res, next) => {
   try {
     // filtros
@@ -16,7 +13,6 @@ router.get('/', async (req, res, next) => {
     const filterByPerro = req.query.perro
     const filterBySexo = req.query.sexo
     const filterBySize = req.query.size
-    const filterByUsuarioName = req.query.usuarioName
 
     // paginación
     const start = parseInt(req.query.start) || 0
@@ -46,10 +42,6 @@ router.get('/', async (req, res, next) => {
     if (filterBySize) {
       filtro.size = filterBySize
     }
-    if (filterByUsuarioName) {
-      const input = req.query.usuarioName // La cadena que estás buscando
-      filtro.usuarioName = new RegExp(`^${input}$`, 'i')
-    }
     const anuncios = await Anuncio.lista(filtro, start, limit, sort, fields)
     res.locals.anuncios = anuncios
     res.json(anuncios)
@@ -59,30 +51,18 @@ router.get('/', async (req, res, next) => {
 })
 
 router.post('/', upload.single('foto'), async (req, res, next) => {
-  // try {
-  //   const anuncio = new Anuncio(req.body)
-
-  //   // save image
-  //   await anuncio.setFoto({
-  //     path: req.file.path,
-  //     originalName: req.file.originalname
-  //   })
-
-  //   const saved = await anuncio.save()
-  //   res.json({ok: true, result: saved})
-  // } catch (err) {
-  //   next(err)
-  // }
   try {
     const {nombre, edad, raza, sexo, size, perro, descripcion} = req.body
+    console.log('aqui ')
     let foto = ''
     if (req.file) {
       foto = req.file.filename // Obtenemos el nombre de la imagen si se envió
     }
-    const usuario = req.userId
-    const user = await Usuario.find({ _id: ObjectId(usuario) })
-    const usuarioName = user[0].name
-    // const usuarioName = req.user.nombre
+    // El usuario autenticado está disponible en req.user
+    const email = req.userEmail
+    const user = await Usuario.findOne({ email: email })
+    const usuarioName = user.name
+    console.log(usuarioName)
     const newAnuncio = new Anuncio({
       nombre: nombre,
       edad: edad,
@@ -94,7 +74,7 @@ router.post('/', upload.single('foto'), async (req, res, next) => {
       perro: perro,
       descripcion: descripcion,
       creacion: new Date(),
-      usuarioName
+      usuarioName: usuarioName
     })
 
     await newAnuncio.save()
@@ -116,4 +96,11 @@ router.delete('/:anuncioId', (req, res, next) => {
   }).catch(err => { err.status = 404; err.message = 'Anuncio no encontrado'; next(err) })
 })
 
+// Ruta protegida
+router.post('/ruta_protegida', async (req, res) => {
+  // El usuario autenticado está disponible en req.user
+  const email = req.userEmail
+  const usuario = await Usuario.findOne({ email: email })
+  res.json(usuario.name)
+})
 module.exports = router

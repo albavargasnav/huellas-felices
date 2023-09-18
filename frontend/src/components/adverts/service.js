@@ -23,7 +23,6 @@ export const deleteAdvert = (advertId) => {
 export const createAdvert = (newAdvert) => {
   return client.post(advertsPath, newAdvert, {
     headers: {
-      
       "Content-Type": "multipart/form-data",
     },
   });
