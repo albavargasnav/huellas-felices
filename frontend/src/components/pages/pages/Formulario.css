@@ -1,10 +1,11 @@
 .formulario {
-  margin-top: 100px;
   width: 100%;
-  max-width: 430px;
+  max-width: 500px;
   margin: 0 auto;
   background: white;
   border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 60px;
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -19,15 +20,18 @@
 .name {
   display: flex;
   gap: 40px; 
+  margin-right: 20px;
 }
 
 .info {
   display: flex;
   gap: 40px; 
+  margin-right: 20px;
 }
 .dni-date {
   display: flex;
   gap: 40px; 
+  margin-right: 20px;
 }
 
 .formulario select,
@@ -44,14 +48,6 @@
   color: #333;
 }
 
-.formulario select:focus,
-.formulario input[type="text"]:focus,
-.formulario input[type="email"]:focus,
-.formulario textarea:focus {
-  outline: none;
-  border: 2px solid #cc9966;
-}
-
 .formulario button {
   padding: 0 20px;
   background-color: #b79bb2;
@@ -62,11 +58,6 @@
   font-size: 18px;
   height: 60px;
   transition: all 0.4s;
-}
-
-.formulario button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
 
 .formulario::before {
@@ -80,6 +71,6 @@
   bottom: 0;
   z-index: -1;
   border-radius: 10px;
-  transform: translateY(1300px); 
+  transform: translateY(10px); 
 }
 
