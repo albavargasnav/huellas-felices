@@ -24,6 +24,7 @@ function App() {
     </Route>
     <Route path="/users" element={<RequireAuth> <Layout /></RequireAuth>}>
       <Route path=":userId" element={<UserPage />} />
+      <Route path="name/:name" element={<UserPage />} />
     </Route>
       <Route path="/login" element={<Layout />}>
         <Route index element={<LoginPage />} />
