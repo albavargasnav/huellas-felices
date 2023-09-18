@@ -6,7 +6,7 @@ import placeholder from '../../../assets/images/placeholder.png';
 import { advert } from '../propTypes';
 const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}`;
 
-function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, descripcion, onDelete, isLoading }) {
+function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, usuarioName, descripcion, onDelete, isLoading }) {
   const fecha = new Date(edad);
   return (
     <div className="contenedor-detalle">
@@ -29,6 +29,7 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
         <p><b>Sexo: </b>{sexo ? 'macho' : 'hembra'}</p>
         <p><b>Especie: </b>{perro ? 'perro' : 'gato'}</p>
         <p><b>Descripción: </b>{descripcion}</p>
+        <p><b>Publicado por: </b>{usuarioName}</p>
         <ConfirmationButton
           confirmation="¿Estás seguro/a?"
           onConfirm={onDelete}
