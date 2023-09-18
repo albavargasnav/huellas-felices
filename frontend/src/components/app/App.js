@@ -8,6 +8,9 @@ import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
+
+import RecoveryPasswordPage from "../auth/RecoveryPasswordPage/RecoveryPasswordPage";
+
 function App() {
   return (
     <Routes>
@@ -29,11 +32,19 @@ function App() {
       <Route path="/register" element={<Layout />}>
         <Route index element={<RegistrationPage />} />
       </Route>
+    <Route path="/recoverypassword" element={<RecoveryPasswordPage />} />
+
     <Route path="/404" element={<Layout />}>
       <Route index element={<NotFoundPage />} />
     </Route>
     <Route path="/" element={<Layout />}>
       <Route index element={<LandingPage />} />
+    </Route>
+    <Route path="/contacto" element={<Layout />}>
+      <Route index element={<InfoProtePage />} />
+    </Route>
+    <Route path="/info-adopcion" element={<Layout />}>
+      <Route index element={<InfoAdopcionPage />} />
     </Route>
     <Route path="*" element={<Navigate to="/404" />} />
   </Routes>

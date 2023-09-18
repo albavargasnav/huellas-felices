@@ -24,7 +24,7 @@ const Navbar = () => {
             <a href="/adverts">Adopción</a>
           </li>
           <li>
-            <a href="/">Contacto</a>
+            <a href="/contacto">Contacto</a>
           </li>
         </ul>
       </div>
