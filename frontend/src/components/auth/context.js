@@ -4,6 +4,7 @@ import client from '../../api/client';
 
 const AuthContext = createContext();
 
+
 export const useAuth = () => {
   const authValue = useContext(AuthContext);
   return authValue;

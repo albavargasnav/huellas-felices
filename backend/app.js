@@ -73,6 +73,7 @@ app.use('/api/anuncios_publicos', require('./routes/api/anuncios_publicos'))
 app.use('/api/login', require('./routes/api/login'))
 app.use('/api/usuarios', require('./routes/api/usuarios'))
 app.use('/api/formulario_adopcion', require('./routes/api/formulario_adopcion'))
+app.use('/api/checkEmailRegistered', require('./routes/api/recovery_password'))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

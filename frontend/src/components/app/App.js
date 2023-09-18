@@ -8,6 +8,9 @@ import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
+
+import RecoveryPasswordPage from "../auth/RecoveryPasswordPage/RecoveryPasswordPage";
+
 function App() {
   return (
     <Routes>
@@ -21,6 +24,7 @@ function App() {
     </Route>
     <Route path="/users" element={<RequireAuth> <Layout /></RequireAuth>}>
       <Route path=":userId" element={<UserPage />} />
+      <Route path="name/:name" element={<UserPage />} />
     </Route>
       <Route path="/login" element={<Layout />}>
         <Route index element={<LoginPage />} />
@@ -28,6 +32,8 @@ function App() {
       <Route path="/register" element={<Layout />}>
         <Route index element={<RegistrationPage />} />
       </Route>
+    <Route path="/recoverypassword" element={<RecoveryPasswordPage />} />
+
     <Route path="/404" element={<Layout />}>
       <Route index element={<NotFoundPage />} />
     </Route>
