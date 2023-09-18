@@ -1,6 +1,7 @@
 import React from "react";
 import T from "prop-types";
 
+
 import { ConfirmationButton } from "../../common";
 import AdoptaButton from "../../common/AdoptaButton"; // Asegúrate de proporcionar la ruta correcta
 import placeholder from "../../../assets/images/placeholder.png";
@@ -20,6 +21,7 @@ function AdvertDetail({
   onDelete,
   isLoading,
 }) {
+
   const fecha = new Date(edad);
   return (
     <div className="contenedor-detalle">
@@ -40,6 +42,7 @@ function AdvertDetail({
           )}
         </h3>
       </div>
+
       <div className="contenedor-datos">
         <h3 className="enunciado"> Datos de nuestro bichote</h3>
         <p>
@@ -70,6 +73,11 @@ function AdvertDetail({
           <b>Descripción: </b>
           {descripcion}
         </p>
+
+        <UserPageLink 
+          usuarioName={usuarioName}
+        />
+
         <ConfirmationButton
           confirmation="¿Estás seguro/a?"
           onConfirm={onDelete}

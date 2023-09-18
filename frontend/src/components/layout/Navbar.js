@@ -2,6 +2,8 @@ import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import AuthButton from "../../components/auth/AuthButton/AuthButton";
+import UserPageLink from "../users/UserPageLink/UserPageLink";
+
 
 const Navbar = () => {
   return (
@@ -19,13 +21,17 @@ const Navbar = () => {
       </div>
       <div className="right-section">
         <ul className="nav-links">
-          <AuthButton />
           <li>
             <a href="/adverts">Adopción</a>
           </li>
           <li>
             <a href="/contacto">Contacto</a>
           </li>
+          <Link to="/adverts/new">
+              Nuevo anuncio
+          </Link>
+          <UserPageLink />
+          <AuthButton />
         </ul>
       </div>
     </nav>
