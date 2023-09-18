@@ -1,6 +1,7 @@
 
 .AdvertsForm{
     display: inline-block;
+    position: relative;
     justify-content: space-between;
     margin: 10px; 
     width: calc(30% - 20px); /* 25% del ancho del contenedor, con un margen de 20px entre elementos */
