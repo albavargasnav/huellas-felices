@@ -53,9 +53,6 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
         <button onClick={handleResetClick}>Mostrar Todos</button>
       </div>
     </form>
-    <Link to="/adverts/new">
-        New advert
-    </Link>
     </>
   );
 }

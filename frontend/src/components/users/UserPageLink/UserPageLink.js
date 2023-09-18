@@ -3,19 +3,22 @@ import jwtDecode from 'jwt-decode'
 import { getAuthorizationHeader } from '../../../api/client';
 import '../../layout/Navbar.css';
 
-const UserPageLink = () => {
+const UserPageLink = ({usuarioName, ...props}) => {
     
     const { isLogged } = useAuth();
     let ruta = ''
+    let rutaName = ''
     if (isLogged) {
         const jwt = getAuthorizationHeader();
         const payload = jwtDecode(jwt);
         ruta = '/users/'+payload._id;
+        rutaName = '/users/name/' + usuarioName
+        
     }
     
     return isLogged ? (
     <>
-        <a href={ruta}>Mi Perfil</a>
+    {usuarioName ? <p><b>Publicado por: </b><a href={rutaName}>{usuarioName}</a></p> : <a href={ruta}>Mi Perfil</a>}
     </>
     ) : '';
 };

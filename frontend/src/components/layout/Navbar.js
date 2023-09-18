@@ -27,6 +27,9 @@ const Navbar = () => {
           <li>
             <a href="/contacto">Contacto</a>
           </li>
+          <Link to="/adverts/new">
+              Nuevo anuncio
+          </Link>
           <UserPageLink />
           <AuthButton />
         </ul>
