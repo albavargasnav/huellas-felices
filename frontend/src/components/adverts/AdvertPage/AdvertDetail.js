@@ -1,11 +1,11 @@
 import React from "react";
 import T from "prop-types";
 
-
 import { ConfirmationButton } from "../../common";
 import AdoptaButton from "../../common/AdoptaButton"; // Asegúrate de proporcionar la ruta correcta
 import placeholder from "../../../assets/images/placeholder.png";
 import { advert } from "../propTypes";
+import UserPageLink from "../../users/UserPageLink/UserPageLink";
 const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}`;
 
 function AdvertDetail({
@@ -74,9 +74,10 @@ function AdvertDetail({
           {descripcion}
         </p>
 
-        <UserPageLink 
+        {/* <UserPageLink 
           usuarioName={usuarioName}
-        />
+        /> */}
+        
 
         <ConfirmationButton
           confirmation="¿Estás seguro/a?"
