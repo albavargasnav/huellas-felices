@@ -6,6 +6,7 @@ const router = express.Router()
 const { Anuncio, Usuario } = require('../../models')
 const ObjectId = mongodb.ObjectId
 
+// http://127.0.0.1:3000/api/anuncios?usuarioName={nombreUsuario}
 router.get('/', async (req, res, next) => {
   try {
     // filtros
@@ -15,6 +16,7 @@ router.get('/', async (req, res, next) => {
     const filterByPerro = req.query.perro
     const filterBySexo = req.query.sexo
     const filterBySize = req.query.size
+    const filterByUsuarioName = req.query.usuarioName
 
     // paginación
     const start = parseInt(req.query.start) || 0
@@ -43,6 +45,10 @@ router.get('/', async (req, res, next) => {
     }
     if (filterBySize) {
       filtro.size = filterBySize
+    }
+    if (filterByUsuarioName) {
+      const input = req.query.usuarioName // La cadena que estás buscando
+      filtro.usuarioName = new RegExp(`^${input}$`, 'i')
     }
     const anuncios = await Anuncio.lista(filtro, start, limit, sort, fields)
     res.locals.anuncios = anuncios
@@ -110,12 +116,4 @@ router.delete('/:anuncioId', (req, res, next) => {
   }).catch(err => { err.status = 404; err.message = 'Anuncio no encontrado'; next(err) })
 })
 
-// Ruta protegida
-router.post('/ruta_protegida', async (req, res) => {
-  // El usuario autenticado está disponible en req.user
-  const usuario = req.userId
-  const user = await Usuario.find({ _id: ObjectId(usuario) })
-  const nombre = user[0].name
-  res.json(nombre)
-})
 module.exports = router
