@@ -13,10 +13,9 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
     handleSubmit,
     validate,
   } = useForm({
-    email: '',
-    password: '',
+    //password: '',
   });
-  const { email, password } = credentials;
+  //const { password } = credentials;
 
   return (
     <div className='row'>
@@ -26,12 +25,12 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
           <div className='login-form-text'>
             <span className='login-form-text-info'>Nueva Contraseña</span>
           </div>
-          <input className='login-form-text-area'
+          {/* <input className='login-form-text-area'
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
-          />
+          /> */}
           <button className='login-form-button'>
             Enviar enlace
           </button>
