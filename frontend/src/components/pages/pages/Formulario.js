@@ -54,6 +54,7 @@ function Formulario() {
   };
 
   return (
+    <div className="fondo-formulario"> 
     <form onSubmit={handleSubmit} className="formulario">
       <div className="name">
         <div className="Name">
@@ -107,8 +108,8 @@ function Formulario() {
         </div>
       </div>
 
-      <div className="additional-info">
-        <div className="campo">
+      <div className="direccion">
+        <div className="codigoPostal">
           <label htmlFor="codigoPostal">Código Postal</label>
           <input
             type="text"
@@ -118,7 +119,7 @@ function Formulario() {
             onChange={handleChange}
           />
         </div>
-        <div className="campo">
+        <div className="provincia">
           <label htmlFor="provincia">Provincia</label>
           <input
             type="text"
@@ -128,6 +129,8 @@ function Formulario() {
             onChange={handleChange}
           />
         </div>
+
+        
         <div className="info">
           <div className="Email">
             <label htmlFor="email">Email</label>
@@ -154,7 +157,7 @@ function Formulario() {
           </div>
         </div>
 
-        <div className="campo">
+        <div className="estadoCivil">
           <label htmlFor="estadoCivil">Estado Civil</label>
           <select
             id="estadoCivil"
@@ -169,7 +172,7 @@ function Formulario() {
           </select>
         </div>
 
-        <div className="campo">
+        <div className="vivienda">
           <label htmlFor="tipoVivienda">Tipo de Vivienda</label>
           <select
             id="tipoVivienda"
@@ -185,7 +188,7 @@ function Formulario() {
           </select>
         </div>
 
-        <div className="campo">
+        <div className="motivo">
           <label htmlFor="motivoAdopcion">
             ¿Por qué crees que eres un buen candidato para adoptar?
           </label>
@@ -194,12 +197,15 @@ function Formulario() {
             name="motivoAdopcion"
             value={formData.motivoAdopcion}
             onChange={handleChange}
+            placeholder="Indica nombre y especie que desea adoptar"
           />
         </div>
-      </div>
+        </div>
+     
       <button type="submit">Enviar</button>
     </form>
-  );
+    </div>
+  ); 
 }
 
 export default Formulario;
