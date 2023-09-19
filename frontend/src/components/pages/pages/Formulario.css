@@ -1,3 +1,10 @@
+.fondo-formulario {
+  background-image: url('../../../assets/images/Purple-lavender-flowers.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .formulario {
   width: 100%;
   max-width: 500px;
@@ -5,7 +12,6 @@
   background: white;
   border-radius: 10px;
   margin-top: 30px;
-  margin-bottom: 60px;
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -26,11 +32,14 @@
 .info {
   display: flex;
   gap: 40px; 
-  margin-right: 20px;
+  margin-right: 0px;
 }
 .dni-date {
   display: flex;
   gap: 40px; 
+  margin-right: 20px;
+}
+.direccion {
   margin-right: 20px;
 }
 
@@ -60,17 +69,6 @@
   transition: all 0.4s;
 }
 
-.formulario::before {
-  content: "";
-  background-image: url('../../../assets/images/Purple-lavender-flowers.jpg');
-  opacity: 0.3;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  border-radius: 10px;
-  transform: translateY(10px); 
-}
+
+
 
