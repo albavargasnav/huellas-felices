@@ -19,13 +19,11 @@ exports.verificarEmailRegistrado = async (req, res, next) => {
       return;
     }
     
-    //console.log('Email verificado:', res.locals.usuario);
     res.locals.usuario = usuario
-    //res.status(200).json({ statusCode: '200', message: 'Correo electrónico registrado' })
 
     // Genera un token JWT con el _id del usuario
     const token = jwt.sign({ _id: usuario._id }, process.env.JWT_SECRET, {
-      expiresIn: '2d' // Puedes ajustar la duración del token según tus necesidades
+      expiresIn: '2d'
     });
 
     const enlaceToken = `${process.env.BACK_APP_API_BASE_URL}generatepassword?token=${token}`;
@@ -34,12 +32,10 @@ exports.verificarEmailRegistrado = async (req, res, next) => {
     }
     console.log(enlaceToken);
 
-    //await sendEmailToken(usuario.email, token);
     await sendEmailToken(usuario.email, enlaceToken);
 
     res.status(201).json({jwt: token})
     
-    //console.log('Email verificado:', res.locals.usuario);
   } catch (err) {
     next(err);
   }
