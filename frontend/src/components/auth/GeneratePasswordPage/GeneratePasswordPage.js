@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { verificationEmail } from '../service';
+import { verificationToken } from '../service';
 import useMutation from '../../../hooks/useMutation';
 
 import GeneratePasswordForm from './GeneratePasswordForm';
@@ -8,13 +8,13 @@ import GeneratePasswordForm from './GeneratePasswordForm';
 function GeneratePasswordPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { isLoading, error, execute, resetError } = useMutation(verificationEmail);
+  const { isLoading, error, execute, resetError } = useMutation(verificationToken);
 
-  const handleSubmit = credentials => {
-    execute(credentials)
+  const handleSubmit = token => {
+    execute(token)
       .then(() => {
-        const from = location.state?.from?.pathname || '/login';
-        navigate(from);
+        //const from = location.state?.from?.pathname || '/login';
+        //navigate(from);
       });
   };
 
