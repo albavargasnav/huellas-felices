@@ -4,9 +4,14 @@ import T from 'prop-types';
 import { ConfirmationButton } from '../../common';
 import placeholder from '../../../assets/images/placeholder.png';
 import { advert } from '../propTypes';
-const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}`;
+import UserPageLink from '../../users/UserPageLink/UserPageLink';
 
-function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, descripcion, onDelete, isLoading }) {
+let fotoUrl = `${process.env.REACT_APP_API_BASE_URL}`;
+if (process.env.NODE_ENV === 'production') {
+  fotoUrl = `${process.env.REACT_APP_API_BASE_URL_PROD}`
+}
+
+function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, usuarioName, descripcion, onDelete, isLoading }) {
   const fecha = new Date(edad);
   return (
     <div className="contenedor-detalle">
@@ -29,12 +34,15 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
         <p><b>Sexo: </b>{sexo ? 'macho' : 'hembra'}</p>
         <p><b>Especie: </b>{perro ? 'perro' : 'gato'}</p>
         <p><b>Descripción: </b>{descripcion}</p>
+        <UserPageLink 
+          usuarioName={usuarioName}
+        />
         <ConfirmationButton
           confirmation="¿Estás seguro/a?"
           onConfirm={onDelete}
           disabled={isLoading}
         >
-          Delete
+          Eliminar
         </ConfirmationButton>
       </div>
     </div>

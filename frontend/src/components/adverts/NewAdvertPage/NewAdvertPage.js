@@ -10,9 +10,9 @@ function NewAdvertPage() {
   const { execute, isLoading } = useMutation(createAdvert);
 
   const handleSubmit = newAdvert => {
-    execute(newAdvert).then(({ id }) => navigate(`/adverts/${id}`));
+    execute(newAdvert).then(({ _id }) => navigate(`/adverts/${_id}`));
   };
-
+  
   return <NewAdvertForm onSubmit={handleSubmit} isLoading={isLoading} />;
 }
 

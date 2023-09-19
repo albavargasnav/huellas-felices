@@ -47,6 +47,7 @@ function AdvertsPage() {
           defaultFilters={defaultFilters}
           onFilter={setFilters}
         />
+        
       )}
       {filteredAdverts.length ? (
         <>

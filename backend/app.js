@@ -49,7 +49,7 @@ app.use(session({
 
 // Configuracion de Cors para permitir solicitudes desde React
 app.use(cors({
-  origin: ['http://localhost:3001', 'http://34.239.130.54/'],
+  origin: ['http://localhost:3001', 'http://3.89.92.231'],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }))
 
@@ -72,6 +72,7 @@ app.use('/api/anuncios', jwtAuth(), require('./routes/api/anuncios'))
 app.use('/api/anuncios_publicos', require('./routes/api/anuncios_publicos'))
 app.use('/api/login', require('./routes/api/login'))
 app.use('/api/usuarios', require('./routes/api/usuarios'))
+app.use('/api/formulario_adopcion', require('./routes/api/formulario_adopcion'))
 app.use('/api/checkEmailRegistered', require('./routes/api/recovery_password'))
 app.use('/api/generar_token', require('./routes/api/recovery_password'))
 

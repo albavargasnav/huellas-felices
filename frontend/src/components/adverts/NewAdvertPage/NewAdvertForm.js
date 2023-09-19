@@ -1,43 +1,73 @@
 import T from 'prop-types';
+import React from 'react';
 
 import useForm from '../../../hooks/useForm';
-import { InputFile } from '../../common';
-import SelectTags from '../SelectTags';
+import { InputFile, RadioGroup} from '../../common';
+import PhotoUploader from '../../common/PhotoUploader';
 
-const validName = ({ name }) => name;
-const validPrice = ({ price }) =>
-  !Number.isNaN(price) && Number.isFinite(price) && price >= 0;
-const validTags = ({ tags }) => !!tags.length;
+const validName = ({ nombre }) => nombre;
+const validRaza = ({ raza }) => raza;
+const validEdad = ({ edad }) => edad;
+
+
+const sexoFilter = {
+  macho: { value: "true", label: 'Macho' },
+  hembra: { value: "false", label: 'Hembra' },
+};
+const perroFilter = {
+  perro: { value: 'true', label: 'Perro' },
+  gato: { value: 'false', label: 'Gato' },
+};
+const sizeFilter = {
+  pequeño: { value: 'Pequeño', label: 'Pequeño' },
+  mediano: { value: 'Mediano', label: 'Mediano' },
+  grande: { value: 'Grande', label: 'Grande' }
+};
 
 function NewAdvertForm({ onSubmit, isLoading }) {
+  
   const {
     formValue: advert,
     handleChange,
     handleSubmit,
     validate,
   } = useForm({
-    name: '',
-    sale: true,
-    price: 0,
-    tags: [],
-    photo: null,
+    nombre: '',
+    raza: '',
+    edad: new Date(),
+    size: sizeFilter.pequeño.value,
+    sexo: sexoFilter.macho.value,
+    perro: perroFilter.perro.value
   });
-  const { name, sale, price, tags } = advert;
-
+  const { nombre, raza, edad,  size, sexo, perro, descripcion} = advert;  
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input name="name" value={name} onChange={handleChange} />
-      <input
-        type="checkbox"
-        name="sale"
-        checked={sale}
-        onChange={handleChange}
-      />
-      <input type="number" name="price" value={price} onChange={handleChange} />
-      <SelectTags name="tags" value={tags} onChange={handleChange} />
-      <InputFile name="photo" onChange={handleChange} />
+      <input name="nombre" value={nombre} onChange={handleChange} />
+      <input name="raza" value={raza} onChange={handleChange} />
+      <input type="date" name="edad" value={edad} onChange={handleChange}/>
+      {<RadioGroup
+              options={Object.values(perroFilter)}
+              name="perro"
+              value={perro}
+              onChange={handleChange} />}
+      {<RadioGroup
+              options={Object.values(sexoFilter)}
+              name="sexo"
+              value={sexo}
+              onChange={handleChange} />}
+      {<RadioGroup
+              options={Object.values(sizeFilter)}
+              name="size"
+              value={size}
+              onChange={handleChange} />}
+      <div>
+      <label for="descripcion">Introduce un texto:</label>
+      <br></br>
+      <textarea rows="10" cols="40" name="descripcion" id="descripcion" maxlenght="180" value={descripcion} onChange={handleChange} ></textarea>
+      </div>
+      <PhotoUploader onImageSelect={handleChange} />
       <button
-        disabled={!validate(validName, validPrice, validTags, () => !isLoading)}
+        disabled={!validate(validName, validRaza, validEdad, () => !isLoading)}
       >
         Save
       </button>

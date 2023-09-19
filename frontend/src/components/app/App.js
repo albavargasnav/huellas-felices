@@ -8,6 +8,7 @@ import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
+import Formulario from "../pages/pages/Formulario";
 import RecoveryPasswordPage from "../auth/RecoveryPasswordPage/RecoveryPasswordPage";
 import GeneratePasswordPage from "../auth/GeneratePasswordPage/GeneratePasswordPage";
 
@@ -18,12 +19,12 @@ function App() {
       <Route index element={<AdvertsPage />} />
       <Route path="new" element={<NewAdvertPage /> } />
       <Route path=":advertId" element={<RequireAuth> <AdvertPage /></RequireAuth>}></Route>
-      <Route path=":advertId" element={<AdvertPage />} />
       <Route path="info-prote" element={<InfoProtePage />} />
       <Route path="info-adopcion" element={<InfoAdopcionPage />} />
     </Route>
     <Route path="/users" element={<RequireAuth> <Layout /></RequireAuth>}>
       <Route path=":userId" element={<UserPage />} />
+      <Route path="name/:name" element={<UserPage />} />
     </Route>
       <Route path="/login" element={<Layout />}>
         <Route index element={<LoginPage />} />
@@ -48,6 +49,9 @@ function App() {
     </Route>
     <Route path="/info-adopcion" element={<Layout />}>
       <Route index element={<InfoAdopcionPage />} />
+    </Route>
+    <Route path="/formulario-adopcion" element={<RequireAuth> <Layout /></RequireAuth>}>
+      <Route index element={<Formulario />} />
     </Route>
     <Route path="*" element={<Navigate to="/404" />} />
   </Routes>

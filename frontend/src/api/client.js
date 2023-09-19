@@ -15,6 +15,7 @@ const setAuthorizationHeader = token => {
   client.defaults.headers.common['Authorization'] = `${token}`;
 };
 
+
 const removeAuthorizationHeader = () => {
   delete client.defaults.headers.common['Authorization'];
 };
@@ -42,6 +43,10 @@ export const configureClient = ({ jwt }) => {
 
 export const resetClient = () => {
   removeAuthorizationHeader();
+};
+
+export const getAuthorizationHeader = () => {
+  return client.defaults.headers.common['Authorization'];
 };
 
 export default client;

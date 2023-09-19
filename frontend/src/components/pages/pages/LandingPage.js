@@ -1,8 +1,8 @@
 import "./LandingPage.css";
 import fotoFondo from "../../../assets/images/foto_fondo_recortadajpg.jpg";
-import fotoDiagrama from "../../../assets/images/Diagrama_proceso_de_adopcion.png";
 import fotoInfo from "../../../assets/images/foto-perro-info-protectora.jpg";
-import { ButtonLadingPage, MasInfoButton } from "../../common";
+import { MasInfoButton } from "../../common";
+
 
 function LandingPage() {
   return (
@@ -43,6 +43,7 @@ function LandingPage() {
           <MasInfoButton />
         </div>
       </div>
+
     </>
   );
 }
