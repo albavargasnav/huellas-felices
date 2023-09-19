@@ -2,7 +2,7 @@
 const express = require('express')
 const upload = require('../../lib/multerConfig')
 const router = express.Router()
-const { Anuncio, Usuario } = require('../../models')
+const { Anuncio } = require('../../models')
 
 router.get('/', async (req, res, next) => {
   try {
@@ -13,6 +13,7 @@ router.get('/', async (req, res, next) => {
     const filterByPerro = req.query.perro
     const filterBySexo = req.query.sexo
     const filterBySize = req.query.size
+    const filterByUser = req.query.usuarioName
 
     // paginación
     const start = parseInt(req.query.start) || 0
@@ -42,6 +43,9 @@ router.get('/', async (req, res, next) => {
     if (filterBySize) {
       filtro.size = filterBySize
     }
+    if (filterByUser) {
+      filtro.usuarioName = new RegExp(`^${req.query.usuarioName}$`)
+    }
     const anuncios = await Anuncio.lista(filtro, start, limit, sort, fields)
     res.locals.anuncios = anuncios
     res.json(anuncios)
@@ -53,16 +57,11 @@ router.get('/', async (req, res, next) => {
 router.post('/', upload.single('foto'), async (req, res, next) => {
   try {
     const {nombre, edad, raza, sexo, size, perro, descripcion} = req.body
-    console.log('aqui ')
     let foto = ''
     if (req.file) {
       foto = req.file.filename // Obtenemos el nombre de la imagen si se envió
     }
     // El usuario autenticado está disponible en req.user
-    const email = req.userEmail
-    const user = await Usuario.findOne({ email: email })
-    const usuarioName = user.name
-    console.log(usuarioName)
     const newAnuncio = new Anuncio({
       nombre: nombre,
       edad: edad,
@@ -74,7 +73,7 @@ router.post('/', upload.single('foto'), async (req, res, next) => {
       perro: perro,
       descripcion: descripcion,
       creacion: new Date(),
-      usuarioName: usuarioName
+      usuarioName: req.user.name
     })
 
     await newAnuncio.save()
@@ -99,8 +98,7 @@ router.delete('/:anuncioId', (req, res, next) => {
 // Ruta protegida
 router.post('/ruta_protegida', async (req, res) => {
   // El usuario autenticado está disponible en req.user
-  const email = req.userEmail
-  const usuario = await Usuario.findOne({ email: email })
-  res.json(usuario.name)
+  const email = req.user
+  res.json(email)
 })
 module.exports = router

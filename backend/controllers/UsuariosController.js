@@ -37,7 +37,6 @@ exports.crearUsuario = async (req, res, next) => {
 exports.obtenerUsuario = async (req, res, next) => {
   try {
     const usuarioId = req.params.usuarioId
-    console.log(usuarioId)
     let response = await Usuario.findById(usuarioId)
     response.password = ''
     res.status(200).json(response)

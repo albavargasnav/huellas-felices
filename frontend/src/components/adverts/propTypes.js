@@ -8,5 +8,6 @@ export const advert = {
   raza: T.string.isRequired,
   sexo: T.bool.isRequired,
   size: T.arrayOf(T.string.isRequired).isRequired,
-  descripcion: T.string
+  descripcion: T.string,
+  usuarioName: T.string.isRequired
 };
