@@ -18,10 +18,7 @@ function LandingPage() {
             brillar los corazones de peludos de cuatro patas. En Huellas
             Felices, nuestra pasión es crear vínculos duraderos entre humanos
             amorosos y adorables compañeros caninos y felinos en busca de un
-            hogar. La protectora huellas felices es una entidad sin ánimo de
-            lucro que se fundó en Madrid (España) en 1992, como respuesta al
-            elevado número de animales que son abandonados y maltratados en
-            nuestro país. Durante el año 2022 fueron recogidos 104.688 animales.
+            hogar. 
           </p>
         </div>
       </section>
