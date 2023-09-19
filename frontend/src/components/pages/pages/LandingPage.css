@@ -1,68 +1,43 @@
 .contenedor-img-header {
-  max-width: 100%;
   position: relative;
-}
-.foto-fondo {
-  max-width: 100%;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  height: 80vh; 
+  overflow: hidden; /* Evita que el contenido se superponga con la imagen de fondo */
+  margin-bottom: 5%;
 }
 
-.titulo-huellas-felices {
-  margin-left: 20px;
-  text-align: center;
+.foto-fondo {
+  width: 100%; 
+  height: auto; 
+  margin: 0; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Enviamos la imagen al fondo */
 }
 
 .header-img-texto {
-  position: absolute;
-  top: 8px;
-  left: 16px;
+  position: relative;
+  transform: translate(-50%, -50%); 
+  margin-left: 34%;
+  margin-top: 60px;
+}
+
+.titulo-huellas-felices {
+  text-align: justify;
+  font-size: 160%;
 }
 
 .texto-foto-fondo {
-  text-align: center;
-  font-size: large;
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+  text-align: justify;
+  font-size: 110%;
 }
 
-.titulo-proceso-de-adopcion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  color: rgb(86, 86, 86);
-  padding: 10px 20px;
-  margin-top: 20px;
-}
-
-.proceso-de-adopcion {
-  max-width: 80%;
-  margin: 20px auto;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.info-protectora {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.foto-diagrama {
-  max-width: 80%;
-  height: auto;
-  margin-right: 30px;
-}
 
 .contenedor {
   display: flex;
-  align-items: center;
+  align-items: center; 
+  height: 45vh; 
+  margin-bottom: 10%;
 }
 
 .imagen-foto-info {
@@ -71,11 +46,15 @@
 }
 
 .imagen-foto-info img {
-  max-width: 70%;
+  max-width: 70%; /* Cambiamos el valor a 100% */
+  height: auto; /* Añadimos esta línea */
   margin-left: 40px;
+  margin-top: 20px;
 }
 
+
 .texto-info {
+  font-size: 110%;
   flex: 2;
   padding: 10px;
   text-align: justify;

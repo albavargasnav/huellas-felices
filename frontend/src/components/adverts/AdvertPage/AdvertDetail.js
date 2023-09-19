@@ -34,6 +34,7 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
         <p><b>Sexo: </b>{sexo ? 'macho' : 'hembra'}</p>
         <p><b>Especie: </b>{perro ? 'perro' : 'gato'}</p>
         <p><b>Descripción: </b>{descripcion}</p>
+        
         <UserPageLink 
           usuarioName={usuarioName}
         />
