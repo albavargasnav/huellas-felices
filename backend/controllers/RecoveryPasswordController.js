@@ -3,6 +3,36 @@ const validator = require('validator');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 
+sendEmailToken = async (email, enlaceToken) => {
+
+  const config = {
+      host : 'smtp.gmail.com',
+      port : 587,
+      secure: false,
+      auth : {
+          user : 'huellasfelicesnoreply@gmail.com',
+          pass : 'sfur vwis jurz deez',
+      },
+      tls: {
+          rejectUnauthorized: false
+      }
+  }
+
+  const mensaje = {
+      from : 'huellasfelicesnoreply@gmail.com',
+      to : email,
+      subject : 'Correo de pruebas',
+      text : `Haga clic en el siguiente enlace para cambiar su contraseña:\n${enlaceToken}`,
+  }
+
+  const transport = nodemailer.createTransport(config);
+
+  const info = await transport.sendMail(mensaje);
+
+  console.log(info);
+
+}
+
 
 exports.verificarEmailRegistrado = async (req, res, next) => {
   try {
@@ -30,6 +60,8 @@ exports.verificarEmailRegistrado = async (req, res, next) => {
     if(process.env.NODE_ENV === 'production') {
       enlaceToken = `${process.env.BACK_APP_API_BASE_URL_PROD}generatepassword?token=${token}`;
     }
+
+    console.log(token);
     console.log(enlaceToken);
 
     await sendEmailToken(usuario.email, enlaceToken);
@@ -41,33 +73,7 @@ exports.verificarEmailRegistrado = async (req, res, next) => {
   }
 }
 
-sendEmailToken = async (email, enlaceToken) => {
 
-    const config = {
-        host : 'smtp.gmail.com',
-        port : 587,
-        secure: false,
-        auth : {
-            user : 'huellasfelicesnoreply@gmail.com',
-            pass : 'sfur vwis jurz deez',
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    }
 
-    const mensaje = {
-        from : 'huellasfelicesnoreply@gmail.com',
-        to : email,
-        subject : 'Correo de pruebas',
-        text : `Haga clic en el siguiente enlace para cambiar su contraseña:\n${enlaceToken}`,
-    }
 
-    const transport = nodemailer.createTransport(config);
-
-    const info = await transport.sendMail(mensaje);
-
-    console.log(info);
-
-}
 
