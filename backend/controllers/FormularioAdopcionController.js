@@ -1,27 +1,26 @@
 const FormularioAdopcion = require('../models/FormularioAdopcion')
 
-// Controlador para crear una nueva solicitud de adopcion
 exports.crearSolicitud = async (req, res, next) => {
   try {
     const {
-        nombre, apellidos, dni,
-        fechaNacimiento, codigoPostal, provincia,
-        email, movil, estadoCivil,
-        tipoVivienda, motivoAdopcion
+      nombre, apellidos, dni,
+      fechaNacimiento, codigoPostal, provincia,
+      email, movil, estadoCivil,
+      tipoVivienda, motivoAdopcion
     } = req.body
 
     const newSolicitud = new FormularioAdopcion({
-        nombre: nombre,
-        apellidos: apellidos,
-        dni: dni,
-        fechaNacimiento: fechaNacimiento,
-        codigoPostal: codigoPostal,
-        provincia: provincia,
-        email: email,
-        movil: movil,
-        estadoCivil: estadoCivil,
-        tipoVivienda: tipoVivienda,
-        motivoAdopcion: motivoAdopcion
+      nombre: nombre,
+      apellidos: apellidos,
+      dni: dni,
+      fechaNacimiento: fechaNacimiento,
+      codigoPostal: codigoPostal,
+      provincia: provincia,
+      email: email,
+      movil: movil,
+      estadoCivil: estadoCivil,
+      tipoVivienda: tipoVivienda,
+      motivoAdopcion: motivoAdopcion
     })
     await newSolicitud.save()
     res.status(201).json(newSolicitud)
@@ -30,8 +29,6 @@ exports.crearSolicitud = async (req, res, next) => {
   }
 }
 
-
-//Funcion a modificar cuando se decida si queremos ver los datos enviados del formulario
 exports.obtenerFormulario = async (req, res, next) => {
   try {
     const solicitudId = req.params.solicitudId
