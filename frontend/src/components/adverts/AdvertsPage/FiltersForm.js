@@ -51,15 +51,22 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
             {<SelectTags multiple name="size" value={size} onChange={handleChange} />}
           </div>
         </div>
-        {<input className='BuscadorUsuario' name="usuarioName" value={usuarioName} placeholder="Nombre de la raza" onChange={handleChange} />}
+        <div>
+          <legend>Buscar por usuario:</legend>
+        {<input className='BuscadorUsuario' name="usuarioName" value={usuarioName} onChange={handleChange} />}
+        </div>
+        
         <button type="submit">Buscar</button>
         <button onClick={handleResetClick}>Mostrar Todos</button>
       </div>
-    </form>
-    { isLogged &&
+      <div>
+      { isLogged &&
       (<Link to="/adverts/new">
-      <button className='BotonDetalle'>Crear Anuncio</button>
+      <button className='BotonCrear'>Crear Anuncio</button>
       </Link> )}
+      </div>
+    </form>
+    
     </>
   );
 }
