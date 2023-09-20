@@ -4,5 +4,4 @@ const GeneratePasswordController = require('../../controllers/GeneratePasswordCo
 
 router.put('/', GeneratePasswordController.verifyTokenPage);
 
-  
 module.exports = router

@@ -3,12 +3,11 @@ import React from 'react';
 
 import useForm from '../../../hooks/useForm';
 import { InputFile, RadioGroup} from '../../common';
-import PhotoUploader from '../../common/PhotoUploader';
 
 const validName = ({ nombre }) => nombre;
 const validRaza = ({ raza }) => raza;
 const validEdad = ({ edad }) => edad;
-
+const ValidPhoto = ({ foto }) => foto;
 
 const sexoFilter = {
   macho: { value: "true", label: 'Macho' },
@@ -25,7 +24,6 @@ const sizeFilter = {
 };
 
 function NewAdvertForm({ onSubmit, isLoading }) {
-  
   const {
     formValue: advert,
     handleChange,
@@ -34,10 +32,11 @@ function NewAdvertForm({ onSubmit, isLoading }) {
   } = useForm({
     nombre: '',
     raza: '',
-    edad: new Date(),
+    edad: '',
     size: sizeFilter.pequeño.value,
     sexo: sexoFilter.macho.value,
-    perro: perroFilter.perro.value
+    perro: perroFilter.perro.value,
+    foto: null
   });
   const { nombre, raza, edad,  size, sexo, perro, descripcion} = advert;  
   return (
@@ -65,11 +64,11 @@ function NewAdvertForm({ onSubmit, isLoading }) {
       <br></br>
       <textarea rows="10" cols="40" name="descripcion" id="descripcion" maxlenght="180" value={descripcion} onChange={handleChange} ></textarea>
       </div>
-      <PhotoUploader onImageSelect={handleChange} />
+        <InputFile name="foto" onChange={handleChange} />
       <button
-        disabled={!validate(validName, validRaza, validEdad, () => !isLoading)}
+        disabled={!validate(validName, validRaza, validEdad, ValidPhoto, () => !isLoading)}
       >
-        Save
+        Crear Anuncio
       </button>
     </form>
   );

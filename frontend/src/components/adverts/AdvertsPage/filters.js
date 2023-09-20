@@ -14,6 +14,7 @@ export const defaultFilters = {
   sexo: sexoFilter.all.value,
   perro: perroFilter.all.value,
   size: [],
+  usuarioName: ''
 };
 
 const filterByRaza =
@@ -21,6 +22,13 @@ const filterByRaza =
   ({ raza }) => {
     const cleanFilter = filter.trim();
     return !cleanFilter || new RegExp(cleanFilter, 'gi').test(raza);
+  };
+
+const filterByUser =
+filter =>
+  ({ usuarioName }) => {
+    const cleanFilter = filter.trim();
+    return !cleanFilter || new RegExp(cleanFilter).test(usuarioName);
   };
 
 const filterByPerro =
@@ -47,10 +55,11 @@ const filterByTags =
 
 
 
-export const filterAdverts = (adverts, {perro, raza, sexo, size }) =>
+export const filterAdverts = (adverts, {perro, raza, sexo, size, usuarioName }) =>
   
   adverts
      .filter(filterByRaza(raza))
      .filter(filterByPerro(perro))
      .filter(filterBySexo(sexo))
      .filter(filterByTags(size))
+     .filter(filterByUser(usuarioName))

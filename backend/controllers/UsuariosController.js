@@ -1,13 +1,10 @@
 const Usuario = require('../models/Usuario')
 const validator = require('validator')
 
-// Controlador para crear un nuevo usuario
-
 exports.crearUsuario = async (req, res, next) => {
   try {
     const {name, email, password} = req.body
 
-    // Verificar si el correo electrónico es válido
     if (!validator.isEmail(req.body.email)) {
       return res.status(400).json({mensaje: 'Correo no válido'})
     }

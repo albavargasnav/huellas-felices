@@ -1,5 +1,5 @@
-const { Usuario } = require('../models');
-const jwt = require('jsonwebtoken');
+const { Usuario } = require('../models')
+const jwt = require('jsonwebtoken')
 
 // exports.verifyTokenPage = (req, res) => {
 //     const token = req.body.token || req.query.token || req.get('Authorization')
@@ -40,3 +40,4 @@ exports.verifyTokenPage = async (req, res) => {
   res.status(201).json({ result: 'Actualizado correctamente' })
     
 };
+
