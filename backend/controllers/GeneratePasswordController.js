@@ -21,17 +21,18 @@ const jwt = require('jsonwebtoken')
 
 
 exports.verifyTokenPage = async (req, res) => {
-  const token = req.body.token || req.query.token || req.get('Authorization');
+  //const token = req.body.token || req.query.token || req.get('Authorization');
 
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
-  const usuarioId = decoded.usuarioId;
+  //const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  const usuarioId = req.user;
+  //const name = req.user.name;
   let body = req.body
   if (body) {
     body.password = await Usuario.hashPassword(body.password)
   }
-  console.log(body)
 
-  await Usuario.findOneAndUpdate({name: usuarioId}, body, function (err, place) {
+  await Usuario.findOneAndUpdate({_id: usuarioId}, {password : body.password}, function (err, place) {
+    console.log(usuarioId)
     if (err) {
       res.status(500).json({ error: err })
     }

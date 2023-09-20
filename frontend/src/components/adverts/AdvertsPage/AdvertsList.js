@@ -7,7 +7,11 @@ import { useAuth } from '../../auth/context'
 import Popup from './Popup';
 import "./AdvertsList.css";
 import placeholder from '../../../assets/images/placeholder.png';
-const fotoUrl = `${process.env.REACT_APP_API_BASE_URL}/images/anuncios/`;
+
+let fotoUrl = `${process.env.REACT_APP_API_BASE_URL}/images/anuncios/`;
+if (process.env.NODE_ENV === 'production') {
+  fotoUrl = `${process.env.REACT_APP_API_BASE_URL_PROD}/images/anuncios/`
+}
 
 function Advert({ nombre, raza, size, foto, sexo, disponible, usuarioName}) {
   return (

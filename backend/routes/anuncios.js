@@ -3,7 +3,6 @@
 const router = require('express').Router()
 const { Anuncio } = require('../models')
 
-/* GET anuncios page. */
 router.get('/', async function (req, res, next) {
   try {
     const start = parseInt(req.query.start) || 0

@@ -12,7 +12,6 @@ const appendSuffix = (fileName, suffix) => {
   return fileName.substr(0, dotPos) + suffix + fileName.substr(dotPos)
 }
 
-// image: string with image path
 responder.on('createThumbnail', async req => {
   const srcImagePath = req.image
   const dstImagePath = appendSuffix(srcImagePath, '_thumbnail')
