@@ -4,8 +4,8 @@
     position: relative;
     justify-content: space-between;
     margin: 10px; 
-    width: calc(30% - 20px); /* 25% del ancho del contenedor, con un margen de 20px entre elementos */
-    box-sizing: border-box; /* Incluir margen en el ancho calculado */
+    width: calc(30% - 20px);
+    box-sizing: border-box;
     border-style: solid;
     border-color: #4b4a34;
     border-width: 5px;

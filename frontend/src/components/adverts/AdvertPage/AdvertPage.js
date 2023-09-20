@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import "./AdvertDetail.css";
 import AdvertDetail from './AdvertDetail';
 import { getAdvert, deleteAdvert } from '../service';
-import { getUserInfo, getUserInfoByName } from '../../users/service';
 
 function AdvertPage() {
   const params = useParams();
