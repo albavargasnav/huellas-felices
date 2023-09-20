@@ -60,9 +60,6 @@ exports.verificarEmailRegistrado = async (req, res, next) => {
       enlaceToken = `${process.env.BACK_APP_API_BASE_URL_PROD}generatepassword?token=${token}`
     }
 
-    console.log(token)
-    console.log(enlaceToken)
-
     await sendEmailToken(usuario.email, enlaceToken)
 
     res.status(201).json({jwt: token})

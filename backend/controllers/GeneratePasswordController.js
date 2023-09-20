@@ -9,7 +9,6 @@ exports.createNewUserPassword = async (req, res) => {
   }
 
   await Usuario.findOneAndUpdate({_id: usuarioId}, {password : body.password}, function (err, place) {
-    console.log(usuarioId)
     if (err) {
       res.status(500).json({ error: err })
     }
