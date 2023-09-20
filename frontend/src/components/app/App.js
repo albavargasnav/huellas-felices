@@ -32,8 +32,12 @@ function App() {
       <Route path="/register" element={<Layout />}>
         <Route index element={<RegistrationPage />} />
       </Route>
-    <Route path="/recoverypassword" element={<RecoveryPasswordPage />} />
-    <Route path="/generatepassword" element={<GeneratePasswordPage />} />
+      <Route path="/recoverypassword" element={<Layout />}>
+        <Route index element={<RecoveryPasswordPage />} />
+      </Route>
+      <Route path="/generatepassword" element={<Layout />}>
+        <Route index element={<GeneratePasswordPage />} />
+      </Route>
     
 
 
