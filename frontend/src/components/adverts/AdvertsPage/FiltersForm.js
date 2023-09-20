@@ -55,11 +55,11 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
         <button type="submit">Buscar</button>
         <button onClick={handleResetClick}>Mostrar Todos</button>
       </div>
-      { isLogged &&
+    </form>
+    { isLogged &&
       (<Link to="/adverts/new">
       <button className='BotonDetalle'>Crear Anuncio</button>
       </Link> )}
-    </form>
     </>
   );
 }
