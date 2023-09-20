@@ -6,7 +6,6 @@ const { Anuncio } = require('../../models')
 
 router.get('/', async (req, res, next) => {
   try {
-    // filtros
     const filterByName = req.query.nombre
     const filterByRaza = req.query.raza
     const filterByStock = req.query.disponible
@@ -14,12 +13,9 @@ router.get('/', async (req, res, next) => {
     const filterBySexo = req.query.sexo
     const filterBySize = req.query.size
 
-    // paginación
     const start = parseInt(req.query.start) || 0
-    const limit = parseInt(req.query.limit) || 1000 // nuestro api devuelve max 1000 registros
-    // ordenar
+    const limit = parseInt(req.query.limit) || 1000
     const sort = {creacion: -1}
-    // selección de campos
     const fields = req.query.fields
 
     const filtro = {}
