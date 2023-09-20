@@ -52,6 +52,7 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
             confirmation="¿Estás seguro/a?"
             onConfirm={onDelete}
             disabled={isLoading}
+            mostrar={payload.name === usuarioName}
           >
             Eliminar
           </ConfirmationButton>
