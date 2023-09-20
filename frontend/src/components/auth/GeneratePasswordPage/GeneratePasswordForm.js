@@ -5,8 +5,9 @@ import useForm from '../../../hooks/useForm';
 import '../LoginPage/LoginForm.css';
 
 import ErrorIcon from '../../../assets/images/icon-error.png'
+import IconVerified from '../../../assets/images/icon-verified.png'
 
-function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
+function GeneratePasswordForm({ onSubmit, isLoading, resetError, error, isEmailSent }) {
   const {
     formValue: credentials,
     handleChange,
@@ -35,9 +36,18 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
             Generar nueva contraseña
           </button>
 
+          {isEmailSent && (
+            <div class="form-successful-container">
+              <div className="confirmation-message">
+                <img src={IconVerified} alt="Error" style={{ marginRight: '20px', width: '20px', height: '20px' }} />
+                <p style={{ color: 'white', fontWeight: 'bold' }}>Se ha reestablecido la contraseña. Inicia sesión para volver a acceder a tu cuenta.</p>
+              </div>
+            </div>
+          )}
+
           {error && (
             <div class="form-error-container">
-              {isLoading && <p>Conectando a huellas felices...</p>}
+              {isLoading && <p>Accediendo a huellas felices...</p>}
               <div className="error-message">
                 <img src={ErrorIcon} alt="Error" style={{ marginRight: '5px', width: '20px', height: '20px' }} />
                 <div onClick={resetError} style={{ color: 'black', fontWeight: 'bold' }}>

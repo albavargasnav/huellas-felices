@@ -9,19 +9,18 @@ function GeneratePasswordPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isLoading, error, execute, resetError } = useMutation(verificationToken);
-
+  const [isEmailSent, setIsEmailSent] = useState(false);
 
   const handleSubmit = credentials => {
     execute(credentials)
       .then(() => {
-        //const from = location.state?.from?.pathname || '/login';
-        //navigate(from);
+        setIsEmailSent(true);
       });
   };
 
   return (
     <div>
-      <GeneratePasswordForm onSubmit={handleSubmit} isLoading={isLoading} resetError={resetError} error={error}/>
+      <GeneratePasswordForm onSubmit={handleSubmit} isLoading={isLoading} resetError={resetError} error={error} isEmailSent={isEmailSent}/>
     </div>
   );
 }
