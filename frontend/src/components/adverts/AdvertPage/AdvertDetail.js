@@ -5,6 +5,9 @@ import { ConfirmationButton } from '../../common';
 import placeholder from '../../../assets/images/placeholder.png';
 import { advert } from '../propTypes';
 import UserPageLink from '../../users/UserPageLink/UserPageLink';
+import AdoptaButton from "../../common/AdoptaButton"
+import jwtDecode from 'jwt-decode'
+import { getAuthorizationHeader } from '../../../api/client';
 
 let fotoUrl = `${process.env.REACT_APP_API_BASE_URL}`;
 if (process.env.NODE_ENV === 'production') {
@@ -13,6 +16,9 @@ if (process.env.NODE_ENV === 'production') {
 
 function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro, usuarioName, descripcion, onDelete, isLoading }) {
   const fecha = new Date(edad);
+  const jwt = getAuthorizationHeader();
+  const payload = jwtDecode(jwt);
+
   return (
     <div className="contenedor-detalle">
       <div className='contenedor-foto'>
@@ -31,19 +37,23 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
         <p><b>Fecha de nacimiento: </b>{String(fecha.getDate()).padStart(2, '0') + "/" + (fecha.getMonth() +1) + "/" + fecha.getFullYear()}</p>
         <p><b>Raza: </b>{raza}</p>
         <p><b>Tamaño: </b>{size}</p>
-        <p><b>Sexo: </b>{sexo ? 'macho' : 'hembra'}</p>
-        <p><b>Especie: </b>{perro ? 'perro' : 'gato'}</p>
+        <p><b>Sexo: </b>{sexo ? 'Macho' : 'Hembra'}</p>
+        <p><b>Especie: </b>{perro ? 'Perro' : 'Gato'}</p>
         <p><b>Descripción: </b>{descripcion}</p>
         <UserPageLink 
           usuarioName={usuarioName}
         />
+        
+      </div>
+      <div className='botonera'>
+        <AdoptaButton />
         <ConfirmationButton
-          confirmation="¿Estás seguro/a?"
-          onConfirm={onDelete}
-          disabled={isLoading}
-        >
-          Eliminar
-        </ConfirmationButton>
+            confirmation="¿Estás seguro/a?"
+            onConfirm={onDelete}
+            disabled={isLoading}
+          >
+            Eliminar
+          </ConfirmationButton>
       </div>
     </div>
   );

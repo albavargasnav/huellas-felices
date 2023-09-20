@@ -23,3 +23,9 @@
 .enunciado-rojo {
     color: #7F1734
 }
+.botonera {
+    display: flex;
+    margin-bottom: 12px;
+    justify-content: space-evenly;
+    flex-direction: row;
+}

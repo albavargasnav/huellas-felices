@@ -62,4 +62,13 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
+
+  .span-usuario {
+    font-weight: bold;
+    color: darkblue
+  }
+
+  .span-usuario:hover {
+    color: #00aced;
+  }
   

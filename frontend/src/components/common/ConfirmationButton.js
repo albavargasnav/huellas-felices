@@ -2,7 +2,7 @@ import { useState } from 'react';
 import T from 'prop-types';
 import "./ConfirmationButton.css";
 
-function ConfirmationButton({ confirmation, onConfirm, ...props }) {
+function ConfirmationButton({ confirmation, onConfirm, mostrar, ...props }) {
   const [confirmationVisible, setConfirmationVisible] = useState(false);
 
   const showConfirmation = () => setConfirmationVisible(true);
@@ -14,19 +14,20 @@ function ConfirmationButton({ confirmation, onConfirm, ...props }) {
     onConfirm();
   };
   const handleCancelClick = hideConfirmation;
-
-  return (
-    <>
-      <button className = "boton-confirmar" onClick={handleClick} {...props} />
-      {confirmationVisible && (
-        <div className='ventana-confirmacion'>
-          {confirmation}
-          <button onClick={handleConfirmClick}>Confirmar</button>
-          <button onClick={handleCancelClick}>Cancelar</button>
-        </div>
-      )}
-    </>
-  );
+  if (mostrar) {
+    return (
+      <>
+        <button className = "boton-confirmar" onClick={handleClick} {...props} />
+        {confirmationVisible && (
+          <div className='ventana-confirmacion'>
+            {confirmation}
+            <button onClick={handleConfirmClick}>Confirmar</button>
+            <button onClick={handleCancelClick}>Cancelar</button>
+          </div>
+        )}
+      </>
+    );
+  }
 }
 
 ConfirmationButton.propTypes = {
