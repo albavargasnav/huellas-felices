@@ -9,18 +9,23 @@ function RecoveryPasswordPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isLoading, error, execute, resetError } = useMutation(verificationEmail);
+  const [isEmailSent, setIsEmailSent] = useState(false);
 
   const handleSubmit = credentials => {
     execute(credentials)
       .then(() => {
-        const from = location.state?.from?.pathname || '/login';
-        navigate(from);
+        setIsEmailSent(true);
       });
   };
 
   return (
     <div>
-      <RecoveryForm onSubmit={handleSubmit} isLoading={isLoading} resetError={resetError} error={error}/>
+      <RecoveryForm onSubmit={handleSubmit} isLoading={isLoading} resetError={resetError} error={error} isEmailSent={isEmailSent}/>
+      {isEmailSent && (
+        <div className="confirmation-message">
+          <p>El correo electrónico se ha enviado con éxito.</p>
+        </div>
+      )}
     </div>
   );
 }
