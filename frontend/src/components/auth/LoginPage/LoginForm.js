@@ -16,10 +16,9 @@ function LoginForm({ onSubmit, isLoading, resetError, error }) {
   } = useForm({
     email: '',
     password: '',
-    remember: false,
+    remember: true,
   });
-  const { email, password, remember } = credentials;
-
+  const { email, password} = credentials;
   return (
     <div className='row'>
       <div className='form-container'>
@@ -38,15 +37,6 @@ function LoginForm({ onSubmit, isLoading, resetError, error }) {
             value={password}
             onChange={handleChange}
           />
-          <div class="checkbox-container">
-            <input className='checkbox-input'
-              type="checkbox"
-              name="remember"
-              checked={remember}
-              onChange={handleChange}
-            />
-            <label class="checkbox-label" for="remember">Recordar contraseña</label>
-          </div>
           <div className='login-form-register'> 
             <p>¿Eres un usuario nuevo?</p>
             <Link to="/register" className='registerBotton'>Empieza aquí</Link>

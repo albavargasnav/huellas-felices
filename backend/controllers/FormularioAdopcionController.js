@@ -1,5 +1,6 @@
-const FormularioAdopcion = require("../models/FormularioAdopcion");
-const nodemailer = require("nodemailer");
+/* eslint-disable no-undef */
+const FormularioAdopcion = require('../models/FormularioAdopcion')
+const nodemailer = require('nodemailer')
 
 // Controlador para crear una nueva solicitud de adopcion
 exports.crearSolicitud = async (req, res, next) => {
@@ -15,8 +16,8 @@ exports.crearSolicitud = async (req, res, next) => {
       movil,
       estadoCivil,
       tipoVivienda,
-      motivoAdopcion,
-    } = req.body;
+      motivoAdopcion
+    } = req.body
 
     const newSolicitud = new FormularioAdopcion({
       nombre: nombre,
@@ -29,52 +30,52 @@ exports.crearSolicitud = async (req, res, next) => {
       movil: movil,
       estadoCivil: estadoCivil,
       tipoVivienda: tipoVivienda,
-      motivoAdopcion: motivoAdopcion,
-    });
-    await newSolicitud.save();
-    res.status(201).json(newSolicitud);
-    await sendEmail(newSolicitud);
+      motivoAdopcion: motivoAdopcion
+    })
+    await newSolicitud.save()
+    res.status(201).json(newSolicitud)
+    await sendEmail(newSolicitud)
   } catch (err) {
-    res.status(400).json({ mensaje: "Ha habido un error" });
+    res.status(400).json({ mensaje: 'Ha habido un error' })
   }
-};
+}
 
 sendEmail = async (newSolicitud) => {
   const config = {
-    host: "smtp.gmail.com",
+    host: 'smtp.gmail.com',
     port: 587,
     secure: false,
     auth: {
-      user: "huellasfelicesnoreply@gmail.com",
-      pass: "sfur vwis jurz deez",
+      user: 'huellasfelicesnoreply@gmail.com',
+      pass: 'sfur vwis jurz deez'
     },
     tls: {
-      rejectUnauthorized: false,
-    },
-  };
+      rejectUnauthorized: false
+    }
+  }
 
   const mensaje = {
-    from: "huellasfelicesnoreply@gmail.com",
+    from: 'huellasfelicesnoreply@gmail.com',
     to: newSolicitud.email,
-    subject: "Nueva solicitud adopción",
-    text: `Nombre: ${newSolicitud.nombre} ${newSolicitud.apellidos}\nDireccion: ${newSolicitud.provincia} y codigo postal: ${newSolicitud.codigoPostal}\nEmail: ${newSolicitud.emial}\nMovil: ${newSolicitud.movil}\nAnimal y motivo de adopcion: ${newSolicitud.motivoAdopcion}`,
-  };
+    subject: 'Nueva solicitud adopción',
+    text: `Nombre: ${newSolicitud.nombre} ${newSolicitud.apellidos}\nDireccion: ${newSolicitud.provincia} y codigo postal: ${newSolicitud.codigoPostal}\nEmail: ${newSolicitud.emial}\nMovil: ${newSolicitud.movil}\nAnimal y motivo de adopcion: ${newSolicitud.motivoAdopcion}`
+  }
 
-  const transport = nodemailer.createTransport(config);
+  const transport = nodemailer.createTransport(config)
 
-  const info = await transport.sendMail(mensaje);
+  const info = await transport.sendMail(mensaje)
 
-  console.log(info);
-};
+  console.log(info)
+}
 
-//Funcion a modificar cuando se decida si queremos ver los datos enviados del formulario
+// Funcion a modificar cuando se decida si queremos ver los datos enviados del formulario
 exports.obtenerFormulario = async (req, res, next) => {
   try {
-    const solicitudId = req.params.solicitudId;
-    let response = await FormularioAdopcion.findById(solicitudId);
-    response.password = "";
-    res.status(200).json(response);
+    const solicitudId = req.params.solicitudId
+    let response = await FormularioAdopcion.findById(solicitudId)
+    response.password = ''
+    res.status(200).json(response)
   } catch (err) {
-    res.status(500).json({ error: "Hubo un error al obtener la solicitud." });
+    res.status(500).json({ error: 'Hubo un error al obtener la solicitud.' })
   }
-};
+}
