@@ -59,13 +59,14 @@ function AdvertsList({ adverts }) {
   const renderAdvert = ({_id, ...advert }) => (
     <li key={_id} className='AdvertsForm'>
       <Advert {...advert} />
-      <Link to={_id}> 
+      <a href={`/adverts/${_id}`} > 
       <button className='BotonDetalle'>Más Información</button>
-      </Link>
+      </a>
     </li>
   );
 
   const renderAdvertPublic = ({_id, ...advert }) => (
+    
     <li key={_id} className='AdvertsForm'>
       <Advert {...advert} />
       <ShowDetails/>
