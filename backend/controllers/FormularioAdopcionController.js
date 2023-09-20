@@ -1,40 +1,24 @@
-const FormularioAdopcion = require('../models/FormularioAdopcion')
+const Usuario = require('../models/Usuario')
 const nodemailer = require('nodemailer')
 
 exports.crearSolicitud = async (req, res, next) => {
-  try {
-    const {
-      nombre,
-      apellidos,
-      dni,
-      fechaNacimiento,
-      codigoPostal,
-      provincia,
-      email,
-      movil,
-      estadoCivil,
-      tipoVivienda,
-      motivoAdopcion
-    } = req.body
+  try { 
+    const responseCreador = await Usuario.find({ name: req.body.creador })
+    const datosUsuarioCreador = responseCreador[0]
 
-    const newSolicitud = new FormularioAdopcion({
-      nombre: nombre,
-      apellidos: apellidos,
-      dni: dni,
-      fechaNacimiento: fechaNacimiento,
-      codigoPostal: codigoPostal,
-      provincia: provincia,
-      email: email,
-      movil: movil,
-      estadoCivil: estadoCivil,
-      tipoVivienda: tipoVivienda,
-      motivoAdopcion: motivoAdopcion
-    })
-    await newSolicitud.save()
-    res.status(201).json(newSolicitud)
+    const datosUsuarioNavegante = await Usuario.findById(req.body.idNavegante)
+
+    const newSolicitud = {
+      mascota: req.body.mascota,
+      datosUsuarioCreador: datosUsuarioCreador,
+      datosUsuarioNavegante: datosUsuarioNavegante,
+      descMascota: req.body.descMascota
+    }
+
     await sendEmail(newSolicitud)
+    res.status(200).json({ mensaje: 'TODO OK' })
   } catch (err) {
-    res.status(400).json({ mensaje: 'Ha habido un error' })
+    res.status(400).json({ mensaje: err })
   }
 }
 
@@ -54,23 +38,12 @@ sendEmail = async (newSolicitud) => {
 
   const mensaje = {
     from: 'huellasfelicesnoreply@gmail.com',
-    to: newSolicitud.email,
+    to: 'mjserrano89@gmail.com',
     subject: 'Nueva solicitud adopción',
-    text: `Nombre: ${newSolicitud.nombre} ${newSolicitud.apellidos}\nDireccion: ${newSolicitud.provincia} y codigo postal: ${newSolicitud.codigoPostal}\nEmail: ${newSolicitud.emial}\nMovil: ${newSolicitud.movil}\nAnimal y motivo de adopcion: ${newSolicitud.motivoAdopcion}`
+    text: `Estimad@ ${newSolicitud.datosUsuarioCreador.name}, me pongo en contacto con usted porque me gustaría adoptar a ${newSolicitud.mascota}.\n Por favor, le ruego póngase en contacto conmigo por los siguientes canales:\nTeléfono: ${newSolicitud.datosUsuarioNavegante.telefono}\nEmail: ${newSolicitud.datosUsuarioNavegante.email}\n Quedo a la espera de su respuesta.\nUn Saludo.`
   }
 
   const transport = nodemailer.createTransport(config)
 
   const info = await transport.sendMail(mensaje)
-}
-
-exports.obtenerFormulario = async (req, res, next) => {
-  try {
-    const solicitudId = req.params.solicitudId
-    let response = await FormularioAdopcion.findById(solicitudId)
-    response.password = ''
-    res.status(200).json(response)
-  } catch (err) {
-    res.status(500).json({ error: 'Hubo un error al obtener la solicitud.' })
-  }
 }
