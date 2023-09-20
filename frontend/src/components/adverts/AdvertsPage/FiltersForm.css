@@ -29,12 +29,31 @@
     font-size: 16px;
     margin-bottom: 15px;
 }
+.buscador .BuscadorUsuario {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
 
-legend{
+.buscador legend{
     padding: 10px;
     background-color: #a58576;
     display: inline-block;    
 }
 .BuscadorOpciones{
     padding: 10px;
+}
+.BotonCrear{
+    padding: 5px 15px;
+    background-color: #4b4a34; /* Cambia el color de fondo según tus preferencias */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
 }
