@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import T from 'prop-types';
 
 import useForm from '../../../hooks/useForm';
-import './LoginForm.css';
+import '../LoginPage/LoginForm.css';
 
 import ErrorIcon from '../../../assets/images/icon-error.png'
 
