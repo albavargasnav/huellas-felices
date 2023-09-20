@@ -6,6 +6,8 @@ import './LoginForm.css';
 
 import ErrorIcon from '../../../assets/images/icon-error.png'
 
+const validPassword = ({ password }) => password;
+
 function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
   const {
     formValue: credentials,
@@ -15,7 +17,7 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
   } = useForm({
     //password: '',
   });
-  //const { password } = credentials;
+  const { password } = credentials;
 
   return (
     <div className='row'>
