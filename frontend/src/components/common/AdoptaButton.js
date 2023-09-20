@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "./AdoptaButton.css";
+import {useNavigate } from 'react-router-dom';
+import { createRequest } from "../../components/adverts/service"
 
-function AdoptaButton() {
+function AdoptaButton({creador, mascota, idNavegante, descMascota, ...props}) {
+  const navigate = useNavigate();
+  const goToController = () => {
+    createRequest({creador: creador, mascota: mascota, idNavegante: idNavegante, descMascota: descMascota})
+      .then(() => navigate("/adverts"))
+      .catch((error) => {
+        console.error(error);
+      });
+    };
+  
   return (
     <div className='adoptar-container'>
-      {/* Otro contenido de la página */}
-      <Link to="/formulario-adopcion">
-        <button className='boton-adoptar'>¡Adóptame!</button>
-      </Link>
+      <button onClick={goToController} className='boton-adoptar'>¡Adóptame!</button>
     </div>
   );
 }
