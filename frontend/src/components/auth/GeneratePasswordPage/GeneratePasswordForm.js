@@ -11,7 +11,6 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
     formValue: credentials,
     handleChange,
     handleSubmit,
-    validate,
   } = useForm({
     password: '',
   });
@@ -33,12 +32,12 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
             onChange={handleChange}
           />
           <button className='login-form-button'>
-            Enviar enlace
+            Generar nueva contraseña
           </button>
 
           {error && (
             <div class="form-error-container">
-              {isLoading && <p>Accediendo a Huellas felices...</p>}
+              {isLoading && <p>Conectando a huellas felices...</p>}
               <div className="error-message">
                 <img src={ErrorIcon} alt="Error" style={{ marginRight: '5px', width: '20px', height: '20px' }} />
                 <div onClick={resetError} style={{ color: 'black', fontWeight: 'bold' }}>

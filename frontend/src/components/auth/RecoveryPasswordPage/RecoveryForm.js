@@ -11,7 +11,6 @@ function RecoveryForm({ onSubmit, isLoading, resetError, error }) {
     formValue: credentials,
     handleChange,
     handleSubmit,
-    validate,
   } = useForm({
     email: '',
   });
@@ -47,7 +46,6 @@ function RecoveryForm({ onSubmit, isLoading, resetError, error }) {
               </div>
             </div>
           )}
-          
         </form>
       </div>
     </div>

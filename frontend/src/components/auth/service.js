@@ -17,22 +17,6 @@ export const verificationEmail = (email) => {
     })
 }
 
-// export const verificationToken = async (...credentials) => {
-// var urlActual = window.location.href;
-// console.log("URL actual: " + urlActual);
-// var parametros = new URLSearchParams(new URL(urlActual).search);
-// var token = parametros.get('token');
-// console.log(token);
-//   try {
-//     const credentials = { credentials }; 
-//     const response = await client.post('/verifytokenuser', credentials);
-//     console.log('Registro de usuario:', response);
-//   } catch (error) {
-//     console.error('Error en la solicitud:', error);
-//     return false; // Manejar errores
-//   }
-// };
-
 export const verificationToken = (credentials) => {
   var urlActual = window.location.href;
   var parametros = new URLSearchParams(new URL(urlActual).search);
@@ -44,7 +28,7 @@ export const verificationToken = (credentials) => {
     }
   })
 }
-    
+  
 
 export const login = ({ remember, ...credentials }) => {
   return client
