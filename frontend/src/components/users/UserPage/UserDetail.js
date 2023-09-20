@@ -27,7 +27,7 @@ function UserDetail({ name, password, direccion, telefono, documento, haTenidoMa
               <label>Nombre:</label>
               <input type="text" name="name" defaultValue={name} disabled={params.userId ? false : true }/>
             </div>
-            <div className='form-group'>
+            <div className='form-group' style={{display: params.userId ? 'block' : 'none' }}>
               <label>Documento:</label>
               <input type="text" name="documento" defaultValue={documento} disabled={params.userId ? false : true }/>
             </div>
@@ -39,15 +39,15 @@ function UserDetail({ name, password, direccion, telefono, documento, haTenidoMa
               <label>Repita Contraseña:</label>
               <input type="password" name="passwordRep" defaultValue={password} />
             </div>
-            <div className='form-group'>
+            <div className='form-group' style={{display: params.userId ? 'block' : 'none' }}>
               <label>Direccion:</label>
               <input type="text" name="direccion" defaultValue={direccion} disabled={params.userId ? false : true }/>
             </div>
-            <div className='form-group'>
+            <div className='form-group'style={{display: params.userId ? 'block' : 'none' }} >
               <label>Teléfono:</label>
               <input type="text" name="telefono" defaultValue={telefono} disabled={params.userId ? false : true }/>
             </div>
-            <div className='form-group'>
+            <div className='form-group' style={{display: params.userId ? 'block' : 'none' }}>
               <label>¿Ha tenido mascotas antes?</label>
               <input id="chk-mascotas" type="checkbox" name="haTenidoMascotas" 
               checked={checked}

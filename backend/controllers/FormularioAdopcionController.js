@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const FormularioAdopcion = require('../models/FormularioAdopcion')
 const nodemailer = require('nodemailer')
 
@@ -63,11 +62,8 @@ sendEmail = async (newSolicitud) => {
   const transport = nodemailer.createTransport(config)
 
   const info = await transport.sendMail(mensaje)
-
-  console.log(info)
 }
 
-// Funcion a modificar cuando se decida si queremos ver los datos enviados del formulario
 exports.obtenerFormulario = async (req, res, next) => {
   try {
     const solicitudId = req.params.solicitudId

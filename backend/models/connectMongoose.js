@@ -18,5 +18,4 @@ const connectionPromise = mongoose.connect(process.env.MONGODB_CONNSTR, {
   useCreateIndex: true
 })
 
-// exportamos la promesa de la conexión (https://mongoosejs.com/docs/connections.html)
 module.exports = connectionPromise

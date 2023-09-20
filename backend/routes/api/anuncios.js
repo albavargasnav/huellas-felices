@@ -6,7 +6,6 @@ const { Anuncio } = require('../../models')
 
 router.get('/', async (req, res, next) => {
   try {
-    // filtros
     const filterByName = req.query.nombre
     const filterByRaza = req.query.raza
     const filterByStock = req.query.disponible
@@ -15,12 +14,11 @@ router.get('/', async (req, res, next) => {
     const filterBySize = req.query.size
     const filterByUser = req.query.usuarioName
 
-    // paginación
     const start = parseInt(req.query.start) || 0
     const limit = parseInt(req.query.limit) || 1000 // nuestro api devuelve max 1000 registros
-    // ordenar
+
     const sort = {creacion: -1}
-    // selección de campos
+
     const fields = req.query.fields
 
     const filtro = {}
@@ -59,9 +57,8 @@ router.post('/', upload.single('foto'), async (req, res, next) => {
     const {nombre, edad, raza, sexo, size, perro, descripcion} = req.body
     let foto = ''
     if (req.file) {
-      foto = req.file.filename // Obtenemos el nombre de la imagen si se envió
+      foto = req.file.filename
     }
-    // El usuario autenticado está disponible en req.user
     const newAnuncio = new Anuncio({
       nombre: nombre,
       edad: edad,
@@ -95,9 +92,7 @@ router.delete('/:anuncioId', (req, res, next) => {
   }).catch(err => { err.status = 404; err.message = 'Anuncio no encontrado'; next(err) })
 })
 
-// Ruta protegida
 router.post('/ruta_protegida', async (req, res) => {
-  // El usuario autenticado está disponible en req.user
   const email = req.user
   res.json(email)
 })

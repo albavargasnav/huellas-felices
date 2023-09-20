@@ -2,13 +2,14 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import "./UserDetail.css";
 import UserDetail from './UserDetail';
-import { getUserInfo, getUserInfoByName, updateUserInfo } from '../service';
+import { getUserInfo, getUserInfoByName, updateUserInfo, getAdvertsByName } from '../service';
 
 function UserPage() {
   const params = useParams();
   const navigate = useNavigate();
   const [error, setError] = useState({status: 0, mensaje: ''});
   const [user, setUser] = useState({});
+  const [adverts, setAdverts] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
 
@@ -35,11 +36,27 @@ function UserPage() {
     }
     
     setIsLoading(false);
-  }, [params.userId, navigate]);
+  }, [params.userId, navigate, params.name]);
+ 
+  
+  useEffect(() => {
+    setIsLoading(true);
+    getAdvertsByName(user.name)
+      .then(res => setAdverts(res))
+      .catch(error => {
+        if (error.status === 404) {
+          return navigate('/404');
+        }
+        setError(error);
+      });
+    setIsLoading(false);
+  }, [user.name, navigate]);
+
   if (error?.status === 404) {
     return <Navigate to="/404" />;
   }
 
+  console.log(adverts)
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.currentTarget
@@ -76,6 +93,7 @@ function UserPage() {
         error={error}
         params={params}
         {...user}
+        
       />
     )
   );
