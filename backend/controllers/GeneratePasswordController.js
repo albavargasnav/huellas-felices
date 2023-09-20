@@ -22,7 +22,7 @@ const jwt = require('jsonwebtoken')
 // };
 
 
-exports.verifyTokenPage = async (req, res) => {
+exports.createNewUserPassword = async (req, res) => {
   const usuarioId = req.user;
   let body = req.body
   if (body) {
