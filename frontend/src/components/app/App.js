@@ -9,8 +9,8 @@ import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
 import Formulario from "../pages/pages/Formulario";
-
 import RecoveryPasswordPage from "../auth/RecoveryPasswordPage/RecoveryPasswordPage";
+import GeneratePasswordPage from "../auth/GeneratePasswordPage/GeneratePasswordPage";
 
 function App() {
   return (
@@ -33,6 +33,10 @@ function App() {
         <Route index element={<RegistrationPage />} />
       </Route>
     <Route path="/recoverypassword" element={<RecoveryPasswordPage />} />
+    <Route path="/generatepassword" element={<GeneratePasswordPage />} />
+    
+
+
 
     <Route path="/404" element={<Layout />}>
       <Route index element={<NotFoundPage />} />

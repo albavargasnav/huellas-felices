@@ -1,13 +1,22 @@
+/* eslint-disable no-undef */
 const FormularioAdopcion = require('../models/FormularioAdopcion')
+const nodemailer = require('nodemailer')
 
 // Controlador para crear una nueva solicitud de adopcion
 exports.crearSolicitud = async (req, res, next) => {
   try {
     const {
-      nombre, apellidos, dni,
-      fechaNacimiento, codigoPostal, provincia,
-      email, movil, estadoCivil,
-      tipoVivienda, motivoAdopcion
+      nombre,
+      apellidos,
+      dni,
+      fechaNacimiento,
+      codigoPostal,
+      provincia,
+      email,
+      movil,
+      estadoCivil,
+      tipoVivienda,
+      motivoAdopcion
     } = req.body
 
     const newSolicitud = new FormularioAdopcion({
@@ -25,9 +34,38 @@ exports.crearSolicitud = async (req, res, next) => {
     })
     await newSolicitud.save()
     res.status(201).json(newSolicitud)
+    await sendEmail(newSolicitud)
   } catch (err) {
-    res.status(400).json({mensaje: 'Ha habido un error'})
+    res.status(400).json({ mensaje: 'Ha habido un error' })
   }
+}
+
+sendEmail = async (newSolicitud) => {
+  const config = {
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    auth: {
+      user: 'huellasfelicesnoreply@gmail.com',
+      pass: 'sfur vwis jurz deez'
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  }
+
+  const mensaje = {
+    from: 'huellasfelicesnoreply@gmail.com',
+    to: newSolicitud.email,
+    subject: 'Nueva solicitud adopción',
+    text: `Nombre: ${newSolicitud.nombre} ${newSolicitud.apellidos}\nDireccion: ${newSolicitud.provincia} y codigo postal: ${newSolicitud.codigoPostal}\nEmail: ${newSolicitud.emial}\nMovil: ${newSolicitud.movil}\nAnimal y motivo de adopcion: ${newSolicitud.motivoAdopcion}`
+  }
+
+  const transport = nodemailer.createTransport(config)
+
+  const info = await transport.sendMail(mensaje)
+
+  console.log(info)
 }
 
 // Funcion a modificar cuando se decida si queremos ver los datos enviados del formulario
