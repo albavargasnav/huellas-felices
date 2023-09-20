@@ -26,16 +26,10 @@ const anuncioSchema = mongoose.Schema({
   usuarioName: { type: String, index: true }
 })
 
-/**
- * lista de tags permitidos
- */
 anuncioSchema.statics.allowedSize = function () {
   return ['Pequeño', 'Mediano', 'Grande']
 }
 
-/**
- * carga un json de anuncios
- */
 anuncioSchema.statics.cargaJson = async function (fichero) {
   const data = await fsPromises.readFile(fichero, { encoding: 'utf8' })
 
@@ -79,26 +73,21 @@ anuncioSchema.statics.list = async function (filters, startRow, numRows, sortFie
   }
   result.rows = await query.exec()
 
-  // poner ruta base a imagenes
+ 
   result.rows.forEach(r => (r.foto = r.foto ? path.join(IMAGE_URL_BASE_PATH, r.foto) : null))
 
-  if (cb) return cb(null, result) // si me dan callback devuelvo los resultados por ahí
-  return result // si no, los devuelvo por la promesa del async (async está en la primera linea de esta función)
+  if (cb) return cb(null, result) 
+  return result
 }
 
 anuncioSchema.methods.setFoto = async function ({ path, originalname: originalName }) {
   if (!originalName) return
 
-  // copiar el fichero desde la carpeta uploads a public/images/anuncios
-  // usando en nombre original del producto
-  // SUGERENCIA: en un proyecto real, valorar si quereis poner el _id del usuario (this._id)
-  // para diferenciar imagenes con el mismo nombre de distintos usuarios
   const imagePublicPath = path.join(__dirname, '../public/images/anuncios', originalName)
   await fs.copy(path, imagePublicPath)
 
   this.foto = originalName
 
-  // Create thumbnail
   thumbnailRequester.send({ type: 'createThumbnail', image: imagePublicPath })
 }
 
