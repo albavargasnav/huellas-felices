@@ -12,8 +12,6 @@ function GeneratePasswordPage() {
 
 
   const handleSubmit = credentials => {
-    //debugger;
-    console.log(credentials)
     execute(credentials)
       .then(() => {
         //const from = location.state?.from?.pathname || '/login';

@@ -4,7 +4,6 @@ import storage from '../../utils/storage';
 const authPath = '/login';
 
 const verificationEmailPath = '/checkEmailRegistered'
-const verificationTokenPath = '/verifytokenuser'
 
 export const verificationEmail = (email) => {
   return client
@@ -36,12 +35,9 @@ export const verificationEmail = (email) => {
 
 export const verificationToken = (credentials) => {
   var urlActual = window.location.href;
-  console.log("URL actual: " + urlActual);
   var parametros = new URLSearchParams(new URL(urlActual).search);
   var token = parametros.get('token');
-  console.log(token);
-  console.log(credentials);
-  return client.post('/verifytokenuser', credentials, {
+  return client.post('/generateNewUserPassword', credentials, {
     headers:
     {
       "Authorization": token,
