@@ -1,16 +1,17 @@
 import React from 'react';
 import T from 'prop-types';
+import './EmptyList.css'
 
 import { Link } from 'react-router-dom';
 
 function EmptyList({ advertsCount }) {
   return (
-    <div>
+    <div className='EmptyList'>
       <p>No hay anuncios</p>
-      {advertsCount > 0 ? (
-        'Cambia tu búsqueda'
+      {advertsCount > 0 ? ( 
+      <p>Cambia tu búsqueda</p>
       ) : (
-        <Link to="new">Crear un nuevo anuncio</Link>
+        <Link to="new" >Crear un nuevo anuncio</Link>
       )}
     </div>
   );

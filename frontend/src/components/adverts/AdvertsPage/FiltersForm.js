@@ -20,7 +20,7 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
     setFormValue(defaultFilters);
     onFilter(defaultFilters);
   };
-  const {raza, sexo, perro, size} = filters;
+  const {raza, sexo, perro, size, usuarioName} = filters;
   const { isLogged } = useAuth();
   return (
     <>
@@ -51,6 +51,7 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
             {<SelectTags multiple name="size" value={size} onChange={handleChange} />}
           </div>
         </div>
+        {<input className='BuscadorUsuario' name="usuarioName" value={usuarioName} placeholder="Nombre de la raza" onChange={handleChange} />}
         <button type="submit">Buscar</button>
         <button onClick={handleResetClick}>Mostrar Todos</button>
       </div>
