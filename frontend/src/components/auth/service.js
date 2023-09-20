@@ -44,9 +44,11 @@ export const login = ({ remember, ...credentials }) => {
       }
     });
 };
+
 export const register = ({ remember, ...credentials }) => {
   return client.post('/usuarios', credentials)
 };
+
 export const logout = () => {
   return Promise.resolve().then(resetClient).then(storage.clear);
 };
