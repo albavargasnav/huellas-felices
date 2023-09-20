@@ -1,0 +1,12 @@
+.boton-adoptar { 
+    background-color: #666;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 14%;
+    border-radius: 5px;
+}
+
+.boton-adoptar:hover {
+    cursor: pointer
+}

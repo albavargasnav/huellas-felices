@@ -2,7 +2,6 @@
 const FormularioAdopcion = require('../models/FormularioAdopcion')
 const nodemailer = require('nodemailer')
 
-// Controlador para crear una nueva solicitud de adopcion
 exports.crearSolicitud = async (req, res, next) => {
   try {
     const {

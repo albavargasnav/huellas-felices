@@ -18,7 +18,7 @@ const UserPageLink = ({usuarioName, ...props}) => {
 
     return isLogged ? (
     <>
-    {usuarioName ? <p><b>Publicado por: </b><a href={rutaName}>{usuarioName}</a></p> : <a href={ruta}>Mi Perfil</a>}
+    {usuarioName ? <p><b>Publicado por: </b><a href={rutaName}><span className='span-usuario'>{usuarioName}</span></a></p> : <a href={ruta}>Mi Perfil</a>}
     </>
     ) : '';
 };
