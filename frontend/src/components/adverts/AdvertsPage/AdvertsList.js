@@ -62,6 +62,7 @@ function AdvertsList({ adverts }) {
   );
 
   const renderAdvertPublic = ({_id, ...advert }) => (
+    
     <li key={_id} className='AdvertsForm'>
       <Advert {...advert} />
       <ShowDetails/>
