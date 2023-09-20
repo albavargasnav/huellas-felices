@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+
 import AuthButton from "../../components/auth/AuthButton/AuthButton";
 import UserPageLink from "../users/UserPageLink/UserPageLink";
 
@@ -27,9 +27,7 @@ const Navbar = () => {
           <li>
             <a href="/contacto">Contacto</a>
           </li>
-          <Link to="/adverts/new">
-              Nuevo anuncio
-          </Link>
+
           <UserPageLink />
           <AuthButton />
         </ul>

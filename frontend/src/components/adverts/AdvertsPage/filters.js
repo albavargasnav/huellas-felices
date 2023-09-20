@@ -28,7 +28,7 @@ const filterByUser =
 filter =>
   ({ usuarioName }) => {
     const cleanFilter = filter.trim();
-    return !cleanFilter || new RegExp(cleanFilter).test(usuarioName);
+    return !cleanFilter || new RegExp(`^${cleanFilter}$`).test(usuarioName);
   };
 
 const filterByPerro =
