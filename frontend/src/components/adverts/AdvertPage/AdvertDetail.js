@@ -47,7 +47,12 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
         
       </div>
       <div className='botonera'>
-        <AdoptaButton />
+        <AdoptaButton 
+          creador={usuarioName}
+          mascota={nombre}
+          idNavegante={payload._id}
+          descMascota={descripcion}
+        />
         <ConfirmationButton
             confirmation="¿Estás seguro/a?"
             onConfirm={onDelete}
