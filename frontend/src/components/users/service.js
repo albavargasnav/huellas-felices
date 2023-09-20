@@ -13,3 +13,7 @@ export const getUserInfoByName = name => {
 export const updateUserInfo = (userId, body) => {
     return client.put(`${userPath}/${userId}`, body);
 };
+
+export const getAdvertsByName = name => {
+  return client.get(`anuncios?usuarioName=${name}`);
+};
