@@ -21,11 +21,6 @@ function RecoveryPasswordPage() {
   return (
     <div>
       <RecoveryForm onSubmit={handleSubmit} isLoading={isLoading} resetError={resetError} error={error} isEmailSent={isEmailSent}/>
-      {isEmailSent && (
-        <div className="confirmation-message">
-          <p>El correo electrónico se ha enviado con éxito.</p>
-        </div>
-      )}
     </div>
   );
 }

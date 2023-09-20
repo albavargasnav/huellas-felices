@@ -50,6 +50,7 @@ function RecoveryForm({ onSubmit, isLoading, resetError, error, isEmailSent }) {
               </div>
             </div>
           )}
+          
         </form>
       </div>
     </div>
