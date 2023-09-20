@@ -11,8 +11,10 @@ function GeneratePasswordPage() {
   const { isLoading, error, execute, resetError } = useMutation(verificationToken);
 
 
-  const handleSubmit = token => {
-    execute(token)
+  const handleSubmit = credentials => {
+    //debugger;
+    console.log(credentials)
+    execute(credentials)
       .then(() => {
         //const from = location.state?.from?.pathname || '/login';
         //navigate(from);

@@ -6,8 +6,6 @@ import './LoginForm.css';
 
 import ErrorIcon from '../../../assets/images/icon-error.png'
 
-const validPassword = ({ password }) => password;
-
 function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
   const {
     formValue: credentials,
@@ -15,8 +13,9 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
     handleSubmit,
     validate,
   } = useForm({
-    //password: '',
+    password: '',
   });
+
   const { password } = credentials;
 
   return (
@@ -27,12 +26,12 @@ function GeneratePasswordForm({ onSubmit, isLoading, resetError, error }) {
           <div className='login-form-text'>
             <span className='login-form-text-info'>Nueva Contraseña</span>
           </div>
-          {/* <input className='login-form-text-area'
+          <input className='login-form-text-area'
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
-          /> */}
+          />
           <button className='login-form-button'>
             Enviar enlace
           </button>

@@ -18,28 +18,37 @@ export const verificationEmail = (email) => {
     })
 }
 
-export const verificationToken = () => {
-var urlActual = window.location.href;
-console.log("URL actual: " + urlActual);
-var parametros = new URLSearchParams(new URL(urlActual).search);
-var token = parametros.get('token');
-console.log(token);
+// export const verificationToken = async (...credentials) => {
+// var urlActual = window.location.href;
+// console.log("URL actual: " + urlActual);
+// var parametros = new URLSearchParams(new URL(urlActual).search);
+// var token = parametros.get('token');
+// console.log(token);
+//   try {
+//     const credentials = { credentials }; 
+//     const response = await client.post('/verifytokenuser', credentials);
+//     console.log('Registro de usuario:', response);
+//   } catch (error) {
+//     console.error('Error en la solicitud:', error);
+//     return false; // Manejar errores
+//   }
+// };
 
-  return client
-    .post(`${verificationTokenPath}`, token, {
-      headers: 
+export const verificationToken = (credentials) => {
+  var urlActual = window.location.href;
+  console.log("URL actual: " + urlActual);
+  var parametros = new URLSearchParams(new URL(urlActual).search);
+  var token = parametros.get('token');
+  console.log(token);
+  console.log(credentials);
+  return client.post('/verifytokenuser', credentials, {
+    headers:
     {
       "Authorization": token,
-      
-    }})
-    .then((response) => {
-      if (response.status === 200) {
-        return true;
-      } else {
-        return false;
-      }
-    })
+    }
+  })
 }
+    
 
 export const login = ({ remember, ...credentials }) => {
   return client
