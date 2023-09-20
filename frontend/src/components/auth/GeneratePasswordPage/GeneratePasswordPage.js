@@ -10,6 +10,7 @@ function GeneratePasswordPage() {
   const location = useLocation();
   const { isLoading, error, execute, resetError } = useMutation(verificationToken);
 
+
   const handleSubmit = token => {
     execute(token)
       .then(() => {
