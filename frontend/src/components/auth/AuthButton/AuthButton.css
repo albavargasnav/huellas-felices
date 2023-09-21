@@ -1,0 +1,14 @@
+.button-cerrarSesion {
+    background: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(86, 86, 86);
+}
+
+.button-cerrarSesion:hover {
+    background-color: white;
+    color: #00aced;
+    transition: color 0.3s ease-in-out;
+}

@@ -23,7 +23,17 @@ sendEmailToken = async (email, enlaceToken) => {
     from: 'huellasfelicesnoreply@gmail.com',
     to: email,
     subject: 'Correo de pruebas',
-    text: `Haga clic en el siguiente enlace para cambiar su contraseña:\n${enlaceToken}`
+    html: `
+      <div style="text-align: center; width: 34%; background-color: #f0f0f0;">
+        <div style="padding: 20px; border-radius: 10px;">
+          <img src="https://static.vecteezy.com/system/resources/previews/009/344/667/non_2x/dog-paw-free-png.png" alt="huellas-felices" style="width: 170px;">
+          <h1>Restablecer contraseña</h1>
+          <p style="font-size: 16px;">Haga clic en el botón para reemplazar su contraseña de Huellas Felices:</p>
+          <a href="${enlaceToken}" style="margin-bottom: 30px; text-decoration: none; background-color: #428bca; color: #ffffff; padding: 10px 20px; border-radius: 5px; display: inline-block; margin-top: 10px;">Reestablecer contraseña</a>
+        </div>
+      </div>
+    `
+    //text: `Haga clic en el siguiente enlace para cambiar su contraseña:\n${enlaceToken}`
   }
 
   const transport = nodemailer.createTransport(config)
@@ -59,9 +69,6 @@ exports.verificarEmailRegistrado = async (req, res, next) => {
     if (process.env.NODE_ENV === 'production') {
       enlaceToken = `${process.env.BACK_APP_API_BASE_URL_PROD}generatepassword?token=${token}`
     }
-
-    console.log(token)
-    console.log(enlaceToken)
 
     await sendEmailToken(usuario.email, enlaceToken)
 
