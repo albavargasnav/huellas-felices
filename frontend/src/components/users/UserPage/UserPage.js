@@ -13,6 +13,7 @@ function UserPage() {
   const [user, setUser] = useState({});
   const [adverts =  [], setAdverts] = useState({})
   const [isLoading, setIsLoading] = useState(true);
+  const [updateUser, setUpdateUser] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; 
 
@@ -67,7 +68,7 @@ function UserPage() {
         body.password = form.elements.password.value
       }
 
-      updateUserInfo(userId,body).then(() => navigate(`/adverts`))
+      updateUserInfo(userId,body).then(() => setUpdateUser(true))
     }
   }
   const handlePageChange = (pageNumber) => {
@@ -89,6 +90,7 @@ function UserPage() {
     isLoading={isLoading}
     error={error}
     params={params}
+    updateUser={updateUser}
     {...user} />
     {Array.isArray(adverts) && 
     <>

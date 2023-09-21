@@ -40,7 +40,21 @@ sendEmail = async (newSolicitud) => {
     from: 'huellasfelicesnoreply@gmail.com',
     to: `${newSolicitud.datosUsuarioCreador.email}`,
     subject: 'Nueva solicitud adopción',
-    text: `Estimad@ ${newSolicitud.datosUsuarioCreador.name}, me pongo en contacto con usted porque me gustaría adoptar a ${newSolicitud.mascota}.\n Por favor, le ruego póngase en contacto conmigo por los siguientes canales:\nTeléfono: ${newSolicitud.datosUsuarioNavegante.telefono}\nEmail: ${newSolicitud.datosUsuarioNavegante.email}\n Quedo a la espera de su respuesta.\nUn Saludo.`
+    html: `
+    <div style="width: 34%; background-color: #f0f0f0;">
+      <div style="padding: 20px; border-radius: 10px;">
+        <img src="https://static.vecteezy.com/system/resources/previews/009/344/667/non_2x/dog-paw-free-png.png" alt="huellas-felices" style="width: 170px;">
+        <h1>Petición de adopción</h1>
+        <h2>Nuevo Mensaje</h2>
+        <p style="font-size: 14px;">Estimad@ ${newSolicitud.datosUsuarioCreador.name}</p>
+        <p style="font-size: 14px;">Me pongo en contacto con usted porque me gustaría adoptar a ${newSolicitud.mascota}.\n,</p>
+        <p style="font-size: 14px;">Por favor, le ruego póngase en contacto conmigo por los siguientes canales:</p>
+        <p style="font-size: 14px;">Teléfono: ${newSolicitud.datosUsuarioNavegante.telefono}</p>
+        <p style="font-size: 14px;">Email: ${newSolicitud.datosUsuarioNavegante.email}</p>
+      
+      </div>
+    </div>
+  `
   }
 
   const transport = nodemailer.createTransport(config)

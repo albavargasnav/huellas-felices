@@ -2,8 +2,11 @@ import React, {useState, useEffect} from "react";
 import T from 'prop-types';
 
 import { user } from '../propTypes';
+import '../../auth/LoginPage/LoginForm.css';
+import IconVerified from '../../../assets/images/icon-verified.png'
 
-function UserDetail({ name, password, direccion, telefono, documento, haTenidoMascotas, onSubmit, isLoading, error, params }) {
+
+function UserDetail({ name, password, direccion, telefono, documento, haTenidoMascotas, onSubmit, isLoading, error, params, updateUser }) {
   const [checked, setChecked] = useState(false);
   
   useEffect(() => {
@@ -56,6 +59,14 @@ function UserDetail({ name, password, direccion, telefono, documento, haTenidoMa
             <div className='form-group'>
               <button id="boton-submit" type="submit" style={{display: params.userId ? 'block' : 'none' }}>Actualizar</button>
             </div>
+            {updateUser && (
+            <div class="form-successful-container">
+              <div className="confirmation-message">
+                <img src={IconVerified} alt="Error" style={{ marginRight: '20px', width: '20px', height: '20px' }} />
+                <p style={{ color: 'white', fontWeight: 'bold' }}>Se han actualizado los datos del usuario.</p>
+              </div>
+            </div>
+          )}
             {error.mensaje !== '' ? <div className='div-error'>{error.mensaje}</div> : ''}
           </fieldset>
         </form>
