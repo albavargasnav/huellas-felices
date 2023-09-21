@@ -21,14 +21,6 @@ To start a single instance:
 To start in development mode:
 
     npm run dev (including nodemon & debug log)
-
-## Test
-
-    npm test (pending to create, the client specified not to do now)
-
-## ESLint
-
-    npm run hints
 ## Api
 ### Models
 #### User
@@ -55,12 +47,6 @@ To start in development mode:
 
 The API can be used with the path: 
 [API](/api/anuncios)
-
-### Language
-
-All requests that return error messages are localized to english, if you want to 
-change language make the request with the header accept-language set to other language, 
-i.e. Accept-Language: es 
 
 ### Error example
 
