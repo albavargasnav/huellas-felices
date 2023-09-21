@@ -65,7 +65,7 @@ exports.verificarEmailRegistrado = async (req, res, next) => {
       expiresIn: '2d'
     })
 
-    const enlaceToken = `${process.env.BACK_APP_API_BASE_URL}generatepassword?token=${token}`
+    let enlaceToken = `${process.env.BACK_APP_API_BASE_URL}generatepassword?token=${token}`
     if (process.env.NODE_ENV === 'production') {
       enlaceToken = `${process.env.BACK_APP_API_BASE_URL_PROD}generatepassword?token=${token}`
     }
