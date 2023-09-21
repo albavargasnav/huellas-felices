@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import T from 'prop-types';
 
 import useForm from '../../../hooks/useForm';
-import './LoginForm.css';
+import '../LoginPage/LoginForm.css';
 
 import ErrorIcon from '../../../assets/images/icon-error.png'
+import IconVerified from '../../../assets/images/icon-verified.png'
 
-function RecoveryForm({ onSubmit, isLoading, resetError, error }) {
+function RecoveryForm({ onSubmit, isLoading, resetError, error, isEmailSent }) {
   const {
     formValue: credentials,
     handleChange,
     handleSubmit,
-    validate,
   } = useForm({
     email: '',
   });
@@ -30,11 +30,14 @@ function RecoveryForm({ onSubmit, isLoading, resetError, error }) {
             Enviar enlace
           </button>
 
-          {/* {emailRegistered && (
-            <div className="form-success-message">
-              El correo electrónico está registrado.
+          {isEmailSent && (
+            <div class="form-successful-container">
+              <div className="confirmation-message">
+                <img src={IconVerified} alt="Error" style={{ marginRight: '20px', width: '20px', height: '20px' }} />
+                <p style={{ color: 'white', fontWeight: 'bold' }}>Reestablecimiento de contraseña enviado. Revisa la bandeja de entrada de tu email.</p>
+              </div>
             </div>
-          )} */}
+          )}
 
           {error && (
             <div class="form-error-container">

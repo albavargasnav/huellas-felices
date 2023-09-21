@@ -13,8 +13,6 @@
 }
 
 .ventana-confirmacion {
-    padding: 4%;
-    border: 1px dotted black;
-    width: 90%;
-    margin-top: 3px;
+    display: flex;
+    align-items: center;
 }

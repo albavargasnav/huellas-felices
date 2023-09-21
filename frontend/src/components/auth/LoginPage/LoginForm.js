@@ -58,7 +58,7 @@ function LoginForm({ onSubmit, isLoading, resetError, error }) {
               <div className="error-message">
                 <img src={ErrorIcon} alt="Error" style={{ marginRight: '5px', width: '20px', height: '20px' }} />
                 <div onClick={resetError} style={{ color: 'black', fontWeight: 'bold' }}>
-                  {error.mensaje}
+                  {error.menssage}
                 </div>
               </div>
             </div>

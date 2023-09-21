@@ -47,7 +47,7 @@ function UserDetail({ name, password, direccion, telefono, documento, haTenidoMa
               <label>Teléfono:</label>
               <input type="text" name="telefono" defaultValue={telefono} disabled={params.userId ? false : true }/>
             </div>
-            <div className='form-group' style={{display: params.userId ? 'block' : 'none' }}>
+            <div className='form-group' style={{ display: params.userId ? 'flex' : 'none', alignItems: 'center' }}>
               <label>¿Ha tenido mascotas antes?</label>
               <input id="chk-mascotas" type="checkbox" name="haTenidoMascotas" 
               checked={checked}
