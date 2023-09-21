@@ -81,7 +81,7 @@ function NewAdvertForm({ onSubmit, isLoading }) {
       <div>
       <label for="descripcion">Escribe una pequeña descripcion:</label>
       <br></br>
-      <textarea rows="10" cols="40" name="descripcion" id="descripcion" maxlenght="180" value={descripcion} onChange={handleChange} ></textarea>
+      <textarea rows="5" cols="40" name="descripcion" id="descripcion" maxlenght="180" value={descripcion} onChange={handleChange} ></textarea>
       <legend className='foto'>Selecciona una imagen:</legend>
       </div>
         <InputFile name="foto" onChange={handleChange} />

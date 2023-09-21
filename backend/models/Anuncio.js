@@ -1,16 +1,12 @@
 'use strict'
 
 const mongoose = require('mongoose')
-const fs = require('fs-extra')
+
 const path = require('path')
-const cote = require('cote')
+
 const fsPromises = require('fs').promises
 
 const { IMAGE_URL_BASE_PATH } = process.env
-
-const thumbnailRequester = new cote.Requester({
-  name: 'thumbnail creator client'
-}, { log: false, statusLogsEnabled: false })
 
 const anuncioSchema = mongoose.Schema({
   nombre: { type: String, index: true },
@@ -78,18 +74,6 @@ anuncioSchema.statics.list = async function (filters, startRow, numRows, sortFie
   if (cb) return cb(null, result)
   return result
 }
-
-anuncioSchema.methods.setFoto = async function ({ path, originalname: originalName }) {
-  if (!originalName) return
-
-  const imagePublicPath = path.join(__dirname, '../public/images/anuncios', originalName)
-  await fs.copy(path, imagePublicPath)
-
-  this.foto = originalName
-
-  thumbnailRequester.send({ type: 'createThumbnail', image: imagePublicPath })
-}
-
 var Anuncio = mongoose.model('Anuncio', anuncioSchema)
 
 module.exports = Anuncio

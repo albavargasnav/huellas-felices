@@ -1,8 +1,8 @@
 'use strict'
 
 const jwt = require('jsonwebtoken')
-
-module.exports = function () { // devuelve un middleware que si no hay usuario responde con error
+// devuelve un middleware que si no hay usuario responde con error
+module.exports = function () {
   return function (req, res, next) {
     const token = req.body.token || req.query.token || req.get('Authorization')
 
@@ -17,7 +17,6 @@ module.exports = function () { // devuelve un middleware que si no hay usuario r
         return next(err)
       }
       // guardo el id del usuario en request para que
-      // los siguientes middlewares puedan usarlo
       req.user = decoded
 
       next()
