@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { register } from '../service';
@@ -9,21 +9,18 @@ function RegistrationPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isLoading, error, execute, resetError } = useMutation(register);
+  const [isRegisterUser, setRegisterUser] = useState(false);
 
   const handleSubmit = credentials => {
     execute(credentials)
       .then(() => {
-        setTimeout(() => {
-          const from = location.state?.from?.pathname || '/login';
-        navigate(from);
-        }, 1000);
-        
-      })
+        setRegisterUser(true);
+      });
   };
   
   return (
     <div>
-      <RegistrationForm onSubmit={handleSubmit} isLoading={isLoading} resetError={resetError} error={error} />
+      <RegistrationForm onSubmit={handleSubmit} isLoading={isLoading} resetError={resetError} error={error} isRegisterUser={isRegisterUser} />
     </div>
   );
 }

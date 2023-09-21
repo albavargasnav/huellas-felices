@@ -4,13 +4,14 @@ import useForm from '../../../hooks/useForm';
 import '../LoginPage/LoginForm.css';
 
 import ErrorIcon from '../../../assets/images/icon-error.png' 
+import IconVerified from '../../../assets/images/icon-verified.png'
 
 const validName = ({ name }) => name;
 const validEmail = ({ email }) => email;
 const validPassword = ({ password }) => password;
 const validRepeatedPassword = ({ password, repeatPassword }) => password === repeatPassword;
 
-function RegistrarionForm({ onSubmit, isLoading, resetError, error }) {
+function RegistrarionForm({ onSubmit, isLoading, resetError, error, isRegisterUser }) {
   const {
     formValue: credentials,
     handleChange,
@@ -59,7 +60,15 @@ function RegistrarionForm({ onSubmit, isLoading, resetError, error }) {
           <button className='login-form-button' disabled={!validate(validName, validEmail, validPassword, validRepeatedPassword, () => !isLoading)}>
             Registrar usuario
           </button>
-          
+
+          {isRegisterUser && (
+            <div class="form-successful-container">
+              <div className="confirmation-message">
+                <img src={IconVerified} alt="Error" style={{ marginRight: '20px', width: '20px', height: '20px' }} />
+                <p style={{ color: 'white', fontWeight: 'bold' }}>Usuario registrado con éxito.</p>
+              </div>
+            </div>
+          )}
             
           {error && (
             <div class="form-error-container">
