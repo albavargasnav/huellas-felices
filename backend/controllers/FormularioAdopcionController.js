@@ -38,7 +38,7 @@ sendEmail = async (newSolicitud) => {
 
   const mensaje = {
     from: 'huellasfelicesnoreply@gmail.com',
-    to: 'huellasfelicesnoreply@gmail.com',
+    to: `${newSolicitud.datosUsuarioCreador.email}`,
     subject: 'Nueva solicitud adopción',
     html: `
     <div style="width: 34%; background-color: #f0f0f0;">
