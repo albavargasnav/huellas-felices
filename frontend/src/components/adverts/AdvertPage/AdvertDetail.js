@@ -52,6 +52,7 @@ function AdvertDetail({ nombre, disponible, edad, raza, size, foto, sexo, perro,
           mascota={nombre}
           idNavegante={payload._id}
           descMascota={descripcion}
+          mostrar={payload.name !== usuarioName}
         />
         <ConfirmationButton
             confirmation="¿Estás seguro/a?"
