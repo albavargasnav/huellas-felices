@@ -8,7 +8,6 @@ import RegistrationPage from '../auth/RegistrationPage/RegistrationPage';
 import LandingPage from '../pages/pages/LandingPage';
 import InfoProtePage from "../pages/pages/InfoProtePage";
 import InfoAdopcionPage from "../pages/pages/InfoAdopcionPage";
-import Formulario from "../pages/pages/Formulario";
 import RecoveryPasswordPage from "../auth/RecoveryPasswordPage/RecoveryPasswordPage";
 import GeneratePasswordPage from "../auth/GeneratePasswordPage/GeneratePasswordPage";
 
@@ -53,9 +52,6 @@ function App() {
     </Route>
     <Route path="/info-adopcion" element={<Layout />}>
       <Route index element={<InfoAdopcionPage />} />
-    </Route>
-    <Route path="/formulario-adopcion" element={<RequireAuth> <Layout /></RequireAuth>}>
-      <Route index element={<Formulario />} />
     </Route>
     <Route path="*" element={<Navigate to="/404" />} />
   </Routes>
