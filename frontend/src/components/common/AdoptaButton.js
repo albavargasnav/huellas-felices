@@ -3,7 +3,7 @@ import "./AdoptaButton.css";
 import {useNavigate } from 'react-router-dom';
 import { createRequest } from "../../components/adverts/service"
 
-function AdoptaButton({creador, mascota, idNavegante, descMascota, ...props}) {
+function AdoptaButton({creador, mascota, idNavegante, descMascota, mostrar, ...props}) {
   const navigate = useNavigate();
   const goToController = () => {
     createRequest({creador: creador, mascota: mascota, idNavegante: idNavegante, descMascota: descMascota})
@@ -12,12 +12,13 @@ function AdoptaButton({creador, mascota, idNavegante, descMascota, ...props}) {
         console.error(error);
       });
     };
-  
-  return (
-    <div className='adoptar-container'>
-      <button onClick={goToController} className='boton-adoptar'>¡Adóptame!</button>
-    </div>
-  );
+  if (mostrar) {
+    return (
+      <div className='adoptar-container'>
+        <button onClick={goToController} className='boton-adoptar'>¡Adóptame!</button>
+      </div>
+    );
+  }
 }
 
 export default AdoptaButton;
