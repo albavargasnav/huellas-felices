@@ -5,6 +5,7 @@ import { logout } from '../service';
 import useMutation from '../../../hooks/useMutation';
 import { useAuth } from '../context';
 import '../../layout/Navbar.css';
+import './AuthButton.css';
 
 const AuthButton = () => {
   const { isLogged, handleLogout } = useAuth();
@@ -28,7 +29,7 @@ const AuthButton = () => {
           </div>
         </div>
       )}
-      <button onClick={() => setShowPopup(true)}>Cerrar sesión</button>
+      <button className='button-cerrarSesion' onClick={() => setShowPopup(true)}>Cerrar sesión</button>
     </>
   ) : (
     <Link to="/login">Iniciar sesión</Link>
