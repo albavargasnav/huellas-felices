@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import T from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import { advert } from '../propTypes';
 import { useAuth } from '../../auth/context'

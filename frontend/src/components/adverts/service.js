@@ -29,7 +29,6 @@ export const createAdvert = (newAdvert) => {
 };
 
 export const createRequest = (newRequest) => {
-  console.log(newRequest)
   return client.post(adoptionRequestPath, newRequest, {
     headers: {
       "Content-Type": "application/json",

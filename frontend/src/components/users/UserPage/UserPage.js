@@ -84,7 +84,6 @@ function UserPage() {
   if (isLoading) {
     return 'Loading...';
   }
-  console.log(Array.isArray(adverts))
   return (<><UserDetail
     onSubmit={handleSubmit}
     isLoading={isLoading}
@@ -92,10 +91,15 @@ function UserPage() {
     params={params}
     {...user} />
     {Array.isArray(adverts) && 
-    <><AdvertsList adverts={currentItems} /><Pagination itemsPerPage={itemsPerPage}
-        totalItems={adverts.length}
-        currentPage={currentPage}
-        setCurrentPage={handlePageChange} /></> 
+    <>
+    <h2 className='advertsTittle'>Anuncios</h2>
+    <div className='adverstBody'>
+        <AdvertsList adverts={currentItems} />
+    </div>
+    <Pagination itemsPerPage={itemsPerPage}
+      totalItems={adverts.length}
+      currentPage={currentPage}
+      setCurrentPage={handlePageChange} /></> 
     }
     </>
     )

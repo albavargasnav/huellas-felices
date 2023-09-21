@@ -73,10 +73,9 @@ anuncioSchema.statics.list = async function (filters, startRow, numRows, sortFie
   }
   result.rows = await query.exec()
 
- 
   result.rows.forEach(r => (r.foto = r.foto ? path.join(IMAGE_URL_BASE_PATH, r.foto) : null))
 
-  if (cb) return cb(null, result) 
+  if (cb) return cb(null, result)
   return result
 }
 

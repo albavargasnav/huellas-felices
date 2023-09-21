@@ -8,8 +8,7 @@ import { getAdverts } from '../service';
 import { defaultFilters, filterAdverts } from './filters';
 import useQuery from '../../../hooks/useQuery';
 import Pagination from '../../common/Pagination';
-import './AdvertsList.css'
-
+import './AdvertsPage.css'
 
 const getFilters = () => storage.get('filters') || defaultFilters;
 const saveFilters = filters => storage.set('filters', filters);
@@ -50,13 +49,16 @@ function AdvertsPage() {
         
       )}
       {filteredAdverts.length ? (
-        <>
+        <div >
+          <div className='adverstBody'>
           <AdvertsList adverts={currentItems} />  
-        <Pagination itemsPerPage={itemsPerPage}
+          </div>
+          
+          <Pagination itemsPerPage={itemsPerPage}
           totalItems={filteredAdverts.length}
           currentPage={currentPage}
           setCurrentPage={handlePageChange} />
-          </>
+        </div>
       ) : (
         <EmptyList advertsCount={adverts.length} />
       )}
