@@ -52,8 +52,7 @@ function FiltersForm({ initialFilters, defaultFilters, onFilter, prices }) {
           </div>
         </div>
         <div>
-          <legend>Buscar por usuario:</legend>
-        {<input className='BuscadorUsuario' name="usuarioName" value={usuarioName} onChange={handleChange} />}
+        {<input className='BuscadorUsuario' name="usuarioName" value={usuarioName} onChange={handleChange} placeholder='Buscar por usuario'/>}
         </div>
         
         <button type="submit">Buscar</button>

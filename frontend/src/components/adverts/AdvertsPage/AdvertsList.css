@@ -4,7 +4,8 @@
     position: relative;
     justify-content: space-between;
     margin: 10px; 
-    width: calc(30% - 20px);
+    width: calc(25% - 5px);
+    min-width: 300px; 
     box-sizing: border-box;
     border-style: solid;
     border-color: #4b4a34;
