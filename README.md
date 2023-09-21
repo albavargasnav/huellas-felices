@@ -13,6 +13,13 @@ Este proyecto es una página web de adopción de perros y gatos, donde los usuar
 
 El proyecto está dividido en dos partes: el frontend desarrollado en React y el backend implementado en Node.js con Express, utilizando MongoDB como base de datos.
 
+## Servidor en AWS
+
+Este proyecto está alojado en un servidor de Amazon Web Services (AWS). Puedes acceder a la aplicación en la siguiente dirección:
+
+- URL: [http://3.89.92.231](http://3.89.92.231)
+
+
 ## Despliegue
 ### Backend
 Desde la raíz del proyecto, ve al directorio backend:
