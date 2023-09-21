@@ -38,7 +38,7 @@ sendEmail = async (newSolicitud) => {
 
   const mensaje = {
     from: 'huellasfelicesnoreply@gmail.com',
-    to: 'mjserrano89@gmail.com',
+    to: `${newSolicitud.datosUsuarioCreador.email}`,
     subject: 'Nueva solicitud adopción',
     text: `Estimad@ ${newSolicitud.datosUsuarioCreador.name}, me pongo en contacto con usted porque me gustaría adoptar a ${newSolicitud.mascota}.\n Por favor, le ruego póngase en contacto conmigo por los siguientes canales:\nTeléfono: ${newSolicitud.datosUsuarioNavegante.telefono}\nEmail: ${newSolicitud.datosUsuarioNavegante.email}\n Quedo a la espera de su respuesta.\nUn Saludo.`
   }
