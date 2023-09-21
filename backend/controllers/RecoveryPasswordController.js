@@ -22,7 +22,7 @@ sendEmailToken = async (email, enlaceToken) => {
   const mensaje = {
     from: 'huellasfelicesnoreply@gmail.com',
     to: email,
-    subject: 'Correo de pruebas',
+    subject: 'Restaurar contraseña',
     html: `
       <div style="text-align: center; width: 34%; background-color: #f0f0f0;">
         <div style="padding: 20px; border-radius: 10px;">
