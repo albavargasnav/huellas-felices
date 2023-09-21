@@ -1,33 +1,46 @@
-# huellas-felices
-Página Web de Adopción de perros y gatos
+# Huella Felices
 
+Proyecto Final para el Bootcamp de KeepCoding de Desarrollo Web Full Stack XIV edición.
 
-# DESPLIEGUE EN EL SERVIDOR (Deployment)
+Este proyecto fue desarrollado por el equipo de Las Barbies compuesto por:
 
-*05/09/2023*
+- Alba Vargas: [albavargasnav](https://github.com/albavargasnav)
+- María José Serrano:[mjserranoal](https://github.com/mjserranoal)
+- Laura Fernández: [macrosura20](https://github.com/macrosura20)
+- Cynthia Naci: [CynthiaMichelle](https://github.com/CynthiaMichelle)
 
-- Borrado de anuncio
-- Página inicio protectora (Langing Page)
-- Registro de usuario
-- Página información de protectora
-- Detalle de anuncio
-- Logout de usuario
-- Bug: Mostrar los errores en Login Form
-- Bug: Correción de jwt
-- Fix: Desplazamiento del Login Form
-- Fix: Cambio de literal "venta" a "disponible"
-- Fix: Cambio de gama cromática en Login Form
-- Fix: Ajuste de background a resolucion de pantalla
+Este proyecto es una página web de adopción de perros y gatos, donde los usuarios pueden buscar, ver detalles y adoptar animales en necesidad de un hogar. Los usuarios también pueden registrarse, iniciar sesion y publicar nuevos anuncios.
 
+El proyecto está dividido en dos partes: el frontend desarrollado en React y el backend implementado en Node.js con Express, utilizando MongoDB como base de datos.
 
-*07/08/2023*
+## Despliegue
+### Backend
+Desde la raíz del proyecto, ve al directorio backend:
+#### Instalas las dependencias 
+    
+    npm install
 
-- Montar instacia AWS
-- Creación del Backend
-- Creación del Frontend
-- Conectar Frontend con Backend
-- Incluir datos de BBDD
-- Interfaz del Login y formulario
-- Endpoint de envío de peticiones del login 
-- Bug: Correción error 204
-- Bug: Correccion middleware Cors
+#### Copia .env.example a .env and cambia tus variables.  
+
+    cp .env.example .env
+
+#### Inicializa la Bases de datos
+
+    npm run installDB
+
+#### Inicia e servidor
+
+    npm start
+
+### Frontend
+Desde la raíz del proyecto, ve al directorio frontend:
+  #### Instalas las dependencias 
+    
+    npm install
+  #### Inicia la aplicación
+
+      npm start
+
+## Uso
+Una vez que hayas configurado el backend y el frontend, puedes acceder a la aplicación en tu navegador. Por defecto, la aplicación estará disponible en http://localhost:3001/
+
