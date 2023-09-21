@@ -67,7 +67,6 @@ app.use((req, res, next) => {
 })
 
 // API
-app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/anuncios', jwtAuth(), require('./routes/api/anuncios'))
 app.use('/api/anuncios_publicos', require('./routes/api/anuncios_publicos'))
 app.use('/api/login', require('./routes/api/login'))

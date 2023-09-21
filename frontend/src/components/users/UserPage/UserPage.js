@@ -92,7 +92,6 @@ function UserPage() {
     {...user} />
     {Array.isArray(adverts) && 
     <>
-    <h2 className='advertsTittle'>Anuncios</h2>
     <div className='adverstBody'>
         <AdvertsList adverts={currentItems} />
     </div>

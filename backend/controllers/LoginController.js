@@ -9,7 +9,7 @@ exports.loginUsuarios = async (req, res, next) => {
 
     if (!usuario || !(await usuario.comparePassword(password))) {
       res.status(401).json({ menssage: 'Correo o Contraseña Incorrectos' })
-      return;
+      return
     }
 
     const token = await jwt.sign({ _id: usuario._id, name: usuario.name }, process.env.JWT_SECRET, {

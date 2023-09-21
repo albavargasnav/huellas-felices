@@ -7,7 +7,8 @@
 textarea{
     margin-top: 10px;
     resize: none;
-    /*max-width: 250px;*/
+    font-family: Arial, sans-serif;
+    font-size: 14px;
 }
 
 .NewAdvert .datosInput input{
